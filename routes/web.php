@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\controllers\ReservasController;
-use App\Http\controllers\DashboardController;
-use App\Http\controllers\HomeController;
+use App\Http\Controllers\ReservasController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 
 
 /*
