@@ -195,9 +195,9 @@ class PublicarHomecamperForm extends Component
         
         //event(new Registered($user));
 
-        // Enviar email de confirmación de reserva
-        //$correo = New ReservaConfirmada ();
-        //Mail::to($this->email)->send($correo);
+        //Enviar email de confirmación de reserva
+        $correo = New ConfirmacionPublicado ();
+        Mail::to($this->email)->send($correo);
        
        return redirect()->route('publicar-resultado');
        
