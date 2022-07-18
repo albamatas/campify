@@ -14,7 +14,7 @@
 
                     <img src="{{ asset('images/sinfoto.png') }}" alt="">
                 @else
-                    <img src="{{ asset($homecamper[$i]->fotos[0]->url) }}" alt=""> 
+                    <img src="{{ asset('storage/imagenesHomeCamper' . $homecamper[$i]->fotos[0]->url) }}" alt=""> 
                 @endif
              
                 <div class="card-inner">
