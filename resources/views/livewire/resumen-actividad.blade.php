@@ -168,8 +168,8 @@
                 <div class="actividad">
                     <div class="content_actividad">
                     
-                        <p>Este será el enlace directo a las reservas en tu establecimiento: <a href="www.campify.es/public/reservar/{{$user->homecamper->id}}">www.campify.es/public/reservar/{{$user->homecamper->id}}</a></p>
-                        <p>Este será el enlace directo a tu ficha, des de allí podrán consultar tus datos e iniciar la reserva: <a href="www.campify.es/public/explorar/{{$user->homecamper->slug}}">www.campify.es/public/explorar/{{$user->homecamper->slug}}</a></p>
+                        <p>Este será el enlace directo a las reservas en tu establecimiento: <a href= "{{route('reservar', [$user->homecamper->id])}}">www.campify.es/public/reservar/{{$user->homecamper->id}}</a></p>
+                        <p>Este será el enlace directo a tu ficha, des de allí podrán consultar tus datos e iniciar la reserva: <a href="{{route('vista.homecamper', [$user->homecamper->slug])}}">www.campify.es/public/explorar/{{$user->homecamper->slug}}</a></p>
                         <p class="hint">Recuerda que puedes compartir estos enlaces en cualquier descripción de aplicaciones como Park4night o Caramaps.</p>
                     </div>
                 </div>
