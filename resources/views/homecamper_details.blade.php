@@ -103,7 +103,7 @@
 <div class="botonera" style="z-index:1000; left:0;">
    
         <a class="btn primary" href="{{route('reservar', [$homecamper->id])}}">
-            Reservar
+            Reservar gratis
         </a>
         
 </div>

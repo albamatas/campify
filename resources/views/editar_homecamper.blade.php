@@ -10,26 +10,13 @@
 
 <div class="dash_container">
   
-    @livewire('edit-homecamper', ['user' => $user])
+    @livewire('edit-homecamper', ['user' => $user, 'guardarfecha' => $guardarfecha])
 
     <x-spacing alto="6rem"></x-spacing>
     
 
 </div>   
 
-<div class="bottom_wrapper">
-        
-    <div id="btn-reservas" class="btn-bottom " onclick="window.location.href='{{route('dashboard-homecamper', $user)}}'">
-                <img src="{{asset('/images/reservas.svg')}}"  style="width: 20px; height:20px; filter: opacity(50%);" alt="">
-                <p>Reservas</p>
-         </div>  
-  
-         
-     
-         <div id="btn-gris" class="btn-bottom btn-selected" onclick="window.location.href='{{route('editar-homecamper', $user)}}'">
-            <img src="{{asset('/images/user.svg')}}" class="svg-selected" style="width: 20px; height:20px" alt="">
-            <p>Editar perfil</p>
-    </div>
 @endsection
 
 @section('js')

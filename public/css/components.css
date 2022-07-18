@@ -495,7 +495,7 @@ padding: 10px;
        cursor: pointer;
        position: absolute;
        z-index: 100;
-       background-color: #ededed;
+       background-color: #b5ffe9;
        border: 1px solid #cccccc;
        height: auto;
        display: flex;
@@ -518,7 +518,7 @@ padding: 10px;
      }
 
     .btn-selected{
-        background-color: whitesmoke;
+        background-color: #00FFB3;
         color: #111111;
         font-weight: 700;
         z-index: 1000000;

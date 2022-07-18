@@ -12,11 +12,11 @@
 
     <h1 class="cabecera">Publica tu área o zona camper y empieza a recibir reservas hoy mismo</h1>
     <x-spacing alto="2rem"></x-spacing>
-    <a href="{{route('publicar')}}"><button type="button" class="primary">Publicar anuncio</button></a>
+    <a href="{{route('publicar')}}"><button type="button" class="primary">Publicar anuncio gratis</button></a>
     <x-spacing alto="4rem"></x-spacing>
     <h2>¿Qué es campify?</h2>
 <x-spacing alto="0.8rem"></x-spacing>
-<p>Somos una plataforma de gestión de reservas adaptada al mundo camper totalmente gratuita que incluye todo lo que necesitas:
+<p>Somos una plataforma gratuita de gestión de reservas adaptada al mundo camper que incluye todo lo que necesitas:
 
     <div style="display:flex; flex-direction:column; align-items:center">
         <img src="{{ asset('images/publicar.png')}}" style="max-width:250px" alt="">
@@ -38,7 +38,7 @@
 
 
 <x-spacing alto="4rem"></x-spacing>
-<a href="{{route('publicar')}}"><button class="primary">Publicar anuncio</button></a>
+<a href="{{route('publicar')}}"><button class="primary">Publicar anuncio gratis</button></a>
 <x-spacing alto="4rem"></x-spacing>
 
 <h2>Tengas lo que tengas, campify es para ti</h2> 
@@ -81,7 +81,7 @@
 </div>
 
     <x-spacing alto="4rem"></x-spacing>
-    <a href="{{route('publicar')}}"><button class="primary">Publicar anuncio</button></a>
+    <a href="{{route('publicar')}}"><button class="primary">Publicar anuncio gratis</button></a>
     <x-spacing alto="4rem"></x-spacing>
 
     
@@ -97,7 +97,7 @@
   
 
 <x-spacing alto="4rem"></x-spacing>
-<a href="{{route('publicar')}}"><button class="primary">Publicar anuncio</button></a>
+<a href="{{route('publicar')}}"><button class="primary">Publicar anuncio gratis</button></a>
 <x-spacing alto="4rem"></x-spacing>
 
     <h2>¿Ya publicaste tu establecimiento?</h2>

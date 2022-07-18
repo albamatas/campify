@@ -148,6 +148,7 @@ class ModalLogin extends Component
                 }else{
                     //Al no tener un homecamper es un usuario particular
                     //pendiente mandarlo a su homecamper
+                    return redirect()->route('dashboard-homecamper');
                 }
              }
        

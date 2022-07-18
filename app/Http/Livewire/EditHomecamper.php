@@ -17,7 +17,8 @@ use App\Models\Servicios;
 use App\Models\ServiciosHomeCamper;
 use App\Models\Fotos;
 use Livewire\WithFileUploads;
-
+use Carbon\Carbon;
+use DateTime;
 
 class EditHomecamper extends Component
 {
@@ -34,14 +35,23 @@ class EditHomecamper extends Component
     public $imgtempAll = [];
     public $class;
     public $style;
+    public $guardarfecha;
 
     public $serviciosSelected = [];
 
     protected $listeners = [
         'Refresh' => '$refresh',
    ];
-    public function mount($user)
+    public function mount($user, $guardarfecha)
     {
+        if($guardarfecha!=null){        
+            
+        }else{
+            $this->hoy = Carbon::now()->format('Y-m-d');
+            $guardarfecha = $this->hoy;
+        }
+        $this->guardarfecha = $guardarfecha;
+        
         $this->user = $user;
         $this->servicios = $user->homecamper->servicios;
         $this->fotos = $user->homecamper->fotos;

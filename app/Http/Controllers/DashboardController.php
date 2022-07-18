@@ -40,23 +40,23 @@ class DashboardController extends Controller
 
          }else{
          
-           if($guardarfecha){
+           //if($guardarfecha){
              
             return view('dashboard_homecamper', [
               'user' => $user,
               'guardarfecha' => $guardarfecha
             ]);  
-           }else{
-            return view('dashboard_homecamper', [
-              'user' => $user,
-              'guardarfecha' =>''
-            ]);  
-           }
+           //}else{
+           // return view('dashboard_homecamper', [
+            //  'user' => $user,
+            //  'guardarfecha' =>''
+          //  ]);  
+          // }
         
         }
     }
 
-    public function edit(){
+    public function edit($guardarfecha = null){
         // $user = HomeCamper::findOrFail($id),
         
         $user = auth()->user();
@@ -74,9 +74,12 @@ class DashboardController extends Controller
 
             //revisamos qué datos faltan por completar para mandar la info a la vista
             
-         return view('editar_homecamper', [
-           'user' => $user
-         ]);  
+            
+              return view('editar_homecamper', [
+              'user' => $user,
+              'guardarfecha' => $guardarfecha
+            ]);  
+          
          }
      }
     public function show($id, $guardarfecha){

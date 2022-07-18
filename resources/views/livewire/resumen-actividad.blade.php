@@ -81,7 +81,7 @@
 
                                  @if (blank($entradas)) 
     
-                                <p>Ninguna entrada prevista para hoy.</p>
+                                <p>Ninguna entrada prevista esta fecha.</p>
                                                                                       
                                 @else
                                                                   
@@ -103,7 +103,7 @@
 
                                     @if (blank($salidas)) 
        
-                                   <p>Ninguna salida prevista para hoy.</p>
+                                   <p>Ninguna salida prevista para esta fecha.</p>
                                                                                          
                                    @else
                                                                      
@@ -137,7 +137,7 @@
                             <div class="resultado-din">
                                 @if (blank($noches))
     
-                                <p>Ninguna pernocta prevista para hoy.</p>
+                                <p>Ninguna pernocta prevista para esta fecha.</p>
                                                                                       
                                 @else
                                    
@@ -176,4 +176,19 @@
         
 
         </div>
+
+        
+<div class="bottom_wrapper">
+        
+    <div id="btn-reservas" class="btn-bottom btn-selected" onclick="window.location.href='{{route('dashboard-homecamper', ['user' => $user, $guardarfecha])}}'">
+                <img src="{{asset('/images/reservas.svg')}}" class="svg-selected" style="width: 20px; height:20px" alt="">
+                <p>Reservas</p>
+         </div>  
+  
+         
+     
+         <div id="btn-gris" class="btn-bottom" onclick="window.location.href='{{route('editar-homecamper', [ 'user' => $user, $guardarfecha ])}}'">
+            <img src="{{asset('/images/user.svg')}}" style="width: 20px; height:20px; filter: opacity(50%);" alt="">
+            <p>Editar perfil</p>
+    </div>
 </div>

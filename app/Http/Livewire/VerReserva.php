@@ -56,7 +56,7 @@ class VerReserva extends Component
     public function mount($reserva, $guardarfecha){
         $this->reserva = $reserva;
                
-        $this->guardarfecha =  $guardarfecha;
+        $this->guardarfecha = $guardarfecha;
     }
 
     public function render()

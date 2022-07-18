@@ -21,7 +21,7 @@ class ListadoHomeCamper extends Component
             $this->homecamper = Cache::get('homecamper');
         } else {
             $this->homecamper = HomeCamper::get()->all();
-            Cache::put('homecamper', $this->homecamper);
+            Cache::put('homecamper', $this->homecamper, 1000);
         }
    
         if(Cache::has('j')){
@@ -43,7 +43,7 @@ class ListadoHomeCamper extends Component
 
     public function mostrarMas(){
         $this->j = $this->j + 10;
-        Cache::put('j', $this->j);
+        Cache::put('j', $this->j, 1000);
         $this->homecamper = HomeCamper::get()->all();
 
     }

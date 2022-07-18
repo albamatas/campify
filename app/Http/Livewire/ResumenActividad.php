@@ -32,6 +32,7 @@ class ResumenActividad extends Component
             
         $this->hoy = Carbon::now()->format('Y-m-d');
         $guardarfecha = $this->hoy;
+        $this->guardarfecha = $guardarfecha;
         $this->reservas = Reservas::where('homecamper_id', $this->user->homecamper->id)->get();
         
         $this->entradas = Reservas::where('entrada', $this->hoy)->where('homecamper_id', $this->user->homecamper->id)->get();
@@ -92,6 +93,7 @@ class ResumenActividad extends Component
         $this->noches = Ocupacion::where('fecha', $this->diaconsulta)->where('homecamper_id', $this->user->homecamper->id)->get();
         }
         $this->emit('ResumenActividad', [$this->hoy, $this->diaconsulta, $this->entradas, $this->salidas, $this->noches]);
+        $this->guardarfecha = $this->diaconsulta;
     } 
 
     public function diaSiguiente(){
@@ -123,6 +125,7 @@ class ResumenActividad extends Component
 
         $this->noches = Ocupacion::where('fecha', $this->diaconsulta)->where('homecamper_id', $this->user->homecamper->id)->get();
         }
+        $this->guardarfecha = $this->diaconsulta;
     } 
 
    
