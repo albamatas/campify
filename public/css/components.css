@@ -648,9 +648,7 @@ div#imagenes{
 .card-inner{
     padding: 10px;
 }
-.card img{
-    width: 100%;
-}
+
 .img-container{
     display: flex;
     justify-content: center;
@@ -669,8 +667,9 @@ div#imagenes{
     max-height: 40vh;
 >>>>>>> 0421991df4eda11ce5d2b2e03e29ca3972f242f4
 }
-
-
+.card img{
+    width: 100%;
+}
 
 
 
