@@ -660,7 +660,7 @@ div#imagenes{
 }
 .img-container img{
     width: auto;
-    height: auto;
+    max-height: 40vh;
 }
 
 
