@@ -656,18 +656,11 @@ div#imagenes{
     justify-content: center;
     max-height: 40vh;
     align-content: center;
-<<<<<<< HEAD
-=======
     overflow-y: hidden;
 }
 .img-container img{
     width: auto;
-<<<<<<< HEAD
-    height: auto;
->>>>>>> 1adfe2863e22cdb40aca5bbd8a726560979329b7
-=======
     max-height: 40vh;
->>>>>>> 0421991df4eda11ce5d2b2e03e29ca3972f242f4
 }
 
 
