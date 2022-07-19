@@ -10,12 +10,14 @@
         <div class="card" onclick="window.localStorage.setItem('scroll', JSON.stringify(window.scrollY));">
 
             <a href="{{route('vista.homecamper', $homecamper[$i])}}" style="text-decoration:none; color:#111111"> 
-                @if (blank($homecamper[$i]->fotos))
-
+                <div class="img-container">
+                    @if (blank($homecamper[$i]->fotos))
                     <img src="{{ asset('images/sinfoto.png') }}" alt="">
                 @else
                     <img src="{{ asset($homecamper[$i]->fotos[0]->url)}}" alt=""> 
                 @endif
+                </div>
+               
              
                 <div class="card-inner">
                     <p style="margin-bottom:2px"><strong>{{$homecamper[$i]->nombre}}</strong></p>
