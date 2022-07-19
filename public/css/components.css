@@ -636,7 +636,6 @@ div#imagenes{
     width: 100%;
     height: min-content;
 }
-
 .card{
     background-color: white;
     border: 1px white;
@@ -648,7 +647,6 @@ div#imagenes{
 .card-inner{
     padding: 10px;
 }
-
 .img-container{
     display: flex;
     justify-content: center;
