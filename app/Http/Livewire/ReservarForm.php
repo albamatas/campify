@@ -288,6 +288,9 @@ class ReservarForm extends Component
       // Enviar email de confirmación de reserva
          $correo = New ReservaConfirmada ($reserva, $this->homecamper);
         Mail::to($this->email)->send($correo);
+
+        $notificaHomecamper = New ReservaConfirmada ($reserva, $this->user);
+        Mail::to($this->homecamper->email)->send($notificaHomecamper);
        
       return redirect()->route('resultado', [ 'id' => $this->homecamper->id, 'id_res' => $reserva->id]);
         

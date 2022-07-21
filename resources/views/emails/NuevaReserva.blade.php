@@ -26,9 +26,10 @@
     </style>
 </head>
 <body>
-    <h1>Reserva confirmada</h1>
+    <h1>{{$homecamper->nombre}}, tienes una nueva reserva</h1>
     
-<h2>{{$homecamper->nombre}}, espera tu llegada para el día {{ date("d/m/Y", strtotime($reserva->entrada)) }}</h2>
+<h2>Detalle de la reserva</h2>
+<x-spacing alto="1rem"></x-spacing>
 
 <p><strong>Día de entrada</strong><br>
 {{date("d/m/Y", strtotime($reserva->entrada))}}</p>
@@ -41,27 +42,30 @@
     
 <p><strong>Precio total</strong><br>
  {{$reserva->precio}}€</p>
- <p class="hint">*Este precio incluye la estada según los días seleccionados. Los servicios del establecimiento, por ejemplo la electricidad, puede que se calculen a parte.</p>
+ <p class="hint">*Este precio incluye la estada según los días seleccionados. Los servicios del establecimiento, por ejemplo la electricidad, se ha informado que puede que se calculen a parte.</p>
 
  <x-spacing alto="0.7rem"></x-spacing>
 <hr>
 <x-spacing alto="1.2rem"></x-spacing>
- <h2>Datos de contacto de {{$homecamper->nombre}}</h2>
+ <h2>Datos de contacto del cliente</h2>
+ 
+ <p><strong>Nombre</strong><br>
+{{$user->name}}</p>
+ 
  <x-spacing alto="1rem"></x-spacing>
  <p><strong>Teléfono</strong><br>
-{{$homecamper->user->telefono}}</p>
+{{$user->telefono}}</p>
 
 <p><strong>Email</strong><br>
-    {{$homecamper->user->email}}</p>
+    {{$user->email}}</p>
+
+<p><strong>Matrícula</strong><br>
+    {{$user->matricula}}</p>
 
 <x-spacing alto="0.7rem"></x-spacing>
 <hr>
-<x-spacing alto="1.2rem"></x-spacing>
- <h2>Ubicación de {{$homecamper->nombre}} </h2>
 
-<p><strong>Dirección</strong><br>
-{{$homecamper->direccion->calle . ' Nº ' . $homecamper->direccion->numero . ', ' . $homecamper->direccion->poblacion->poblacion . ', ' .  $homecamper->direccion->provincia->provincia}}</p>
-
+<x-spacing alto="0.7rem"></x-spacing>
 <p>Recuerda que puedes acceder a tu cuenta campify para consultar todas tus reservas.</p>
 <a href="www.campify.es/auth/resumen_actividad"></a>
 <x-spacing alto="0.7rem"></x-spacing>

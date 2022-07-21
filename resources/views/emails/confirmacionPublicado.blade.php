@@ -40,7 +40,9 @@
     <li>Información actualizada al instante</li>
     <li>Mobilidad total: Accede a tu cuenta y administración de reservas desde un móbil o un ordenador</li>
 </ul>
-   
+<x-spacing alto="0.4rem"></x-spacing>
+<p>Recuerda que puedes acceder a tu cuenta campify para consultar y todas tus reservas.</p>
+<a href="www.campify.es/auth/resumen_actividad"></a>
 <x-spacing alto="0.7rem"></x-spacing>
 </body>
 </html>
