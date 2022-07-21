@@ -45,7 +45,10 @@
 <p><strong>Dirección</strong><br>
 {{$homecamper->direccion->calle . ' Nº ' . $homecamper->direccion->numero . ', ' . $homecamper->direccion->poblacion->poblacion . ', ' .  $homecamper->direccion->provincia->provincia}}</p>
 
-<x-spacing alto="0.7rem"></x-spacing>
+<x-spacing alto="1rem"></x-spacing>
+<h2>Accede a tu cuenta para consultar y gestionar tus reservas</h2>
+<button data-toggle="modal" data-target="#fechas" wire:click="" class="btn-secondary" >  <a href="{{route('dashboard-homecamper')}}" style="text-decoration:none; color:#111111">Acceder su ficha</a></button>
+<x-spacing alto="1rem"></x-spacing>
 
 @endsection
 

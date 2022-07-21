@@ -63,7 +63,7 @@
 {{$homecamper->direccion->calle . ' Nº ' . $homecamper->direccion->numero . ', ' . $homecamper->direccion->poblacion->poblacion . ', ' .  $homecamper->direccion->provincia->provincia}}</p>
 
 <p>Recuerda que puedes acceder a tu cuenta campify para consultar todas tus reservas.</p>
-<a href="www.campify.es/auth/resumen_actividad"></a>
+<a href="{{route('dashboard-homecamper')}}">Acceder</a>
 <x-spacing alto="0.7rem"></x-spacing>
 </body>
 </html>

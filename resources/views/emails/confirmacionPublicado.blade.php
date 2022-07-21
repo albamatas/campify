@@ -42,7 +42,7 @@
 </ul>
 <x-spacing alto="0.4rem"></x-spacing>
 <p>Recuerda que puedes acceder a tu cuenta campify para consultar y todas tus reservas.</p>
-<a href="www.campify.es/auth/resumen_actividad"></a>
+<a href="{{route('dashboard-homecamper')}}">Acceder</a>
 <x-spacing alto="0.7rem"></x-spacing>
 </body>
 </html>
