@@ -64,8 +64,9 @@
 
 <x-spacing alto="0.7rem"></x-spacing>
 <hr>
-
 <x-spacing alto="0.7rem"></x-spacing>
+
+<h2>Accede a tu cuenta</h2>
 <p>Recuerda que puedes acceder a tu cuenta campify para consultar todas tus reservas.</p>
 <a href="{{route('dashboard-homecamper')}}">Acceder</a>
 <x-spacing alto="0.7rem"></x-spacing>

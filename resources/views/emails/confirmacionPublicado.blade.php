@@ -40,7 +40,10 @@
     <li>Información actualizada al instante</li>
     <li>Mobilidad total: Accede a tu cuenta y administración de reservas desde un móbil o un ordenador</li>
 </ul>
-<x-spacing alto="0.4rem"></x-spacing>
+<x-spacing alto="0.7rem"></x-spacing>
+<hr>
+<x-spacing alto="1.2rem"></x-spacing>
+<h2>Accede a tu cuenta</h2>
 <p>Recuerda que puedes acceder a tu cuenta campify para consultar y todas tus reservas.</p>
 <a href="{{route('dashboard-homecamper')}}">Acceder</a>
 <x-spacing alto="0.7rem"></x-spacing>
