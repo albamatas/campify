@@ -58,13 +58,21 @@
                     <p><strong>Dirección</strong><br>
                     {{$reserva->homecamper->direccion->calle . ' Nº ' . $reserva->homecamper->direccion->numero . ', ' . $reserva->homecamper->direccion->poblacion->poblacion . ', ' .  $reserva->homecamper->direccion->provincia->provincia}}</p>
                     
-                    <x-spacing alto="0.7rem"></x-spacing>
-                    <p>Accede a la ficha del establecimiento si quieres ver sus fotos, los servicios disponibles y ampliar información</p>
-                    <button data-toggle="modal" data-target="#fechas" wire:click="" class="btn-secondary" >  <a href="{{route('vista.homecamper', $reserva->homecamper)}}" style="text-decoration:none; color:#111111">Acceder a su ficha</a></button>
+                    
                 </div>
                        
             </div>
 
+            <x-spacing alto="2rem"></x-spacing>
+            <h2>Detalle ficha de: {{$reserva->homecamper->nombre}}</h2>
+            <x-spacing alto="0.7rem"></x-spacing>
+            <div class="actividad">
+                <div class="content_actividad">
+                    <x-spacing alto="0.7rem"></x-spacing>
+                    <p>Accede a la ficha del establecimiento si quieres ver sus fotos, los servicios disponibles y ampliar información</p>
+                    <button data-toggle="modal" data-target="#fechas" wire:click="" class="btn-secondary" >  <a href="{{route('vista.homecamper', $reserva->homecamper)}}" style="text-decoration:none; color:#111111">Acceder a su ficha</a></button>
+                </div>
+            </div>
         </div>  
     </div>
     <x-spacing alto="1rem"></x-spacing>
