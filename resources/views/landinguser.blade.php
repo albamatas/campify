@@ -10,47 +10,65 @@
 
 <div class="content landing">
 
-    <h1 class="cabecera">Acampa a tu aire en los lugares más camperfriendly</h1>
+        <div class="heading">
+            <h1 class="">Con <span class="campify">campify</span>  acampa a tu aire en los lugares más camperfriendly</h1>
+            <x-spacing alto="2rem"></x-spacing>
+            <a href="{{route('publicar')}}"><button type="button" class="primary">Publicar ahora</button></a>
+           
+        </div>
+        <x-spacing alto="4rem"></x-spacing>
+
+
+        <h2 class="h2-l">Fluye en tu viaje pero sin sorpresas</h2>
+        <x-spacing alto="0.8rem"></x-spacing>
+        <p style="text-align: center">Consulta la disponibilidad de manera online, fácil y rápida, y asegura tu plaza antes no se llene al completo.
+        </p>   
+        
+        <x-spacing alto="4rem"></x-spacing>
+
+        <h2 class="h2-l">Money, money, money... de eso nada, el money te lo quedas tú</h2>
+        <x-spacing alto="0.8rem"></x-spacing>
+        <p style="text-align: center">Reservar con campify no solo es totalmente gratuïto sinó que nos aseguramos que los precios por plaza y noche estén regulados. El precio no se cuenta por personas sinó por vehículo + plaza de acampada.
+        </p>    
+        
+        <x-spacing alto="4rem"></x-spacing>
+
+        <h2 class="h2-l">Acampada sí o sí</h2>
+        <x-spacing alto="0.8rem"></x-spacing>
+        <p style="text-align: center">Lo has leído bien, así de sencillo y como debería ser, podrás acampar.
+        </p>            
+
+<x-spacing alto="3rem"></x-spacing>
+<a href="{{route('lista.homecamper')}}"><button class="primary">Explorar lugares campify</button></a>
+<x-spacing alto="8rem"></x-spacing>
+
+
+
+<div class="heading">
+    <h2 class="h2-l">¿Ya tienes cuenta? <br> Accede a tu área para consultar todas tus reservas y gestionarlas</h2>
+   
     <x-spacing alto="2rem"></x-spacing>
-    <a href="{{route('lista.homecamper')}}"><button type="button" class="primary">Explorar lugares campify</button></a>
-    <x-spacing alto="4rem"></x-spacing>
-<h2>¿Qué es campify?</h2>
-<x-spacing alto="0.8rem"></x-spacing>
-<p>Viaja sin preocupaciones: Somos una plataforma de reservas online adaptada al mundo camper. Con campify de lo último que te preocuparás es dónde dormirás hoy o mañana, si podrás acampar, si habrá sitio, porqué en un plis plas, este asunto estará resuelto.</p>
-<p>Si tienes una camper, autocaravana, caravana o camión, ya tienes casi todo lo que necesitas. Solo te falta reservar un sitio bonito y económico donde acampar.</p>
 
-<x-spacing alto="4rem"></x-spacing>
-<a href="{{route('lista.homecamper')}}"><button class="primary">Explorar lugares campify</button></a>
-<x-spacing alto="4rem"></x-spacing>
-
-<h2>¿Qué me ofrece campify?</h2>
-<x-spacing alto="0.8rem"></x-spacing>
-<p>Campify es totalmente gratuito y tendrás todo lo que necesitas:</p>
-
-<ul>
-    <li>Precio regulado: Aseguramos un tope de precio por plaza</li>
-    <li>El precio no se cuenta por personas, sinó por vehículo + zona de acampada</li>
-    <li>Has leído bien, podrás acampar</li>
-    <li>Plaza asegurada. Cuando reserves online podrás saber si hay hueco para tí</li>
-    <li>Cuando hayas reservado, verás los datos de contacto del establecimiento</li>
-    <li>Accede a tu área privada para consultar y gestionar tus reservas</li>
-    <li>Mobilidad total: Accede a tu cuenta desde un móbil o un ordenador</li>
-    <li>¿Hay algo más que te gutaría poder hacer con campify? ¡Cuéntanoslo!</li> 
-</ul>
-
-<x-spacing alto="4rem"></x-spacing>
-<a href="{{route('lista.homecamper')}}"><button class="primary">Explorar lugares campify</button></a>
-
-<x-spacing alto="4rem"></x-spacing>
-
-
-<h2>¿Ya creaste una cuenta?</h2>
-<x-spacing alto="0.8rem"></x-spacing>
-<p>Accede a tu cuenta para consultar o gestionar tus tus reservas</p>
-<x-spacing alto="0.8rem"></x-spacing>
-
-<button class="btn-secondary"  data-toggle="modal" data-target="#login"><img src="{{asset('/images/user.svg')}}" style="width: 20px; height:20px; float:sight; margin-top:-5px; margin-right:10px;" alt="">Acceder</button>
+    <button class="btn-secondary"  data-toggle="modal" data-target="#login"><img src="{{asset('/images/user.svg')}}" style="width: 20px; height:20px; float:sight; margin-top:-5px; margin-right:10px;" alt="">Acceder</button>
 
 </div>
+
+<x-spacing alto="4rem"></x-spacing>
+
+
+<div style="">
+    <h2 class="h2-l">¿Quieres publicar tu casa o área en campify?</h2>
+    <x-spacing alto="0.8rem"></x-spacing>
+    <p style="text-align: center">¿Tines un terreno, una área camper, un jardín, un restaurante, un hostal o hotel o un camping? Tengas lo que tengas, no dudes que campify es para ti. </p>
+    <p tyle="text-align: center">Conuslta las ventajar de publicar tu área en campify</p>
+    <x-spacing alto="2rem"></x-spacing>
+
+    <a href="{{route('landing.homecamper')}}"><button class="btn-secondary">Ir a ventajas de campify</button></a>
+
+</div>
+
+
+</div>
+
 
 @endsection

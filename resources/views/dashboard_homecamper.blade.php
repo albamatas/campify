@@ -17,7 +17,7 @@
     <x-spacing alto="6rem"></x-spacing>
     
 </div>
-{
+
 @endsection
 
 @section('js')
@@ -93,4 +93,5 @@
       );
         
     </script>
+    
 @endsection

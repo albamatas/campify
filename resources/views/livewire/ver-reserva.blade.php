@@ -85,6 +85,50 @@
         </div>
     </div>
 
+   {{--  <div class="modal fade" id="borrarReserva" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true" wire:ignore.self>
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                
+              <h5 class="modal-title" id="exampleModalLabel">Borrar reserva</h5>
+              
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+   
+                        
+            </div>
+            <div class="modal-body" >
+                <form method="POST" wire:submit.prevent = "borrarReserva">
+                    @csrf
+  
+                    <div  class="row mb-3">     
+                        
+                    
+                        <div class="col-md-6">
+                            <label for="">¿Seguro que quieres borrar esta reserva?</label>
+                            <x-spacing alto="0.7rem"></x-spacing>
+                                                        
+                            </div>
+                                                
+                    </div>
+                    
+                                
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="innerform" data-dismiss="modal">Cerrar</button>
+
+             
+            <button type="submit" wire:click.defer="borrarReserva()" class="btn btn-primary red">Borrar Reserva</button>
+           
+            
+          </div>
+          </div>
+        </div>
+    </div>
+    comment --}}
+
     <br>
    
     <a class="link-back" href="{{route('dashboard-homecamper', [ 'guardarfecha' => $guardarfecha ]) }}"> < Volver al resumen de actividad</a>
@@ -141,6 +185,8 @@
                         </div>
                     <x-spacing alto="0.7rem"></x-spacing>
                     <button data-toggle="modal" data-target="#fechas" wire:click="setActualizado" class="btn-secondary" >Modificar fechas</button>
+                    <x-spacing alto="0.7rem"></x-spacing>
+                    <button type="submit" data-target="" wire:click.defer="borrarConfirmar()" class="btn-secondary borrarReserva" >Borrar reserva</button>
                     </div>
             </div>
             <x-spacing alto="2rem"></x-spacing>
@@ -173,7 +219,7 @@
         </script>
 @endif
 
-   
+    
 </div>
 
 

@@ -20,6 +20,7 @@
 @endsection
 
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     var modal = 0;
     $(document).ready(function(){
@@ -88,4 +89,5 @@
     });
   </script>
   comment --}}
+  
 @endsection

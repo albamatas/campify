@@ -30,6 +30,7 @@ class VerReserva extends Component
     
     protected $listeners = [
         'Refresh' => '$refresh',
+        'borrarReserva'
    ];
 
     public function updatedentrada(){
@@ -72,7 +73,27 @@ public function setActualizado(){
     $this->emit('VerReserva', [$this-> actualizado ]);
 
 }
-   
+public function borrarConfirmar(){
+    $this->dispatchBrowserEvent( 'swal:confirm', [
+        'type' => 'warning',
+        'title' => '¿Seguro que quieres eliminar esta reserva?',
+    ]);
+}
+
+public function borrarReserva(){
+
+    $eliminarOcupacion = Ocupacion::where('reserva_id', $this->reserva->id);
+    $eliminarReserva = Reservas::find($this->reserva->id);
+ 
+    $eliminarOcupacion->delete();
+    $eliminarReserva->delete();
+
+    $this->dispatchBrowserEvent( 'swal:reservaBorrada', [
+        'type' => 'success'
+    ]);
+
+}
+
     public function actualizarFechas(){
         
        

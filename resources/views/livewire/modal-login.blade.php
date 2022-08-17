@@ -1,4 +1,6 @@
+
 <div wire:ignore.self>
+  
     <div wire:ignore.self class="modal fade" id="login" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div wire:ignore.self class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -11,7 +13,7 @@
           <div class="modal-body">
               <form method="POST">
                   @csrf
-
+                  <x-lean::console-log />
                   <div  class="row mb-3">
                       <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
@@ -58,3 +60,26 @@
       </div>
     </div>
 </div>
+
+<script>
+  
+window.addEventListener('swal:fechaReservada', event => {
+    swal.fire({
+        title: 'Ups',
+            text: 'No se ha podido realizar la reserva. Parece que ya reservaste para alguna de las mismas fechas que has indicado. Accede a tu cuenta y elimina la reserva que contenga esas fechas para formalizar una nueva reserva.',
+            icon: 'error',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Sí, eliminar ahora',
+            confirmButtonText: 'No',
+    }).then((result) => {
+            if (result.isConfirmed){
+
+            }else{
+                window.livewire.emit('borrarReserva');
+            }
+   
+        })
+});
+</script>

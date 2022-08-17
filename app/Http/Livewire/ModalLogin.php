@@ -93,44 +93,88 @@ class ModalLogin extends Component
            if($this->acceso == 'reservar'){
                 //Guarda reserva
                 $this->consoleLog($user);
-                $reserva = Reservas::create([
-                    'entrada' => $this->entrada,
-                    'salida' => $this->salida,
-                    'dias' => $this->dias,
-                    'precio' => $this->precio,
-                    'comision' => 0.00,
-                    'user_id' => $user->id,
-                    'homecamper_id' => $this->homecamper->id
-                ]);  
-        
+
+                //Chequear que no haya reservado ya para esas mismas fechas
+
                 $i = 0;
                 $fecha_temp1 = $this->entrada;
                 $fecha_temp3 = null;
+                $this->fechaocupada = array();  
+                $ocupaciones = null;
+                            
+                //Recorres totes las ocupacions para detectar si ya hay reservas de este homecamper en estas fechas
+                              
+               
+               while ($i < $this->dias){
+                    $this->consoleLog("inicio while MISMAS FECHAS");
+                if($fecha_temp3 != null){
+                    $fecha_temp1 = $fecha_temp3;
+                }else{}
+                    $this->consoleLog("Consultar fecha");
+                    $ocupaciones = Ocupacion::where('fecha', $fecha_temp1)->where('user_id', $user->id)->count();
+                   
+                    if ($ocupaciones == 0){ 
+                        $this->consoleLog("No ha reservado en esta fecha:" . $fecha_temp1);                
+                    }
+                    else{
+                        $this->consoleLog("Ya ha reservado en esa fecha:" . $fecha_temp1);
+                        $fecha_temp1 = date('d-m-Y', strtotime($fecha_temp1));        
+                        array_push($this->fechaocupada, $fecha_temp1);             
+                    }                                 
+                $i++;
+                $fecha_temp3 = date('Y-m-d', strtotime($fecha_temp1.' +1 day'));          
+               }
+               if(blank($this->fechaocupada)){
+                    //Si no hay ninguna fecha en la que ya se ha reservado se inicia la reserva, en caso contrario se devuelve un error conforme ya ha reservado para esas fechas indicando las fechas
                 
-                //Crea 1 registro para cada dia de ocupacion
-                while ($i < $this->dias){
-                    if($fecha_temp3 != null){
-                        $fecha_temp1 = $fecha_temp3;
-                        }
-                         $this->consoleLog('Guardando ocupación');
-                        Ocupacion::create([
-                            'fecha' => $fecha_temp1,
-                            'user_id' => $user->id,
-                            'homecamper_id' => $this->homecamper->id,
-                            'reserva_id' => $reserva->id            
-                        ]);               
-                        $i++;
+
+                    $reserva = Reservas::create([
+                        'entrada' => $this->entrada,
+                        'salida' => $this->salida,
+                        'dias' => $this->dias,
+                        'precio' => $this->precio,
+                        'comision' => 0.00,
+                        'user_id' => $user->id,
+                        'homecamper_id' => $this->homecamper->id
+                    ]);  
+            
+                    $i = 0;
+                    $fecha_temp1 = $this->entrada;
+                    $fecha_temp3 = null;
                     
-                        $fecha_temp3 = date('Y-m-d', strtotime($fecha_temp1.' +1 day')); 
-                    
-                }
-                // Enviar email de confirmación de reserva
-                $correo = New ReservaConfirmada ($reserva, $this->homecamper);
-                Mail::to($this->email2)->send($correo);
-  
-                 // Nageva al resultado de reserva
-                return redirect()->route('resultado', [ 'id' => $this->homecamper->id, 'id_res' => $reserva->id]);       
-                    
+                    //Crea 1 registro para cada dia de ocupacion
+                    while ($i < $this->dias){
+                        if($fecha_temp3 != null){
+                            $fecha_temp1 = $fecha_temp3;
+                            }
+                             $this->consoleLog('Guardando ocupación');
+                            Ocupacion::create([
+                                'fecha' => $fecha_temp1,
+                                'user_id' => $user->id,
+                                'homecamper_id' => $this->homecamper->id,
+                                'reserva_id' => $reserva->id            
+                            ]);               
+                            $i++;
+                        
+                            $fecha_temp3 = date('Y-m-d', strtotime($fecha_temp1.' +1 day')); 
+                        
+                    }
+                    // Enviar email de confirmación de reserva
+                    $correo = New ReservaConfirmada ($reserva, $this->homecamper);
+                    Mail::to($this->email2)->send($correo);
+      
+                     // Nageva al resultado de reserva
+                    return redirect()->route('resultado', [ 'id' => $this->homecamper->id, 'id_res' => $reserva->id]);       
+                        
+
+
+               }else{
+                  // dd($this->fechaocupada);
+                  $this->dispatchBrowserEvent( 'swal:fechaReservada');
+               }
+          
+
+              
              }
                 //Si viene de login
              if($this->acceso == 'login'){
@@ -155,7 +199,7 @@ class ModalLogin extends Component
      }
        return back()->withErrors([
            'email' => 'Este email no tiene una cuenta en campify.',
-       ])->onlyInput('email');
+       ])->onlyInput('email2');
 
 
     }

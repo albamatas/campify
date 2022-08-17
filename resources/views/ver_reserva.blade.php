@@ -13,7 +13,7 @@
 
 @section('js')
 
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
      
@@ -48,7 +48,71 @@ $('#tab-ambas').click(function(){
 
 });
 
+//Alerta borrado reserva
 
+window.addEventListener('swal:confirm', event => {
+    swal.fire({
+        title: 'Eliminar reserva',
+            text: '¿Seguro que quieres eliminar esta reserva?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#555555',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Sí, eliminar ahora',
+            confirmButtonText: 'No',
+    }).then((result) => {
+            if (result.isConfirmed){
+
+            }else{
+                window.livewire.emit('borrarReserva');
+            }
+   
+        })
+});
+     
+
+window.addEventListener('swal:reservaBorrada', event => {
+    swal.fire({
+        title: 'Reserva borrada',
+            text: 'Se ha borrado la reserva',
+            icon: 'success',
+            showCancelButton: false,
+            confirmButtonColor: '#555555',
+            confirmButtonText: 'Enendido',
+    }).then((result) => {
+        window.location.href ="{{route('dashboard-homecamper', ['guadarfecha' => $guardarfecha])}}";
+    }
+    )
+});
+
+
+
+    /* $(".borrarReserva").click(function(e){
+         e.preventDefault();
+         Swal.fire({
+            title: 'Seguro que quieres borrar esta reserva?',
+            text: "",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Sí, borrar ahora',
+            confirmButtonText: 'No, cerrar'
+            }).then((result) => {
+            if (result.isConfirmed) {
+
+            }else{
+                
+                Swal.fire(
+                'Reserva borrada!',
+                'Has borrado la reserva.',
+                'success'
+                );
+                e.submit();
+            }
+            })
+     });*/
+   
 </script>
 
 @endsection

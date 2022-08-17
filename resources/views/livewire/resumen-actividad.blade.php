@@ -10,8 +10,8 @@
             <p><strong> Hoy, {{date("d/m/Y", strtotime($hoy))}}</strong></p>
         @endif
     </div>
-    <h1 id="h1-scroll">Gestiona tus reservas <br>
-        <strong style="weight: 900">{{ $user->homecamper->nombre}}</strong></h1>
+    <h1 id="h1-scroll"><strong style="font-weight: 900">{{ $user->homecamper->nombre}}</strong><br>
+        </h1>Gestiona tus reservas
         <x-spacing alto="1.7rem"></x-spacing>
     
         <div class="wrapper">

@@ -38,7 +38,7 @@ Route::get('/acceder', function () {
 
 Route::get('/', function () {  
     return view('landinghomecamper');
-});
+})->name('landing.homecamper');
 
 Route::get('/explorar', [HomeController::class, 'list'])->name('lista.homecamper');
 

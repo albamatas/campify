@@ -68,7 +68,6 @@
             <x-spacing alto="0.7rem"></x-spacing>
             <div class="actividad">
                 <div class="content_actividad">
-                    <x-spacing alto="0.7rem"></x-spacing>
                     <p>Accede a la ficha del establecimiento si quieres ver sus fotos, los servicios disponibles y ampliar información</p>
                     <button data-toggle="modal" data-target="#fechas" wire:click="" class="btn-secondary" >  <a href="{{route('vista.homecamper', $reserva->homecamper)}}" style="text-decoration:none; color:#111111">Acceder a su ficha</a></button>
                 </div>

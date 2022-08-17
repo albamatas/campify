@@ -178,6 +178,28 @@ img.cabecera{
     height: auto;
     margin: auto;
 }
+
+.heading{
+    border-radius: 20px;
+    width: 100% + 40px;
+    padding: 50px 20px;
+    margin: -50px -20px 0px;
+    background-color: #C8FFEF;
+}
+
+.heading h1{
+    font-size: 180%;
+    line-height: 140%;
+}
+.campify{
+    color: #00A977;
+    font-weight: 900; 
+}
+.h2-l{
+    font-size: 160%;
+    line-height: 130%;
+    text-align: center;
+}
 div.cabecera{
     border: 1px black;
     background-color: #111111;
@@ -669,7 +691,9 @@ div#imagenes{
     min-height: 100%;
     min-width: 100%;
 }
-
+.swal2-file, .swal2-input, .swal2-radio, .swal2-checkbox, .swal2-select {
+    display: none !important;
+}  
 
 
 

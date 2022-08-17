@@ -148,15 +148,13 @@ class ReservarForm extends Component
                 //Si el usuario ya está autenticado, finaliza su reserva y navega directamente a confirmar
 
                 //Si el usuario no está autenticado, navega a una pantalla intermedia para elegir si ya tiene cuenta o aún no
-
-                //Si ha pasado por la pantalla intermedia y no ha 
+ 
                 $this->currentPage++;
                 $this->emit('scrollTop');
             }else{
                 $this->consoleLog("KO: Alguna fecha no está disponible");
                 return $this->fechaocupada;
-                //Reset fecha ocupada
-                              
+                                
             }
         }else{
         //En cas que no estigui a la pagina 1, suma una página
