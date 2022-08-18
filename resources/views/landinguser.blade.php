@@ -13,7 +13,7 @@
         <div class="heading">
             <h1 class="">Con <span class="campify">campify</span>  acampa a tu aire en los lugares más camperfriendly</h1>
             <x-spacing alto="2rem"></x-spacing>
-            <a href="{{route('publicar')}}"><button type="button" class="primary">Publicar ahora</button></a>
+            <a href="{{route('lista.homecamper')}}"><button type="button" class="primary">Explorar lugares campify</button></a>
            
         </div>
         <x-spacing alto="4rem"></x-spacing>
