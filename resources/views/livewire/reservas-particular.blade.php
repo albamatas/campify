@@ -9,7 +9,7 @@
              <div class="wrapper_actividad">
                
                 <x-spacing alto="2rem"></x-spacing>
-                <h2 id="movimientos">Estas son tus reseras</h2>
+                <h2 id="movimientos">Estas son tus reservas</h2>
                 <x-spacing alto="0.7rem"></x-spacing>
                 <div class="actividad">
                         <div class="content_actividad">

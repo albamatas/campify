@@ -11,7 +11,7 @@
         @endif
     </div>
     <h1 id="h1-scroll"><strong style="font-weight: 900">{{ $user->homecamper->nombre}}</strong><br>
-        </h1>Gestiona tus reservas
+        Gestiona tus reservas</h1>
         <x-spacing alto="1.7rem"></x-spacing>
     
         <div class="wrapper">
@@ -167,13 +167,14 @@
 
                 <div class="actividad">
                     <div class="content_actividad">
-                    
-                        <p>Este será el enlace directo a las reservas en tu establecimiento: <a href= "{{route('reservar', [$user->homecamper->id])}}">www.campify.es/public/reservar/{{$user->homecamper->id}}</a></p>
-                        <p>Este será el enlace directo a tu ficha, des de allí podrán consultar tus datos e iniciar la reserva: <a href="{{route('vista.homecamper', [$user->homecamper->slug])}}">www.campify.es/public/explorar/{{$user->homecamper->slug}}</a></p>
-                        <p class="hint">Recuerda que puedes compartir estos enlaces en cualquier descripción de aplicaciones como Park4night o Caramaps.</p>
+                        <p>Puedes incluir estos enlaces en las aplicaciones camper como Park4night o Caramaps para que tus clientes te encuentren antes.</p>
+                        <p><strong>Enlace a la reserva</strong><br>
+                            Este será el enlace directo al formulario para reservar en tu area camper: <a href= "{{route('reservar', [$user->homecamper->id])}}">www.campify.es/public/reservar/{{$user->homecamper->id}}</a></p>
+                        <p><strong>Enlace a tu ficha en campify</strong>
+                            Este será el enlace directo a tu ficha, des de allí podrán consultar tus datos (fotos, servicios, etc) pero también iniciar la reserva: <a href="{{route('vista.homecamper', [$user->homecamper->slug])}}">www.campify.es/public/explorar/{{$user->homecamper->slug}}</a></p> 
                     </div>
                 </div>
-    
+                <x-spacing alto="5rem"></x-spacing>
             </div>  
         
 

@@ -60,7 +60,7 @@
     <h2 class="h2-l">¿Quieres publicar tu casa o área en campify?</h2>
     <x-spacing alto="0.8rem"></x-spacing>
     <p style="text-align: center">¿Tines un terreno, una área camper, un jardín, un restaurante, un hostal o hotel o un camping? Tengas lo que tengas, no dudes que campify es para ti. </p>
-    <p tyle="text-align: center">Conuslta las ventajar de publicar tu área en campify</p>
+    <p tyle="text-align: center">Conuslta las ventajas de publicar tu área en campify</p>
     <x-spacing alto="2rem"></x-spacing>
 
     <a href="{{route('landing.homecamper')}}"><button class="btn-secondary">Ir a ventajas de campify</button></a>

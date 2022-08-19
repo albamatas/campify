@@ -90,7 +90,8 @@
 <x-spacing alto="2rem"></x-spacing>
 
 <h2>Precio por 24/h y por acampar</h2>
-<p class="hint">*Este precio incluye la plaza. Los servicios, por ejemplo la electricidad, puede que se calculen a parte.</p>
+<p class="hint">*Este precio incluye únicamente la plaza. Los servicios como la electricidad, puede que estén incluidos o se cobren a parte.</p>
+<p class="hint">*La reserva es totalmente gratuïta y durante la reserva tampoco se te pedirá ningún método de pago. El pago lo gestionará el área camper en el momento de tu llegada o una vez hayas disfrutado de tu estancia. </p>
 <p>{{$homecamper->precio}} €</p>
 
 <x-spacing alto="3rem"></x-spacing>
