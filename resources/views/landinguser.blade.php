@@ -1,5 +1,11 @@
 @extends('layouts.landing')
 
+@section('seo')
+    <title>Campify: Reserva online y gratis de estancias en áreas camper.r</title>
+    <meta name="description" content="Campify es una plataforma gratuita de gestión de reservas adaptada al mundo camper. Podrás reservar en áreas camper gratis y online">
+
+@endsection
+
 @section('content')
 
 <div class="cabecera">
@@ -11,7 +17,7 @@
 <div class="content landing">
 
         <div class="heading">
-            <h1 class="">Con <span class="campify">campify</span>  acampa a tu aire en los lugares más camperfriendly</h1>
+            <h1 class="">Con <span class="campify">campify</span> reserva y acampa a tu aire en los lugares más camperfriendly</h1>
             <x-spacing alto="2rem"></x-spacing>
             <a href="{{route('lista.homecamper')}}"><button type="button" class="primary">Explorar lugares campify</button></a>
            

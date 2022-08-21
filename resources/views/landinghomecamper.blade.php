@@ -1,5 +1,11 @@
 @extends('layouts.landing')
 
+@section('seo')
+    <title>Campify, el gestor de reservas gratis para tu área camper</title>
+    <meta name="description" content="Campify es una plataforma gratuita de gestión de reservas adaptada al mundo camper. Podrás gestionar las reservas de tu área camper de manera online.">
+
+@endsection
+
 @section('content')
 
 <div class="cabecera">
@@ -41,9 +47,9 @@
 <a href="{{route('publicar')}}"><button class="primary">Publicar ahora</button></a>
 <x-spacing alto="5rem"></x-spacing>
 
-<h2 class="h2-l">Totalmente gratis y sin letra pequeña</h2>
+<h2 class="h2-l">Campify, totalmente gratis y sin letra pequeña</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Lo has leído bien, campify no tiene ni tendrá costes. El plan básico de campify de publicar tu espacio, consultar y gestionar tus reservas estará disponible de manera gratuita. 
+        <p style="text-align: center">Lo has leído bien, campify no tiene ni tendrá costes. Campify es una plataforma gratuita que te permitirá gestionar las reservas de tu área camper: publicar tu espacio, consultar y gestionar tus reservas. 
             A futuro, se pueden añadir funcionalidades nuevas consideradas premium que, si te interesan, podrás adquirir para ampliar tus posibilidades.
         </p>            
 
