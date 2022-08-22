@@ -21,7 +21,7 @@
                     <div  class="row mb-3">     
                         
                     
-                        <div class="col-md-6">
+                        <div class="">
                             <label for="">¿Qué fecha quieres modificar?</label>
                             <x-spacing alto="0.7rem"></x-spacing>
                             
@@ -30,9 +30,9 @@
                             
                             @endif
                             <div class="tabs">
-                                <div id="tab-entrada"  class="tab" wire:ignore.self>Entrada</div>
-                                <div id="tab-salida" class="tab " wire:ignore.self >Salida</div>
-                                <div id="tab-ambas"  class="tab" wire:ignore.self>Ambas</div>
+                                <div id="tab-entrada"  wire:click.defer="tipoModificacion(1)" class="tab" wire:ignore.self>Entrada</div>
+                                <div id="tab-salida" wire:click.defer="tipoModificacion(2)" class="tab" wire:ignore.self >Salida</div>
+                                <div id="tab-ambas"  wire:click.defer="tipoModificacion(3)" class="tab" wire:ignore.self>Ambas</div>
                             </div>
                             <x-spacing alto="1.7rem"></x-spacing>
                             <div id="modificar-entrada" wire:ignore.self>
@@ -43,29 +43,30 @@
                                   @enderror
                                 <x-spacing alto="1.7rem" ></x-spacing>
                                 <p><strong>Fecha de salida </strong><br>{{date("d/m/Y", strtotime($reserva->salida))}}</p>
+                               
                             </div>
                             <div id="modificar-salida" wire:ignore.self>
                                 <p><strong>Fecha de entrada </strong><br>{{date("d/m/Y", strtotime($reserva->entrada))}}</p>
                                 <x-spacing alto="0.4rem"></x-spacing>
                                 <label for="">Nueva fecha de salida:</label>
-                                <input  type="date" wire:model.lazy="salida"  name="" id="">
+                                <input  type="date" wire:model="salida"  name="" id="">
                                 @error('salida')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
+                                <span class="error">{{ $message }}</span>
+                            @enderror
                                 
                             </div>
                             <div id="modificar-ambas" wire:ignore.self>
                                 <label for="">Nueva fecha de entrada</label>
-                                <input  type="date" wire:model.lazy="entrada">
+                                <input  type="date" wire:model="entrada">
                                 @error('entrada')
                                 <span class="error">{{ $message }}</span>
-                            @enderror
+                                @enderror
                                 <x-spacing alto="1.7rem"></x-spacing>
                                 <label for="">Nueva fecha de salida</label>
-                                <input  type="date" wire:model.lazy="salida">
+                                <input  type="date" wire:model="salida">
                                 @error('salida')
                             <span class="error">{{ $message }}</span>
-                        @enderror
+                            @enderror
                             </div> 
                     
                         </div>
@@ -134,15 +135,16 @@
     <a class="link-back" href="{{route('dashboard-homecamper', [ 'guardarfecha' => $guardarfecha ]) }}"> < Volver al resumen de actividad</a>
     <x-spacing alto="1.4rem"></x-spacing>
     
+    <h4 style="margin-left:20px">Reserva de:</h4>
+    
     <h1>{{$reserva->user->name}}</h1>
     <p style="margin-left:20px">{{$reserva->user->matricula}}<p>
-    <x-spacing alto="1.7rem"></x-spacing>
+    <x-spacing alto="0.7rem"></x-spacing>
 
     <div class="wrapper">
 
          <div class="wrapper_actividad">
-            <h2>Reserva</h2>
-            <x-spacing alto="0.7rem"></x-spacing>
+            
             @if(blank($fechaocupada))
                 @else
                 

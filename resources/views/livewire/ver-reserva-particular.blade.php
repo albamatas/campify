@@ -5,17 +5,14 @@
     <a class="link-back" href="{{route('dashboard-homecamper') }}"> < Volver a mis reservas</a>
     <x-spacing alto="1.4rem"></x-spacing>
     
+    <h4 style="margin-left:20px">Tu reserva en:</h4>
     <h1>{{$reserva->homecamper->nombre}}</h1>
     <x-spacing alto="1.7rem"></x-spacing>
 
     <div class="wrapper">
 
          <div class="wrapper_actividad">
-            <h2>Reserva</h2>
-            <x-spacing alto="0.7rem"></x-spacing>
-         
-
-
+            
             <div class="actividad">
                     <div class="content_actividad">
                         <div class="item_actividad">

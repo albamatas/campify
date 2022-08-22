@@ -10,7 +10,7 @@
 
 <div class="cabecera">
    
-    <img class="cabecera" src="{{ asset('images/homecamper_landing.png')}}" alt="">   
+    <img class="cabecera" src="{{ asset('images/homecamper_landing.png')}}" alt="Una camper en un jardín con sillas y una mesa a su alrededo">   
 
 </div>
 

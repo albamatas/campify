@@ -27,6 +27,7 @@ class VerReserva extends Component
     public $credentials = array(); 
     public $actualizado = 0;  
     public $guardarfecha = null;
+    public $tipo_modificacion = null;
     
     protected $listeners = [
         'Refresh' => '$refresh',
@@ -53,6 +54,8 @@ class VerReserva extends Component
 
    
   }
+
+
     
     public function mount($reserva, $guardarfecha){
         $this->reserva = $reserva;
@@ -94,26 +97,41 @@ public function borrarReserva(){
 
 }
 
+public function tipoModificacion ($tipo_modificacion) {
+    $this->tipo_modificacion = $tipo_modificacion;
+}
+
     public function actualizarFechas(){
-        
-       
+        //Se modifica ambas fechas y no se informa ningún dato antes de clicar botón continuar
+        if ($this->tipo_modificacion == 3) {
+
+            if ($this->entrada == null){
+                $this->validate(['entrada' => ['required']]);
+            }
+            if ($this->salida == null){
+                $this->validate(['salida' => ['required']]);
+            }  
             if ($this->entrada != null){
-                if($this->salida == null){
-                    $this->validate(['entrada' => ['required','date', 'date_format:Y-m-d', 'before:reserva.salida' ]]);
-
-                }else{
                   
-                    $this->validate(['entrada' => ['required','date', 'date_format:Y-m-d', 'before:salida']]);
-                }
+                $this->validate(['entrada' => ['required','date', 'date_format:Y-m-d', 'before:salida']]);
             }
+            if ($this->salida != null){
+            $this->validate(['salida' => ['required','date', 'date_format:Y-m-d', 'after:entrada' ]]);
+            }
+        }
 
-            if($this->salida != null){
-                if($this->entrada == null){
-                    $this->validate(['salida' => ['required','date', 'date_format:Y-m-d', 'after:reserva.entrada' ]]);
-                }else{
-                    $this->validate(['salida' => ['required','date', 'date_format:Y-m-d', 'after:entrada' ]]);
-                }
-            }
+        
+        if ($this->tipo_modificacion == 2) {
+            $this->validate(['salida' => ['required','date', 'date_format:Y-m-d', 'after:reserva.entrada' ]]);
+        }
+             
+        if ($this->tipo_modificacion == 1) {
+               
+            $this->validate(['entrada' => ['required','date', 'date_format:Y-m-d', 'before:reserva.salida' ]]);
+        }
+
+
+
             
         
         
