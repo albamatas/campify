@@ -129,13 +129,9 @@ public function tipoModificacion ($tipo_modificacion) {
                
             $this->validate(['entrada' => ['required','date', 'date_format:Y-m-d', 'before:reserva.salida' ]]);
         }
-
-
-
-            
+     
         
         
-    
 
        // $this->consoleLog("actualizdo :" . $this->actualizado);
 
@@ -244,6 +240,9 @@ public function tipoModificacion ($tipo_modificacion) {
 
                     $this->emit('Refresh');
                     $this->dispatchBrowserEvent('hide-form');
+                    $this->dispatchBrowserEvent( 'swal:reservaModificada', [
+                        'type' => 'success'
+                    ]);
 
             $this->actualizado = 1;
             //$this->consoleLog("actualizdo :" . $this->actualizado);
@@ -253,7 +252,9 @@ public function tipoModificacion ($tipo_modificacion) {
 
                 
             }else{
-
+                $this->dispatchBrowserEvent( 'swal:reservaNoModificada', [
+                   
+                ]);
                 //$this->consoleLog("KO: Alguna fecha no está disponible");
                 $this->entrada = null;
                $this->salida = null;

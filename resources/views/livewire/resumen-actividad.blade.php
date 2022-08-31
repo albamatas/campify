@@ -1,4 +1,5 @@
-<div>
+<div wire:poll.visible.10s>
+
     <div class="topday">
         @if ($diaconsulta != null)
             @if (date("d/m/Y", strtotime($hoy)) == date("d/m/Y", strtotime($diaconsulta)))

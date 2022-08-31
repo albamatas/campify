@@ -85,6 +85,17 @@ window.addEventListener('swal:reservaBorrada', event => {
     )
 });
 
+window.addEventListener('swal:reservaModificada', event => {
+    swal.fire({
+        title: 'Reserva modificada',
+            text: 'Se ha modificado correctamente la reseva.',
+            icon: 'success',
+            showCancelButton: false,
+            confirmButtonColor: '#555555',
+            confirmButtonText: 'Enendido',
+    })
+});
+
 
 
     /* $(".borrarReserva").click(function(e){

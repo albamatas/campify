@@ -25,7 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/acceder', function () {
 
 Route::get('/acceder', function () {
     return view('auth.login');
-});
+})->name('login');
 
 //Route::post('auth/recuperar_contraseña', function () {
 //    return view('auth.forgot-password');

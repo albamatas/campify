@@ -2,11 +2,11 @@
     <x-lean::console-log /> 
 
     <x-spacing alto="0.7rem"></x-spacing>
-    <a class="link-back" href="{{route('dashboard-homecamper') }}"> < Volver a mis reservas</a>
+    <a class="link-back"style="position: relative; float: right; margin-top: 10px; "  href="{{route('dashboard-homecamper') }}"><img style="width: 30px" src="{{ asset('images/close.svg') }}" alt="Cerrar"> </a>
     <x-spacing alto="1.4rem"></x-spacing>
     
     <h4 style="margin-left:20px">Tu reserva en:</h4>
-    <h1>{{$reserva->homecamper->nombre}}</h1>
+    <h1 style="max-width: 90vw">{{$reserva->homecamper->nombre}}</h1>
     <x-spacing alto="1.7rem"></x-spacing>
 
     <div class="wrapper">

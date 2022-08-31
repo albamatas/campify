@@ -41,8 +41,8 @@
 
         
      
-  
-     <script>
+   <!-- Latest compiled and minified CSS 
+      <script>  
         $(document).ready(
             function() {
                 $('#btn-acceso').click(
@@ -53,6 +53,8 @@
                 }
          );
     </script>
+        
+        -->
 
      @livewireScripts
 

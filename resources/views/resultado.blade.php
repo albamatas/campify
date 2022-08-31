@@ -52,7 +52,7 @@
 
 <p>Accede a tu cuenta para consultar y gestionar tus reservas</p>
 <x-spacing alto="0.4rem"></x-spacing>
-<button data-toggle="modal" data-target="#fechas" wire:click="" class="btn-secondary" >  <a href="{{route('dashboard-homecamper')}}" style="text-decoration:none; color:#111111">Acceder su ficha</a></button>
+<button data-toggle="modal" data-target="#fechas" wire:click="" class="btn-secondary" >  <a href="{{route('dashboard-homecamper')}}" style="text-decoration:none; color:#111111">Acceder</a></button>
 <x-spacing alto="1rem"></x-spacing>
 
 @endsection

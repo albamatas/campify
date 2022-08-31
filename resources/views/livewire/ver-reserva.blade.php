@@ -129,15 +129,13 @@
         </div>
     </div>
     comment --}}
-
-    <br>
    
-    <a class="link-back" href="{{route('dashboard-homecamper', [ 'guardarfecha' => $guardarfecha ]) }}"> < Volver al resumen de actividad</a>
+    <a class="link-back" style="position: relative; float: right; margin-top: 10px; " href="{{route('dashboard-homecamper', [ 'guardarfecha' => $guardarfecha ]) }}"><img style="width: 30px" src="{{ asset('images/close.svg') }}" alt="Cerrar"> </a>
     <x-spacing alto="1.4rem"></x-spacing>
     
     <h4 style="margin-left:20px">Reserva de:</h4>
     
-    <h1>{{$reserva->user->name}}</h1>
+    <h1 style="max-width: 90vw">{{$reserva->user->name}}</h1>
     <p style="margin-left:20px">{{$reserva->user->matricula}}<p>
     <x-spacing alto="0.7rem"></x-spacing>
 
@@ -147,18 +145,22 @@
             
             @if(blank($fechaocupada))
                 @else
-                
-                <div id="avisofechas" class="alert alert-warning" role="alert">
-                                        
-                    <strong>No se ha podido modificar la reserva </strong><br>
-                    <p>Vaya, has seleccionado alguna fecha en la que ya estás al completo:</p>
-                    <ul>
-                    @foreach ($fechaocupada as $nodisponible)
-                        <li>  {{ $nodisponible }} (no disponible)</li>
-                    @endforeach
-                    </ul>
-            </div>
-            <x-spacing alto="0.7rem"></x-spacing>
+                <script>
+               
+window.addEventListener('swal:reservaNoModificada', event => {
+            var fechaocupada = @this.fechaocupada
+            console.log(fechaocupada)
+            swal.fire({
+            title: 'La reserva no se ha podido modificar',
+            html: 'Vaya, has seleccionado alguna fecha en la que ya estás al completo. <br><br> <strong>Estas son las fechas no disonibles:</strong> <br>' + fechaocupada.join(" <br> "),
+            icon: 'error',
+            showCancelButton: false,
+            confirmButtonColor: '#555555',
+            confirmButtonText: 'Enendido',
+    })
+});
+
+                </script>
 
                 @endif
 
