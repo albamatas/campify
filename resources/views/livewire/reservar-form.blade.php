@@ -1,4 +1,4 @@
-<div>
+<div style="overflow-x:hidden;">
     @if($currentPage == 2)
         @livewire('modal-login', [ 'acceso' => 'reservar', 'homecamper' => $homecamper, 'entrada' => $entrada, 'salida' => $salida, 'dias' => $dias, 'precio' => $precio ])
     @endif

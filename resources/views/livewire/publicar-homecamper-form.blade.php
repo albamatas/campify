@@ -1,4 +1,4 @@
-<div>
+<div style="overflow-x:hidden;">
     <div class="titulo" id="titulo">
             <x-spacing alto="1.7rem"></x-spacing>
             <h1>Publicar anuncio</h1>
