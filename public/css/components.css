@@ -9,7 +9,7 @@ text-align: center;
 .content-form{
     background-color: white;
     overflow: auto;
-   /* height: 80vh !important;*/
+    height: 80vh !important;
     }
 
 body{
@@ -40,7 +40,7 @@ li{
 }
 .botonera{
     display: block;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     padding: 20px;
 width:100%;
