@@ -9,7 +9,7 @@ text-align: center;
 .content-form{
     background-color: white;
     overflow: auto;
-    height: 80vh !important;
+   /* height: 80vh !important;*/
     }
 
 body{
