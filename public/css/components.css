@@ -478,7 +478,7 @@ display: block;
 position: fixed;
 top:0;
 left: 0;
-z-index: 1000000;
+z-index: 1000;
 }
 .topbar h1{
 background-color: #111111;
@@ -509,7 +509,7 @@ padding: 10px;
     position: fixed;
     bottom:0;
     left: 0;
-    z-index: 1000000;
+    z-index: 100;
     width: 100%;
     }
     .btn-bottom{
@@ -544,7 +544,7 @@ padding: 10px;
         background-color: #00FFB3;
         color: #111111;
         font-weight: 700;
-        z-index: 1000000;
+        z-index: 1000;
         
     }
     .svg-selected{
