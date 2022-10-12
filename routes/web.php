@@ -44,7 +44,7 @@ Route::get('/explorar', [HomeController::class, 'list'])->name('lista.homecamper
 
 Route::get('/explorar/{homecamp}', [HomeController::class, 'view'])->name('vista.homecamper');
 
-Route::get('/campify_para_campistas', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/reservar_plaza_en_area_autocaravanas', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::get('/publicar', function () {
