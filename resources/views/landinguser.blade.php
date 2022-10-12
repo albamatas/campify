@@ -70,7 +70,7 @@
     <p tyle="text-align: center">Conuslta las ventajas de publicar tu área en campify</p>
     <x-spacing alto="2rem"></x-spacing>
 
-    <a href="{{route('landing.homecamper')}}"><button class="btn-secondary">Ir a ventajas de campify</button></a>
+    <a href="{{route('landing.homecamper')}}"><button class="btn-secondary">Ir a ventajas de publicar en campify</button></a>
 
 </div>
 

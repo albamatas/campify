@@ -103,14 +103,20 @@
 
 
 <div class="heading">
-    <h2 class="h2-l">¿Ya publicaste tu zona de autocaravanas en <span class="campify">campify</span>?</h2>
+    <h2 class="h2-l">¿Ya publicaste tu área de autocaravanas en <span class="campify">campify</span>?</h2>
     <x-spacing alto="0.8rem"></x-spacing>
-    <p>Accede ahora a tu cuenta y gestiona tus reservas.</p>
+    <p style="text-align: center">Accede ahora a tu cuenta y gestiona tus reservas.</p>
     <x-spacing alto="0.8rem"></x-spacing>
 
     <button class="btn-secondary"  data-toggle="modal" data-target="#login"><img src="{{asset('/images/user.svg')}}" style="width: 20px; height:20px; float:sight; margin-top:-5px; margin-right:10px;" alt="">Acceder</button>
 
 </div>
-    
+<x-spacing alto="4rem"></x-spacing>
+<h2 class="h2-l">Quieres reservar tu plaza en una área de autocaravanas o terreno particular de <span class="campify">campify</span>?</h2>
+<x-spacing alto="0.8rem"></x-spacing>
+
+<a href="{{route('home')}}"><button class="btn-secondary">Ir a reservar plaza</button></a>
+
+  
 </div>
 @endsection
