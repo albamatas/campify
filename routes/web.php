@@ -18,6 +18,14 @@ use App\Http\Controllers\HomeController;
 */
 Route::group(['middleware' => ['cors']], function () {
 
+/*
+Route::middleware(['auth:sanctum', 'verified'])->get('/acceder', [App\Http\Controllers\Auth\LoginController::class, 'login'] {
+    return view('auth.login');
+})->name('dashboard');
+*/
+
+//Route::get('/acceder', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
+
 
 //Route::post('auth/recuperar_contraseña', function () {
 //    return view('auth.forgot-password');
