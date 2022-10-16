@@ -11,7 +11,12 @@
 
 <div class="cabecera">
    
-    <img class="cabecera" src="{{ asset('images/homecamper_landing.png')}}" alt="Una autocaravanaa en un jardín con sillas y una mesa a su alrededo">   
+    <img class="cabecera" src="{{ asset('images/homecamper_landing_large.png')}}" 
+   
+                                srcSet="{{ asset('images/homecamper_landing_small.png')}} 320w,
+                                    {{ asset('images/homecamper_landing_medium.png')}} 480w,
+                                    {{ asset('images/homecamper_landing_large.png')}} 800w"
+                                    alt="Una autocaravanaa en un jardín con sillas y una mesa a su alrededo">   
 
 </div>
 

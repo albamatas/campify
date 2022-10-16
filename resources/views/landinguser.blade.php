@@ -11,7 +11,11 @@
 
 <div class="cabecera">
    
-    <img class="cabecera" src="{{ asset('images/landing_user.png')}}" alt="Una camper-autocaravana aparcada en el monte con unas vistas espectaculares">   
+    <img class="cabecera" src="{{ asset('images/landing_user_large.png')}}" 
+                                srcSet="{{ asset('images/landing_user_small.png')}} 320w,
+                                    {{ asset('images/landing_user_medium.png')}} 480w,
+                                    {{ asset('images/landing_user_large.png')}} 800w"
+                                 alt="Lugares campify. Una camper autocaravana aparcada en el monte con unas vistas espectaculares">   
 
 </div>
 

@@ -23,7 +23,7 @@
                         <div class="content_actividad">
                             <x-spacing alto="1rem"></x-spacing>
                             <div class="tabs" id="header-fecha" style="justify-content: space-between">
-                                <div class="back make-blinking" wire:click="diaAnterior" style="border: 0px; border-radius: 4px" alt="Ir a resumen del día anterior"></div>
+                                <div id="arrow-back" class="back make-blinking" wire:click="diaAnterior" style="border: 0px; border-radius: 4px" alt="Ir a resumen del día anterior"></div>
                                 @if ($diaconsulta != null)
                                 
                                     @if (date("d/m/Y", strtotime($hoy)) == date("d/m/Y", strtotime($diaconsulta)))
@@ -43,7 +43,7 @@
                                 <br>
                                 
                                 @endif
-                                <div class="next make-blinking" wire:click="diaSiguiente" style="border: 0px; border-radius: 4px" alt="Ir a resumen del día anterior"></div>
+                                <div id="arrow-next" class="next make-blinking" wire:click="diaSiguiente" style="border: 0px; border-radius: 4px" alt="Ir a resumen del día siguiente"></div>
                             </div>
                             
                             <x-spacing alto="2em"></x-spacing>
@@ -195,4 +195,5 @@
             <img src="{{asset('/images/user.svg')}}" style="width: 20px; height:20px; filter: opacity(50%);" alt="">
             <p>Editar perfil</p>
     </div>
+    
 </div>

@@ -95,6 +95,9 @@ margin: 0;
     margin: 0;
     transform: rotate(180deg);
     }
+.next:active{
+    opacity: 40%;   
+}
 input, label, select{
 display: block !important;
 width: 100%;

@@ -101,8 +101,16 @@
         
           
              $('.make-blinking').click(function(){
-                $(".blink").delay(200).fadeOut(200);
+                 
+                $("div#arrow-next").removeClass("make-blinking");
+                $("#arrow-back").removeClass("make-blinking");
+                $(".blink").fadeOut(200);
                 $(".blink").fadeIn(500);
+                
+                $("#arrow-next").delay(1000).addClass('make-blinking');
+                $("#arrow-back").delay(1000).addClass('make-blinking');
+                
+                
             });
        
        
