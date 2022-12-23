@@ -23,7 +23,7 @@
 
 <div class="content landing">
     <div class="heading">
-        <h1 class="">Publica tu área en <span class="campify">campify</span> y empieza a recibir reservas online hoy mismo</h1>
+        <h1 class="">Publica tu área de autocaravanas o tu terreno en <span class="campify">campify</span> y empieza a recibir reservas online hoy mismo</h1>
         <x-spacing alto="2rem"></x-spacing>
         <a href="{{route('publicar')}}"><button type="button" class="primary">Publicar ahora</button></a>
        
