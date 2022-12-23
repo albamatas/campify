@@ -1,9 +1,9 @@
 @extends('layouts.landing')
 
 @section('seo')
-    <title>Campify, reserva tu plaza online en áreas de autocaravanas y terrenos de particulares</title>
-    <meta name="description" content="Reserva tu plaza gratis online y acampa en áreas de autocaravana o terrenos de particulares. Fluye en tu viaje pero sin sorpresas.">
-    <meta name="keywords" content="reserva online area de autocaravanas, reserva area de autocaravanas, reservar, autocaravanas, camper, furgo, camping, terreno, gestionar reservas, gratis, gestionar reservas gratis, park4night, caramaps, airb&b, camplify, campify">
+    <title>Campify, reserva tu parcela online en áreas de autocaravanas y terrenos de particulares</title>
+    <meta name="description" content="Reserva tu parcela online y acampa en áreas de autocaravana o terrenos de particulares. Fluye en tu viaje pero sin sorpresas.">
+    <meta name="keywords" content="reserva online area de autocaravanas, reserva area de autocaravanas, reservar, reserva, parcela, autocaravana, autocaravanas, camper, furgo, camping, terreno, gestionar reservas, gratis, gestionar reservas gratis, park4night, caramaps, airb&b, camplify, campify">
 
 @endsection
 
@@ -33,14 +33,14 @@
 
         <h2 class="h2-l">Fluye en tu viaje pero sin sorpresas</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Consulta la disponibilidad de manera online, fácil y rápida, y asegura tu plaza antes no se llene al completo.
+        <p style="text-align: center">No te quedes sin plaza. Consulta las parcelas disponibles y reserva online, en un plis plas.
         </p>   
         
         <x-spacing alto="4rem"></x-spacing>
 
         <h2 class="h2-l">Money, money, money... de eso nada, el money te lo quedas tú</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Reservar con campify no solo es totalmente gratuïto sinó que nos aseguramos que los precios por plaza y noche estén regulados. El precio no se cuenta por personas sinó por vehículo + plaza de acampada.
+        <p style="text-align: center">Reservar con nosotros es totalmente gratuïto sin ningún coste añadido. Pagarás directamente allí. El precio no se cuenta por personas sinó por parcela y punto.
         </p>    
         
         <x-spacing alto="4rem"></x-spacing>

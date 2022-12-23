@@ -1,8 +1,8 @@
 @extends('layouts.landing')
 
 @section('seo')
-    <title>Campify, gestiona las reservas online de tu área de autocaravanas</title>
-    <meta name="description" content="¿Tienes una área, un camping, un terreno? Con campify tus clientes reservan de manera online así ahorras tiempo, agilidad y calidad en tu servicio.">
+    <title>Campify, gestiona las reservas online de tu área de autocaravanas o tu terreno particular</title>
+    <meta name="description" content="¿Tienes una área, un camping, un terreno y sigues apuntando tus reservas en un excel o un papel? ¿A qué esperas? ¡Digitalízate ya! Con campify tus clientes reservan de manera online así ahorras tiempo, agilidad y calidad en tu servicio.">
     <meta name="keywords" content="reserva online area de autocaravanas, reserva area de autocaravanas, reservar, autocaravanas, camper, furgo, camping, terreno, gestionar reservas, gratis, gestionar reservas gratis, park4night, caramaps, airb&b, camplify, campify">
 
 @endsection
@@ -35,7 +35,7 @@
     <div style="display:flex; flex-direction:column; align-items:center">
         <h2 class="h2-l">Estarás al día de todas las entradas y salidas</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Información en tiempo real y actualizada de las reservas online.</p>  
+        <p style="text-align: center">Tanto tú como los clientes recibís un correo de confirmación de la reserva. También tendrás la infomación actualizada en tu pantalla de inicio.</p>  
         <img src="{{ asset('images/Resumen.png')}}" style="max-width:250px" alt="">
         <x-spacing alto="0.4rem"></x-spacing>
     </div>
@@ -43,7 +43,7 @@
     <div style="display:flex; flex-direction:column; align-items:center">
         <h2 class="h2-l">Consulta tus reservas y gestionalas al momento</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Tendrás disponible la información de las reservas y podrás gestionarlas y modificarlas siempre que quieras.</p>  
+        <p style="text-align: center">Consultalas o modifícalas siempre que quieras.</p>  
         <img src="{{ asset('images/Movimientos.png')}}" style="max-width:250px" alt="">
         <x-spacing alto="0.4rem"></x-spacing>
     </div>
