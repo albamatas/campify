@@ -3,9 +3,16 @@
     <h1 style="margin-left:20px">Encuentra los lugares más campify</h1>
     <x-spacing alto="2rem"></x-spacing>
         
+    
 
     @while ($i <= $j)
+    
         @isset($homecamper[$i])
+
+        
+        <h2> J = {{$j}}</h2>
+        <h2> I = {{$i}}</h2>
+
            
         <div class="card" onclick="window.localStorage.setItem('scroll', JSON.stringify(window.scrollY));">
 

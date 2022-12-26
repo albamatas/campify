@@ -168,11 +168,8 @@
 
                 <div class="actividad">
                     <div class="content_actividad">
-                        <p>Puedes incluir estos enlaces en las aplicaciones camper como Park4night o Caramaps para que tus clientes te encuentren antes.</p>
-                        <p><strong>Enlace a la reserva</strong><br>
-                            Este será el enlace directo al formulario para reservar en tu area camper: <a href= "{{route('reservar', [$user->homecamper->id])}}">www.campify.es/public/reservar/{{$user->homecamper->id}}</a></p>
-                        <p><strong>Enlace a tu ficha en campify</strong><br>
-                            Este será el enlace directo a tu ficha, des de allí podrán consultar tus datos (fotos, servicios, etc) pero también iniciar la reserva: <a href="{{route('vista.homecamper', [$user->homecamper->slug])}}">www.campify.es/public/explorar/{{$user->homecamper->slug}}</a></p> 
+                        <p>Incluye este enlace en las aplicaciones camper como Park4night o Caramaps para dirigir directamente a la reserva.</p>
+                           <a href="{{route('vista.homecamper', [$user->homecamper->slug])}}">www.campify.es/public/explorar/{{$user->homecamper->slug}}</a> 
                     </div>
                 </div>
                 <x-spacing alto="5rem"></x-spacing>
