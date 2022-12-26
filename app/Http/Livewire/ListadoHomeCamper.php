@@ -17,7 +17,7 @@ class ListadoHomeCamper extends Component
 
         //guardar en cache: listado homecampers, scroll y, valor j;
 
-        if (Cache::has('homecamper')) {
+       /* if (Cache::has('homecamper')) {
             $this->homecamper = Cache::get('homecamper');
         } else {
             $this->homecamper = HomeCamper::get()->all();
@@ -28,7 +28,9 @@ class ListadoHomeCamper extends Component
             $this->j = Cache::get('j');
         }else{
             $this->j = 9;
-        }
+        }*/
+
+        $this->j = 9;
 
         $this->i = 0;
    
