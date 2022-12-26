@@ -9,10 +9,6 @@
     
         @isset($homecamper[$i])
 
-        
-        <h2> J = {{$j}}</h2>
-        <h2> I = {{$i}}</h2>
-
            
         <div class="card" onclick="window.localStorage.setItem('scroll', JSON.stringify(window.scrollY));">
 
