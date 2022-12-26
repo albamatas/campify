@@ -30,6 +30,7 @@ class ListadoHomeCamper extends Component
             $this->j = 9;
         }*/
 
+        $this->homecamper = HomeCamper::get()->all();
         $this->j = 9;
 
         $this->i = 0;
