@@ -41,9 +41,9 @@
     </div>
     <x-spacing alto="4rem"></x-spacing>
     <div style="display:flex; flex-direction:column; align-items:center">
-        <h2 class="h2-l">Consulta tus reservas y gestionalas al momento</h2>
+        <h2 class="h2-l">Consulta tus reservas y gestionalas al momento des de cualquier dispositivo</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Consultalas o modifícalas siempre que quieras.</p>  
+        <p style="text-align: center">Consulta o modifica tus reservas siempre que quieras. Olvídate del papel o de los excels, conéctate con tu móvil, tu tablet o ordenador para gestionar las reservas.</p>  
         <img src="{{ asset('images/Movimientos.png')}}" style="max-width:250px" alt="">
         <x-spacing alto="0.4rem"></x-spacing>
     </div>

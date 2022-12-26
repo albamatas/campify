@@ -3,7 +3,7 @@
 @section('seo')
     <title>Campify, reserva tu parcela online en áreas de autocaravanas y terrenos de particulares</title>
     <meta name="description" content="Reserva tu parcela online y acampa en áreas de autocaravana o terrenos de particulares. Fluye en tu viaje pero sin sorpresas.">
-    <meta name="keywords" content="reserva online area de autocaravanas, reserva area de autocaravanas, reservar, reserva, parcela, autocaravana, autocaravanas, camper, furgo, camping, terreno, gestionar reservas, gratis, gestionar reservas gratis, park4night, caramaps, airb&b, camplify, campify">
+    <meta name="keywords" content="reserva online area de autocaravanas, reserva area de autocaravanas, reservar, reserva, parcela, plaza, autocaravana, autocaravanas, camper, furgo, camping, terreno, gestionar reservas, gratis, gestionar reservas gratis, park4night, caramaps, airb&b, camplify, campify">
 
 @endsection
 
