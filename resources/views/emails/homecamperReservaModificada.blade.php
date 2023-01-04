@@ -26,10 +26,10 @@
     </style>
 </head>
 <body>
-    <h1>{{$homecamper->nombre}}, tienes una nueva reserva</h1>
-    
-<h2>Detalle de la reserva</h2>
-<x-spacing alto="1rem"></x-spacing>
+    <h1>Se ha modificado la reserva de: {{$user->name}} ({{$user->matricula}})</h1>
+    <x-spacing alto="1rem"></x-spacing>
+
+<h2>Detalle de la reserva definitiva</h2>
 
 <p><strong>Día de entrada</strong><br>
 {{date("d/m/Y", strtotime($reserva->entrada))}}</p>
@@ -50,16 +50,17 @@
  <h2>Datos de contacto del cliente</h2>
  
  <p><strong>Nombre</strong><br>
-{{$reserva->user->name}}</p>
+{{$user->name}}</p>
  
+
  <p><strong>Teléfono</strong><br>
-{{$reserva->user->telefono}}</p>
+{{$user->telefono}}</p>
 
 <p><strong>Email</strong><br>
-    {{$reserva->user->email}}</p>
+    {{$user->email}}</p>
 
 <p><strong>Matrícula</strong><br>
-    {{$reserva->user->matricula}}</p>
+    {{$user->matricula}}</p>
 
 <x-spacing alto="0.7rem"></x-spacing>
 <hr>

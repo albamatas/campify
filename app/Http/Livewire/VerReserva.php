@@ -11,6 +11,10 @@ use Lean\ConsoleLog\ConsoleLog;
 use DateTime;
 use Illuminate\Support\Str;
 
+use App\Mail\homecamperReservaModificada;
+use App\Mail\UserReservaModificada;
+use Illuminate\Support\Facades\Mail;
+
 class VerReserva extends Component
 {
     use ConsoleLog;
@@ -167,7 +171,7 @@ public function tipoModificacion ($tipo_modificacion) {
                 }else{}
                    // $this->consoleLog("Consultar fecha");
                     
-                    //Se consulta su para esa fecha quedan plazas disponibles
+                    //Se consulta si para esa fecha quedan plazas disponibles
                     $ocupaciones = Ocupacion::where('fecha', $fecha_temp1)->count();
                     if ($ocupaciones < $plazas){ 
                        // $this->consoleLog("Esta fecha esta libre:" . $fecha_temp1);                
@@ -237,6 +241,7 @@ public function tipoModificacion ($tipo_modificacion) {
                     
                         
                     }
+                    //endwhile
 
                     $this->emit('Refresh');
                     $this->dispatchBrowserEvent('hide-form');
@@ -246,6 +251,14 @@ public function tipoModificacion ($tipo_modificacion) {
 
             $this->actualizado = 1;
             //$this->consoleLog("actualizdo :" . $this->actualizado);
+           
+            // Enviar email de confirmación de reserva
+         $correo = New UserReservaModificada ($this->reserva, $this->reserva->homecamper);
+         Mail::to($this->reserva->user->email)->send($correo);
+ 
+         $notificaHomecamper = New homecamperReservaModificada ($this->reserva, $this->reserva->homecamper);
+         Mail::to($this->reserva->homecamper->user->email)->send($notificaHomecamper);
+        
             $this->emit('VerReserva', [$this->reserva, $this->reserva->entrada, $this->reserva->salida, $this->reserva->dias, $this->reserva->precio, $this->actualizado ]);
             
                             

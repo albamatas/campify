@@ -65,17 +65,15 @@
   
 window.addEventListener('swal:fechaReservada', event => {
     swal.fire({
-        title: 'Ups',
-            text: 'No se ha podido realizar la reserva. Parece que ya reservaste para alguna de las mismas fechas que has indicado. Accede a tu cuenta y elimina la reserva que contenga esas fechas para formalizar una nueva reserva.',
+        title: 'No se ha podido realizar la reserva',
+            text: 'No está permitido tener 2 reservas con fechas coincidentes. Parece que ya reservaste para alguna de estas fechas. Te dirigiremos a tu cuenta para que puedas contactar con el anfitrión',
             icon: 'error',
-            showCancelButton: true,
+            showCancelButton: false,
             confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            cancelButtonText: 'Sí, eliminar ahora',
-            confirmButtonText: 'No',
+            confirmButtonText: 'Entendido',
     }).then((result) => {
             if (result.isConfirmed){
-
+                window.livewire.emit('Acceder');
             }else{
                 window.livewire.emit('borrarReserva');
             }

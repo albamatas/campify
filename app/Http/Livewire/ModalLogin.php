@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Mail\ReservaConfirmada;
+use App\Mail\NuevaReserva;
 use Illuminate\Support\Facades\Mail;
 
 use Livewire\Component;
@@ -46,6 +47,10 @@ class ModalLogin extends Component
     public $email = null;
 
     use ConsoleLog;
+
+    protected $listeners = [
+        'Acceder'
+   ];
 
     public function mount($acceso, $homecamper, $entrada, $salida, $dias, $precio)
     {
@@ -162,6 +167,10 @@ class ModalLogin extends Component
                     // Enviar email de confirmación de reserva
                     $correo = New ReservaConfirmada ($reserva, $this->homecamper);
                     Mail::to($this->email2)->send($correo);
+
+                    $notificaHomecamper = New NuevaReserva ($reserva, $this->homecamper);
+                    Mail::to($this->homecamper->user->email)->send($notificaHomecamper);
+                   
       
                      // Nageva al resultado de reserva
                     return redirect()->route('resultado', [ 'id' => $this->homecamper->id, 'id_res' => $reserva->id]);       
@@ -171,7 +180,7 @@ class ModalLogin extends Component
                }else{
                   // dd($this->fechaocupada);
                   $this->dispatchBrowserEvent( 'swal:fechaReservada');
-               }
+                  }
           
 
               
@@ -202,6 +211,15 @@ class ModalLogin extends Component
        ])->onlyInput('email2');
 
 
+    }
+
+    public function Acceder(){
+        //Esta función se usa en caso que el usuario intente hecer una reserva que ya está ocupada (después de identificarse) y se le dirige a su cuenta para que acceda a sus reservas
+        $user = User::where('email', $this->email2)->first();
+        
+        Auth::login($user);
+
+        return redirect()->route('dashboard-homecamper');
     }
 }
 

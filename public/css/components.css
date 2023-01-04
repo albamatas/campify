@@ -696,7 +696,34 @@ div#imagenes{
 .swal2-file, .swal2-input, .swal2-radio, .swal2-checkbox, .swal2-select {
     display: none !important;
 }  
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+.goog-te-banner-frame.skiptranslate body {
+    top: 0px !important;
+}
+#goog-gt-tt{
+display:none !important;
+height: 0px;
+font-size: 200%!important;
+padding: 10px 5px;
+}
 
+.goog-te-gadget-simple{
+border-radius: 5px;
+}
+
+.goog-te-gadget-simple span{
+    font-size: 120%;
+    padding: 5px 10px;
+    }
+
+img .goog-te-gadget-icon{
+    display: none !important;
+}
+.goog-te-gadget img {
+    display: none !important;
+}
 
 
 

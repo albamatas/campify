@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Mail\ReservaConfirmada;
+use App\Mail\NuevaReserva;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -287,7 +288,7 @@ class ReservarForm extends Component
          $correo = New ReservaConfirmada ($reserva, $this->homecamper);
         Mail::to($this->email)->send($correo);
 
-        $notificaHomecamper = New ReservaConfirmada ($reserva, $this->homecamper);
+        $notificaHomecamper = New NuevaReserva ($reserva, $this->homecamper);
         Mail::to($this->homecamper->user->email)->send($notificaHomecamper);
        
       return redirect()->route('resultado', [ 'id' => $this->homecamper->id, 'id_res' => $reserva->id]);

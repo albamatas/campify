@@ -4,13 +4,14 @@
     @endif
     <div class="titulo">
             <x-spacing alto="1.7rem"></x-spacing>
+     
+       
+    
             <h1>Reservar en {{$homecamper->nombre}}</h1>
             <x-spacing alto="1.2rem"></x-spacing>
             <x-progres_bar progres="{{ $pages[$currentPage] ['progres'] }}"></x-progres_bar>
     </div>
     
-
-
 
 
 <form wire:submit.prevent="store" method="POST">
