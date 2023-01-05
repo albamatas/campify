@@ -8,16 +8,15 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
 
-class HomecamperReservaModificada extends Mailable
+class UserReservaEliminada extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = "Reserva modificada";
+    public $subject = "Tu reserva ha sido eliminada";
 
     public $reserva;
     public $homecamper;
     public $user;
-
 
 
 
@@ -42,6 +41,6 @@ class HomecamperReservaModificada extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.HomecamperReservaModificada');
+        return $this->view('emails.UserReservaEliminada');
     }
 }

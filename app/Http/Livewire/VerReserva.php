@@ -11,8 +11,10 @@ use Lean\ConsoleLog\ConsoleLog;
 use DateTime;
 use Illuminate\Support\Str;
 
-use App\Mail\homecamperReservaModificada;
+use App\Mail\HomecamperReservaModificada;
 use App\Mail\UserReservaModificada;
+use App\Mail\HomecamperReservaEliminada;
+use App\Mail\UserReservaEliminada;
 use Illuminate\Support\Facades\Mail;
 
 class VerReserva extends Component
@@ -91,7 +93,15 @@ public function borrarReserva(){
 
     $eliminarOcupacion = Ocupacion::where('reserva_id', $this->reserva->id);
     $eliminarReserva = Reservas::find($this->reserva->id);
- 
+    
+    //Pendiente email reserva eliminada a homecamper y a user
+    $correo = New UserReservaEliminada ($this->reserva, $this->reserva->homecamper);
+    Mail::to($this->reserva->user->email)->send($correo);
+
+    $notificaHomecamper = New HomecamperReservaEliminada ($this->reserva, $this->reserva->homecamper);
+    Mail::to($this->reserva->homecamper->user->email)->send($notificaHomecamper);
+
+
     $eliminarOcupacion->delete();
     $eliminarReserva->delete();
 
@@ -256,7 +266,7 @@ public function tipoModificacion ($tipo_modificacion) {
          $correo = New UserReservaModificada ($this->reserva, $this->reserva->homecamper);
          Mail::to($this->reserva->user->email)->send($correo);
  
-         $notificaHomecamper = New homecamperReservaModificada ($this->reserva, $this->reserva->homecamper);
+         $notificaHomecamper = New HomecamperReservaModificada ($this->reserva, $this->reserva->homecamper);
          Mail::to($this->reserva->homecamper->user->email)->send($notificaHomecamper);
         
             $this->emit('VerReserva', [$this->reserva, $this->reserva->entrada, $this->reserva->salida, $this->reserva->dias, $this->reserva->precio, $this->actualizado ]);
