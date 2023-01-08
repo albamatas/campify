@@ -22,10 +22,19 @@
         P{
         font-family: 'Open Sans', sans-serif;
         }
-        
+        .header{
+  font-size: 1.6rem;
+  background-color: #C8FFEF;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px 10px 0px 0px;
+}
     </style>
 </head>
 <body>
+    <div class="header"><strong>Campify</strong>,<br> <i>fluye pero sin preocupaciones</i></div>
+    <br>
+
     <h1>Se ha modificado la reserva de: {{$user->name}} ({{$user->matricula}})</h1>
     <x-spacing alto="1rem"></x-spacing>
 
@@ -45,8 +54,10 @@
  <p class="hint">*Este precio incluye la estada según los días seleccionados. Los servicios del establecimiento, por ejemplo la electricidad, se ha informado que puede que se calculen a parte.</p>
 
  <x-spacing alto="0.7rem"></x-spacing>
+ <br>
 <hr>
 <x-spacing alto="1.2rem"></x-spacing>
+<br>
  <h2>Datos de contacto del cliente</h2>
  
  <p><strong>Nombre</strong><br>
@@ -63,12 +74,15 @@
     {{$user->matricula}}</p>
 
 <x-spacing alto="0.7rem"></x-spacing>
+<br>
 <hr>
 <x-spacing alto="0.7rem"></x-spacing>
+<br>
 
 <h2>Accede a tu cuenta</h2>
 <p>Recuerda que puedes acceder a tu cuenta campify para consultar todas tus reservas.</p>
 <a href="{{route('dashboard-homecamper')}}">Acceder</a>
 <x-spacing alto="0.7rem"></x-spacing>
+<br>
 </body>
 </html>

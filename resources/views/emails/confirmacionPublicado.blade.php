@@ -22,13 +22,23 @@
         P{
         font-family: 'Open Sans', sans-serif;
         }
-        
+        .header{
+  font-size: 1.6rem;
+  background-color: #C8FFEF;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px 10px 0px 0px;
+}
     </style>
 </head>
 <body>
+
+    <div class="header"><strong>Campify</strong>,<br> <i>fluye pero sin preocupaciones</i></div>
+    <br>
+
     <h1>Has publicado tu establecimiento</h1>
 
-    
+    <br>
 <h2>Esto es todo lo que puedes hacer con tu cuenta campify</h2>
 <x-spacing alto="1rem"></x-spacing>
 
@@ -40,12 +50,15 @@
     <li>Información actualizada al instante</li>
     <li>Mobilidad total: Accede a tu cuenta y administración de reservas desde un móbil o un ordenador</li>
 </ul>
+<br>
 <x-spacing alto="0.7rem"></x-spacing>
 <hr>
 <x-spacing alto="1.2rem"></x-spacing>
+<br>
 <h2>Accede a tu cuenta</h2>
 <p>Recuerda que puedes acceder a tu cuenta campify para consultar y todas tus reservas.</p>
 <a href="{{route('dashboard-homecamper')}}">Acceder</a>
 <x-spacing alto="0.7rem"></x-spacing>
+<br>
 </body>
 </html>

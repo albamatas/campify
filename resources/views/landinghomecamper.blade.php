@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('seo')
-    <title>Campify, gestiona las reservas online de tu área de autocaravanas o tu terreno particular</title>
+    <title>Campify, gestiona las reservas online de tu área de autocaravanas o terreno particular</title>
     <meta name="description" content="¿Tienes una área, un camping, un terreno y sigues apuntando tus reservas en un excel o un papel? ¿A qué esperas? ¡Digitalízate ya! Con campify tus clientes reservan de manera online así ahorras tiempo, agilidad y calidad en tu servicio.">
     <meta name="keywords" content="reserva online area de autocaravanas, reserva area de autocaravanas, reservar, autocaravanas, camper, furgo, camping, terreno, gestionar reservas, gratis, gestionar reservas gratis, park4night, caramaps, airb&b, camplify, campify">
 
@@ -23,7 +23,7 @@
 
 <div class="content landing">
     <div class="heading">
-        <h1 class="">Publica tu área de autocaravanas o tu terreno en <span class="campify">campify</span> y empieza a recibir reservas online hoy mismo</h1>
+        <h1 class="">Publica tu área de autocaravanas o terreno particular en <span class="campify">campify</span> y empieza a recibir reservas online hoy mismo</h1>
         <x-spacing alto="2rem"></x-spacing>
         <a href="{{route('publicar')}}"><button type="button" class="primary">Publicar ahora</button></a>
        
