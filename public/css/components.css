@@ -733,6 +733,7 @@ img .goog-te-gadget-icon{
 list-style: none;
 display: inline-flex;
 align-items: flex-start;
+display: block;
 
 }
 .card-ventajas{
