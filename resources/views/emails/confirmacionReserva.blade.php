@@ -28,6 +28,7 @@
     text-align: center;
     padding: 20px;
     border-radius: 10px 10px 0px 0px;
+    font-family: 'Lato', Helvetica, sans-serif;
 }
     </style>
 </head>
