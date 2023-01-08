@@ -207,9 +207,9 @@
             @enderror
             <x-spacing alto="2rem"></x-spacing>
             <p class="hint">
-                <strong>Sobre los datos que has informado para la publicación</strong><br>
-                En Campify guardaremos tus datos según la normativa (RGPD) para publicar tu anuncio y administrar tus reservas.
-                Solo facilitaremos tus datos (tu nombre del establecimiento, tu nombre personal, tu teléfono, tu email y tu dirección) a los clientes que hayan hecho una reserva.
+                <strong>Tratamiento de datos</strong><br>
+                En Campify guardaremos tus datos según la normativa (RGPD) para publicar tu anuncio e informarte del estado de las reservas.
+                Los clientes con reserva tendrán acceso a tus datos de contacto.
             </p> 
                 
                 <x-spacing alto="7rem"></x-spacing>

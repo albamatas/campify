@@ -158,9 +158,9 @@
         @enderror
         <x-spacing alto="2rem"></x-spacing>
         <p class="hint">
-            <strong>Sobre los datos que has informado para la reserva</strong><br>
-            En Campify guardaremos tus datos según la normativa (RGPD) para generar la reserva y que puedas administrarla.
-            Solo facilitaremos tus datos (tu nombre, la matrícula, tu teléfono y tu email) al establecimiento para que pueda tramitar tu reserva.
+            <strong>Tratamiento de datos</strong><br>
+            En Campify guardaremos tus datos según la normativa (RGPD) para generar la reserva e informarte de su estado.
+            El anfitrión con el que reserves tendrá acceso a tus datos para gestionar tu estancia. 
         </p> 
             
                   <x-spacing alto="7rem"></x-spacing>
