@@ -725,5 +725,54 @@ img .goog-te-gadget-icon{
     display: none !important;
 }
 
+.card-ventajas ul{
+    padding: 0px;
+    margin: 0px;
+    }
+.card-ventajas ul li{
+list-style: none;
+display: inline-flex;
+align-items: flex-start;
+
+}
+.card-ventajas{
+    padding: 20px;
+}
+.card-ventajas img{
+    padding-right: 8px;
+    padding-top: 3px;
+}
+.card-landing{
+    border: 1px solid #00A98B;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+.green-header{
+    background-color: #C8FFEF;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px 10px 0px 0px;
+}
+.green-header h2{
+  color:#005848;
+}
+#price{
+    color:#005848;
+    font-size:160%;
+}
+#euro{
+    color:#005848;
+}
+.btn-ic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-ic img{
+   padding-right: 8px;
+}
+
+
+
 
 

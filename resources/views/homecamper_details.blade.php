@@ -105,20 +105,21 @@
 
 <h2>Precio por 24/h y por acampar</h2>
 <p class="hint">*Este precio incluye únicamente la plaza. Los servicios como la electricidad, puede que estén incluidos o se cobren a parte.</p>
-<p class="hint">*La reserva es totalmente gratuïta y durante la reserva tampoco se te pedirá ningún método de pago. El pago lo gestionará el área camper en el momento de tu llegada o una vez hayas disfrutado de tu estancia. </p>
 <p>{{$homecamper->precio}} €</p>
 
 <x-spacing alto="3rem"></x-spacing>
 <a class="link-back" href="{{route('lista.homecamper')}}" style="padding-left:0"> < Volver al listado</a>
 <x-spacing alto="3rem"></x-spacing>
 
+<p class="hint">Para hacer la reserva online no tendrás que añadir ningún método de pago.</p>
 
+<x-spacing alto="3rem"></x-spacing>
 </div>
 
 <div class="botonera" style="z-index:1000; left:0;">
    
         <a class="btn primary" href="{{route('reservar', [$homecamper->id])}}">
-            Reservar gratis
+            Reservar
         </a>
         
 </div>

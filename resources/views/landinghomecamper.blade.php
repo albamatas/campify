@@ -51,16 +51,28 @@
 
 <x-spacing alto="3rem"></x-spacing>
 <a href="{{route('publicar')}}"><button class="primary">Publicar ahora</button></a>
-<x-spacing alto="5rem"></x-spacing>
+<x-spacing alto="6rem"></x-spacing>
 
-<h2 class="h2-l">Campify, totalmente gratis y sin letra pequeña</h2>
-        <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Lo has leído bien, campify no tiene costes. Campify es una plataforma gratuita que te permitirá gestionar las reservas online de tu área de autocaravanas: publicar tu espacio, recibir, consultar y gestionar tus reservas. 
-        </p>            
+        
+        <div class="card-landing">
+            <div class="green-header">
+                <h2>Plan gratuito</h2>
+                <div><span id="price">0</span><span id="euro"> €</span>
+                </div>
+            </div>
+            <div class="card-ventajas">
+                <ul>
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Publica tu área, terreno o lo que tengas</li> 
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Recibe reservas online</li> 
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Recibe notificaciones del estado de las reservas</li> 
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Consulta las reservas: dashboard y detalle de reservas</li> 
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Gestión de reservas: Modifica o cancela reservas</li>  
+                </ul>
+            </div>
+        </div>
 
-        <x-spacing alto="3rem"></x-spacing>
-        <a href="{{route('publicar')}}"><button class="primary">Publicar ahora</button></a>
-        <x-spacing alto="5rem"></x-spacing>
+        <x-spacing alto="6rem"></x-spacing>
+                    
 
 <h2 class="h2-l">Tengas lo que tengas, <span class="campify">campify</span> es para tí</h2> 
 <x-spacing alto="0.8rem"></x-spacing>

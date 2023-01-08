@@ -188,9 +188,9 @@ window.addEventListener('swal:reservaNoModificada', event => {
                             <p class="number_actividad blink" style="font-size:120%">{{$reserva->precio}} €</p>
                         </div>
                     <x-spacing alto="0.7rem"></x-spacing>
-                    <button data-toggle="modal" data-target="#fechas" wire:click="setActualizado" class="btn-secondary" >Modificar fechas</button>
+                    <button data-toggle="modal" data-target="#fechas" wire:click="setActualizado" class="btn-secondary btn-ic" > <img src="{{ asset('images/ic_modificar_fechas.svg')}}" alt="">  Modificar fechas</button>
                     <x-spacing alto="0.7rem"></x-spacing>
-                    <button type="submit" data-target="" wire:click.defer="borrarConfirmar()" class="btn-secondary borrarReserva" >Cancelar reserva</button>
+                    <button type="submit" data-target="" wire:click.defer="borrarConfirmar()" class="btn-secondary btn-ic borrarReserva" > <img src="{{ asset('images/ic_cancelar.svg')}}" alt="">  Cancelar reserva</button>
                     </div>
             </div>
             <x-spacing alto="2rem"></x-spacing>
