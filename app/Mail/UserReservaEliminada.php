@@ -12,7 +12,7 @@ class UserReservaEliminada extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = "Tu reserva ha sido eliminada";
+    public $subject = "Tu reserva ha sido cancelada";
 
     public $reserva;
     public $homecamper;

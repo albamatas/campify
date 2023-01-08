@@ -26,9 +26,9 @@
     </style>
 </head>
 <body>
-    <h1>Tu reserva ha sido eliminada</h1>
+    <h1>Tu reserva ha sido cancelada</h1>
     
-<h2>Esta era la reserva que tenías en {{$homecamper->nombre}}</h2>
+<h2>Esta era la reserva que tenías en {{$homecamper->nombre}} y que se ha cancelado</h2>
 
 <p><strong>Día de entrada</strong><br>
 {{date("d/m/Y", strtotime($reserva->entrada))}}</p>

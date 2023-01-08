@@ -52,7 +52,7 @@ $('#tab-ambas').click(function(){
 
 window.addEventListener('swal:confirm', event => {
     swal.fire({
-        title: 'Eliminar reserva',
+        title: 'Cancelar reserva',
             text: '¿Seguro que quieres eliminar esta reserva?',
             icon: 'warning',
             showCancelButton: true,
@@ -73,8 +73,8 @@ window.addEventListener('swal:confirm', event => {
 
 window.addEventListener('swal:reservaBorrada', event => {
     swal.fire({
-        title: 'Reserva borrada',
-            text: 'Se ha borrado la reserva',
+        title: 'Reserva cancelada',
+            text: 'Se ha eliminado la reserva',
             icon: 'success',
             showCancelButton: false,
             confirmButtonColor: '#555555',

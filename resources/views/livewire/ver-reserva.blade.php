@@ -190,7 +190,7 @@ window.addEventListener('swal:reservaNoModificada', event => {
                     <x-spacing alto="0.7rem"></x-spacing>
                     <button data-toggle="modal" data-target="#fechas" wire:click="setActualizado" class="btn-secondary" >Modificar fechas</button>
                     <x-spacing alto="0.7rem"></x-spacing>
-                    <button type="submit" data-target="" wire:click.defer="borrarConfirmar()" class="btn-secondary borrarReserva" >Borrar reserva</button>
+                    <button type="submit" data-target="" wire:click.defer="borrarConfirmar()" class="btn-secondary borrarReserva" >Cancelar reserva</button>
                     </div>
             </div>
             <x-spacing alto="2rem"></x-spacing>

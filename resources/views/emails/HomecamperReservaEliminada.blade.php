@@ -26,9 +26,9 @@
     </style>
 </head>
 <body>
-    <h1>{{$homecamper->nombre}}, has borrado una reserva</h1>
+    <h1>{{$homecamper->nombre}}, has cancelado una reserva</h1>
     
-<h2>Detalle de la reserva que has eliminado</h2>
+<h2>Detalle de la reserva que has cancelado</h2>
 <x-spacing alto="1rem"></x-spacing>
 
 <p><strong>Día de entrada</strong><br>
