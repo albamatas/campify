@@ -113,7 +113,7 @@ class EditHomecamper extends Component
             $tmp = $this->image->store('public/imagenesHomeCamper');
             //Por este motivo modificamos la url que devuelve la sentencia anterior
             $url = Storage::url($tmp);
-
+            
             Fotos::Create([
                 'url' => $url,
                 'homecamper_id' => $this->user->homecamper->id
