@@ -366,6 +366,7 @@
                                     @foreach ($fotos as $foto)
                                         <img src="{{ asset($foto->url) }}" alt="">
                                     @endforeach
+                                    
                                     @if($imgtempAll)
                                         @foreach ($imgtempAll as $imgtemp)
                                             <img src="{{$imgtemp->temporaryUrl()}}" alt="">
