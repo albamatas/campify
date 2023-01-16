@@ -54,6 +54,7 @@ return [
     |
     */
 
+    
     /*'asset_url' => '/public',*/
     /*'asset_url' => 'http://192.168.177.235',*/
     'asset_url' => 'http://localhost/campify/public',
