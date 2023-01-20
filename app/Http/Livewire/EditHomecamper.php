@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+
 use Livewire\Component;
 
 use Illuminate\Support\Facades\Storage;
@@ -19,6 +20,11 @@ use App\Models\Fotos;
 use Livewire\WithFileUploads;
 use Carbon\Carbon;
 use DateTime;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Str;
+
+
+
 
 class EditHomecamper extends Component
 {
@@ -109,6 +115,24 @@ class EditHomecamper extends Component
         
         $this->imgtempAll = $this->imageAll;
         foreach ($this->imageAll as $this->image){
+            
+            $tmpUrl = $this->image->path();
+            $fileName = $this->image->getClientOriginalName();
+            $random = Str::random(3);
+            $manager = new ImageManager(['driver' => 'gd']);
+            $img = $manager->make($tmpUrl);
+            $img->resize(700, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+           
+            $resized = $img->save($tmpUrl); 
+           
+
+           // $resized = $img->scaleDown(width: 700);
+           // $img->save('public/imagenesHomeCamper');
+             //   dd($tmpUrl);   
+            
+           // $tmp = $resized->save('public/imagenesHomeCamper/'. $fileName);
 
             $tmp = $this->image->store('public/imagenesHomeCamper');
             //Por este motivo modificamos la url que devuelve la sentencia anterior

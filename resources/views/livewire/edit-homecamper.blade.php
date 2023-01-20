@@ -146,8 +146,9 @@
   
                     <div  class="mb-3">
                                              
-                        <div wire:loading wire:target="imageAll" class="alert alert-success" role="alert">
-                            Cargando la visualización previa de la/s imagen/es seleccionadas...
+                        <div wire:loading wire:target="imageAll" class="alert alert-secondary" role="alert">
+                            <span style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                            Cargando la/s imagen/es seleccionadas... Puede tardar unos segundos...
                           </div>
                           
                           
@@ -172,7 +173,7 @@
             <div class="modal-footer">
               <button type="button" class="innerform cerrarfotos" click="" data-dismiss="modal">Cerrar</button>
              
-            <button type="submit" data-dismiss="modal" id="1" wire:click="subirImagen" wire:target="imageAll" class="cerrarfotos btn btn-primary">Subir fotos</button>
+            <button type="submit" data-dismiss="modal" id="1" wire:click="subirImagen" wire:target="imageAll" wire:loading.attr="disabled" class="cerrarfotos btn btn-primary">Subir fotos</button>
            
             
                     </div>
