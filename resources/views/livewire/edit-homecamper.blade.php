@@ -146,11 +146,11 @@
   
                     <div class="mb-3">
                                              
-                        {{-- comment<div wire:loading wire:target="imageAll" class="alert alert-secondary" wire:change="set" role="alert">
+                         comment<div wire:loading wire:target="imageAll" class="alert alert-secondary" wire:change="set" role="alert">
                             <span style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
                             Cargando la/s imagen/es seleccionadas... Puede tardar unos segundos...
                           </div>
-                         --}}
+                         
                           <div id="fileList" class="fotos-grid" style="max-height: 400px; overflow-y: scroll">
                             
                             </div>
@@ -178,15 +178,15 @@
             <div class="modal-footer">
               <button type="button" class="innerform cerrarfotos" click="" data-dismiss="modal">Cerrar</button>
               
-             {{--  @if($imageAll)comment --}}
+              @if($imageAll)
               
              <button type="submit" id="cerrar" class="cerrarfotos btn btn-primary" data-dismiss="modal" wire:click="subirImagen" wire:target="imageAll" onclick="hide_modal()">Subir fotos</button>
-             {{-- @endif 
+              @endif 
                    <div wire:loading wire:target="imageAll">
                        <span  style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
                         Cargando...
                     </div>
-                    --}}
+                    
                     
             
                     </div>
