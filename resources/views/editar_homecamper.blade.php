@@ -35,6 +35,7 @@
             
             console.log('changed1');
        if(modal==1){
+       
             
             $('#fotos').css({ "display": "block", "opacity": "1"});
             
@@ -45,6 +46,7 @@
     });
     $('#fotos').on('DOMSubtreeModified', function(){
   console.log('NEW CHANGE');
+  
   if(modal==1){
             
             $('#fotos').css({ "display": "block", "opacity": "1"});
@@ -56,6 +58,7 @@
     window.addEventListener('contentChanged', event => {
         console.log('changed');
        if(modal==1){
+        
             
             $('#fotos').css({ "display": "block", "opacity": "1"});
             

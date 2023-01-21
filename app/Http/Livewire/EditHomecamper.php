@@ -49,7 +49,7 @@ class EditHomecamper extends Component
 
     protected $listeners = [
         'Refresh' => '$refresh',
-        'imageAll' => 'set',
+        'set',
    ];
     public function mount($user, $guardarfecha)
     {

@@ -148,7 +148,7 @@
                                              
                          <div wire:loading wire:target="imageAll" class="alert alert-secondary" wire:change="set" role="alert">
                             <span style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
-                            Cargando la/s imagen/es seleccionadas... Puede tardar unos segundos...
+                            Procesando las imagenes. Este proceso puede tardar varios segundos (Ej. 20s). 
                           </div>
                          
                           <div id="fileList" class="fotos-grid" style="max-height: 400px; overflow-y: scroll">
@@ -378,12 +378,13 @@
                                                     id="fileElem"
                                                     multiple
                                                     accept="image/*"
-                                                    style="display:none !important" wire:model="imageAll"/>
-                                                    <div class="custom-input-file col-md-6 col-sm-6 col-xl-6" data-toggle="modal" id="fileSelect" data-target="#fotos" >
+                                                    style="display:none !important" wire:model.defer="imageAll"/>
+                                                    <div class="custom-input-file col-md-6 col-sm-6 col-xl-6" data-toggle="modal" id="fileSelect" wire:change="set" data-target="#fotos" >
                                                     Añadir fotos
                                                     
-                                            <!-- <input class="input-file" type="file" accept="image/*" multiple wire:model="imageAll">
-                                                Añadir fotos -->
+                                            {{-- comment  <input class="input-file" type="file" accept="image/*" multiple wire:model="imageAll">
+                                                Añadir fotos
+                                                --}}
                                             </div>
 
                                             
