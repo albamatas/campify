@@ -178,23 +178,15 @@
             <div class="modal-footer">
               <button type="button" class="innerform cerrarfotos" click="" data-dismiss="modal">Cerrar</button>
               
-              @if($imageAll)
-              <script>
-                $("#cerrar").click(function(){
-                console.log('cerrar');
-                $('#fotos').css({ "display": "none", "opacity": "0"});
-                modal = 0; 
-                console.log('setmodal to 0');
-
-                   });
-            </script>
-
+             {{--  @if($imageAll)comment 
+              
              <button type="submit" id="cerrar" class="cerrarfotos btn btn-primary" data-dismiss="modal" wire:click="subirImagen" wire:target="imageAll" onclick="hide_modal()">Subir fotos</button>
-              @endif 
+             {{-- @endif 
                    <div wire:loading wire:target="imageAll">
                        <span  style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
                         Cargando...
                     </div>
+                    --}}
                     
             
                     </div>
@@ -363,7 +355,7 @@
                         <div class="content_actividad">
                             <div wire:loading wire:target="subirImagen" class="alert alert-secondary" role="alert">
                                 <span  style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
-                                Cargando imágenes...</div>   
+                                Subiendo imágenes...</div>   
                            
                             @if(blank($user->homecamper->fotos))
                             @if($imageAll)
