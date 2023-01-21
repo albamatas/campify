@@ -178,7 +178,7 @@
             <div class="modal-footer">
               <button type="button" class="innerform cerrarfotos" click="" data-dismiss="modal">Cerrar</button>
               
-             {{--  @if($imageAll)comment 
+             {{--  @if($imageAll)comment --}}
               
              <button type="submit" id="cerrar" class="cerrarfotos btn btn-primary" data-dismiss="modal" wire:click="subirImagen" wire:target="imageAll" onclick="hide_modal()">Subir fotos</button>
              {{-- @endif 
