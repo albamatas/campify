@@ -149,7 +149,7 @@
                                              
                          <div wire:loading wire:target="imageAll" class="alert alert-secondary" wire:change="set" role="alert">
                             <span style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
-                            Procesando las imagenes. Este proceso puede tardar varios segundos (Ej. 20s). 
+                            Procesando las imagenes. Tiempo estimado de carga: 1 minuto. 
                           </div>
                          
                           <div id="fileList" class="fotos-grid" style="max-height: 400px; overflow-y: scroll">
