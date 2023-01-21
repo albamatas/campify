@@ -124,7 +124,7 @@ class EditHomecamper extends Component
             $fileName = $this->image->getClientOriginalName();
             
             $manager = new ImageManager(['driver' => 'gd']);
-            $img = $manager->make($tmpUrl)->encode('jpg');
+            $img = $manager->make($tmpUrl)->encode('jpg')->orientate();
             $img->resize(700, null, function ($constraint) {
                 $constraint->aspectRatio();
             });         
@@ -151,7 +151,7 @@ class EditHomecamper extends Component
             //Els svg donen error això evita que intervention image els tracti 
             if ($this->image->getClientOriginalExtension() != 'svg'){
                 $manager = new ImageManager(['driver' => 'gd']);
-                $img = $manager->make($tmpUrl)->encode('jpg');
+                $img = $manager->make($tmpUrl)->encode('jpg')->orientate();
                 $img->resize(700, null, function ($constraint) {
                     $constraint->aspectRatio();
                 });

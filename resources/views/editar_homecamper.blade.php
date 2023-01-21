@@ -115,6 +115,7 @@ function handleFiles() {
     for (let i = 0; i < this.files.length; i++) {
       //const li = document.createElement("li");
       //list.appendChild(li);
+     
 
       const img = document.createElement("img");
       img.src = URL.createObjectURL(this.files[i]);

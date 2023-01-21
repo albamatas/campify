@@ -140,7 +140,8 @@
               </button>
                            
             </div>
-            <div wire:ignore class="modal-body">
+            <div wire:ignore
+             class="modal-body">
                 <form method="POST">
                     @csrf
   
@@ -355,11 +356,11 @@
                         <div class="content_actividad">
                             <div wire:loading wire:target="subirImagen" class="alert alert-secondary" role="alert">
                                 <span  style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
-                                Subiendo imágenes...</div>   
+                                Subiendo imágenes...</div> 
+                                <br>  
                            
                             @if(blank($user->homecamper->fotos))
-                            @if($imageAll)
-                             @else
+                            
                             <style>
                                 #avisocompletarfotos{
                                     display:block !important;
@@ -367,7 +368,7 @@
                             </style>
                             
                                     
-                                    <div wire:target="subirImagen" wire:loading.delay.remove id="avisocompletarfotos" class="alert alert-warning" role="alert">
+                                    <div wire:target="subirImagen" wire:loading.remove id="avisocompletarfotos" class="alert alert-warning" role="alert">
                                     <p><strong>Aún no has subido ninguna foto de tu estabecimiento.</strong> <br>
                                             ¿Tú irías a un sitio que no tiene fotos? ¿A qué esperas?<br>
                                             ¡Súbelas ahora!</p>
@@ -390,7 +391,7 @@
                                             
 
                                     </div>
-                                     @endif
+                                    
                             @else
                             <style>
                                 #avisocompletarfotos{
