@@ -146,7 +146,7 @@
   
                     <div class="mb-3">
                                              
-                         comment<div wire:loading wire:target="imageAll" class="alert alert-secondary" wire:change="set" role="alert">
+                         <div wire:loading wire:target="imageAll" class="alert alert-secondary" wire:change="set" role="alert">
                             <span style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
                             Cargando la/s imagen/es seleccionadas... Puede tardar unos segundos...
                           </div>
