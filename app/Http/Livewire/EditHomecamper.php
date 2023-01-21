@@ -6,6 +6,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 
 use Illuminate\Support\Facades\Storage;
+use Lean\ConsoleLog\ConsoleLog;
 
 
 use App\Models\TiposHomeCamper;
@@ -29,6 +30,7 @@ use Illuminate\Support\Str;
 class EditHomecamper extends Component
 {
     use WithFileUploads;
+    use ConsoleLog;
 
     public $user;
     public $descripcion=null;
@@ -47,6 +49,7 @@ class EditHomecamper extends Component
 
     protected $listeners = [
         'Refresh' => '$refresh',
+        'imageAll' => 'set',
    ];
     public function mount($user, $guardarfecha)
     {
@@ -108,25 +111,53 @@ class EditHomecamper extends Component
         $this->emit('EditHomecamper', $this->fotos, $this->servicios);      
     }
 
-    public function subirImagen(){
+    public function set(){
+        $this->consoleLog("setting");
         
         $tmp = null;
         //Es diferente el sitio donde se guarda la imagen y luego donde se accede
-        
+        $this->consoleLog($this->imageAll);
         $this->imgtempAll = $this->imageAll;
         foreach ($this->imageAll as $this->image){
             
             $tmpUrl = $this->image->path();
             $fileName = $this->image->getClientOriginalName();
-            $random = Str::random(3);
+            
             $manager = new ImageManager(['driver' => 'gd']);
-            $img = $manager->make($tmpUrl);
+            $img = $manager->make($tmpUrl)->encode('jpg');
             $img->resize(700, null, function ($constraint) {
                 $constraint->aspectRatio();
-            });
+            });         
+           
+            $resized = $img->save($this->image->temporaryUrl()); 
+            
+        }
+        
+    }
+
+    public function subirImagen(){
+        
+        $tmp = null;
+        $this->consoleLog("subir imagen");
+        //Es diferente el sitio donde se guarda la imagen y luego donde se accede
+        
+        $this->imgtempAll = $this->imageAll;
+        foreach ($this->imageAll as $this->image){
+            
+
+            $tmpUrl = $this->image->path();
+            $fileName = $this->image->getClientOriginalName();
+            $random = Str::random(3);
+            //Els svg donen error això evita que intervention image els tracti 
+            if ($this->image->getClientOriginalExtension() != 'svg'){
+                $manager = new ImageManager(['driver' => 'gd']);
+                $img = $manager->make($tmpUrl)->encode('jpg');
+                $img->resize(700, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
            
             $resized = $img->save($tmpUrl); 
-           
+            }
 
            // $resized = $img->scaleDown(width: 700);
            // $img->save('public/imagenesHomeCamper');

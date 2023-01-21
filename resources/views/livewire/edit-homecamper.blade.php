@@ -140,19 +140,24 @@
               </button>
                            
             </div>
-            <div class="modal-body">
+            <div wire:ignore class="modal-body">
                 <form method="POST">
                     @csrf
   
-                    <div  class="mb-3">
+                    <div class="mb-3">
                                              
-                        <div wire:loading wire:target="imageAll" class="alert alert-secondary" role="alert">
+                        {{-- comment<div wire:loading wire:target="imageAll" class="alert alert-secondary" wire:change="set" role="alert">
                             <span style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
                             Cargando la/s imagen/es seleccionadas... Puede tardar unos segundos...
                           </div>
-                          
-                          
-                          @if ($imageAll)
+                         --}}
+                          <div id="fileList" class="fotos-grid" style="max-height: 400px; overflow-y: scroll">
+                            
+                            </div>
+
+                            {{-- 
+                                                     
+                          co@if ($imageAll)
                             <div class="alert alert-success" role="alert">
                                 Estas son las fotos que has seleccionado. Ahora, ¡Súbelas! 
                             </div>
@@ -163,8 +168,8 @@
                                 @endforeach
                                                                 
                             </div>
-                         @endif
-                       
+                         co@endif
+                        comment --}}
   
                     </div>
                                 
@@ -172,9 +177,25 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="innerform cerrarfotos" click="" data-dismiss="modal">Cerrar</button>
-             
-            <button type="submit" data-dismiss="modal" id="1" wire:click="subirImagen" wire:target="imageAll" wire:loading.attr="disabled" class="cerrarfotos btn btn-primary">Subir fotos</button>
-           
+              
+              @if($imageAll)
+              <script>
+                $("#cerrar").click(function(){
+                console.log('cerrar');
+                $('#fotos').css({ "display": "none", "opacity": "0"});
+                modal = 0; 
+                console.log('setmodal to 0');
+
+                   });
+            </script>
+
+             <button type="submit" id="cerrar" class="cerrarfotos btn btn-primary" data-dismiss="modal" wire:click="subirImagen" wire:target="imageAll" onclick="hide_modal()">Subir fotos</button>
+              @endif 
+                   <div wire:loading wire:target="imageAll">
+                       <span  style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                        Cargando...
+                    </div>
+                    
             
                     </div>
                 </div>
@@ -338,25 +359,45 @@
                 <h2>Fotos</h2>
                 <x-spacing alto="0.7rem"></x-spacing>
                 <div class="actividad">
-                                  
+                    
                         <div class="content_actividad">
+                            <div wire:loading wire:target="subirImagen" class="alert alert-secondary" role="alert">
+                                <span  style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                                Cargando imágenes...</div>   
+                           
                             @if(blank($user->homecamper->fotos))
+                            @if($imageAll)
+                             @else
                             <style>
                                 #avisocompletarfotos{
                                     display:block !important;
                                 }
                             </style>
-                            <div id="avisocompletarfotos" class="alert alert-warning" role="alert">
-                               <p><strong>Aún no has subido ninguna foto de tu estabecimiento.</strong> <br>
-                                    ¿Tú irías a un sitio que no tiene fotos? ¿A qué esperas?<br>
-                                    ¡Súbelas ahora!</p>
+                            
+                                    
+                                    <div wire:target="subirImagen" wire:loading.delay.remove id="avisocompletarfotos" class="alert alert-warning" role="alert">
+                                    <p><strong>Aún no has subido ninguna foto de tu estabecimiento.</strong> <br>
+                                            ¿Tú irías a un sitio que no tiene fotos? ¿A qué esperas?<br>
+                                            ¡Súbelas ahora!</p>
 
-                                    <div class="custom-input-file col-md-6 col-sm-6 col-xl-6" data-toggle="modal" id="subirfotos" data-target="#fotos" >
-                                        <input class="input-file" type="file" accept="image/*" multiple wire:model="imageAll">
-                                        Añadir fotos
-                                     </div>
+                                            
+                                                <input
+                                                    type="file"
+                                                    id="fileElem"
+                                                    multiple
+                                                    accept="image/*"
+                                                    style="display:none !important" wire:model="imageAll"/>
+                                                    <div class="custom-input-file col-md-6 col-sm-6 col-xl-6" data-toggle="modal" id="fileSelect" data-target="#fotos" >
+                                                    Añadir fotos
+                                                    
+                                            <!-- <input class="input-file" type="file" accept="image/*" multiple wire:model="imageAll">
+                                                Añadir fotos -->
+                                            </div>
 
-                            </div>
+                                            
+
+                                    </div>
+                                     @endif
                             @else
                             <style>
                                 #avisocompletarfotos{
