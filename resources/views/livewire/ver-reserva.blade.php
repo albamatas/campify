@@ -133,10 +133,18 @@
     <a class="link-back" style="position: relative; float: right; margin-top: 10px; " href="{{route('dashboard-homecamper', [ 'guardarfecha' => $guardarfecha ]) }}"><img style="width: 30px" src="{{ asset('images/close.svg') }}" alt="Cerrar"> </a>
     <x-spacing alto="1.4rem"></x-spacing>
     
-    <h4 style="margin-left:20px">Reserva de:</h4>
+        @if(isset($nombre_generico))
+        <h1 style="max-width: 90vw">
+            {{$nombre_generico}}</h1>
+            <p style="margin-left:20px">Esta reserva no tiene datos del cliente porque la generaste desde tu cuenta.</p>
+        @else
+        <h4 style="margin-left:20px">Reserva de:</h4>
     
-    <h1 style="max-width: 90vw">{{$reserva->user->name}}</h1>
-    <p style="margin-left:20px">{{$reserva->user->matricula}}<p>
+        <h1 style="max-width: 90vw">
+            {{$reserva->user->name}}</h1>
+        <p style="margin-left:20px">{{$reserva->user->matricula}}<p>
+        @endif
+    
     <x-spacing alto="0.7rem"></x-spacing>
 
     <div class="wrapper">
@@ -194,6 +202,9 @@ window.addEventListener('swal:reservaNoModificada', event => {
                     </div>
             </div>
             <x-spacing alto="2rem"></x-spacing>
+
+            @if(isset($nombre_generico))
+            @else
             <h2>Datos</h2>
             <x-spacing alto="0.7rem"></x-spacing>
             <div class="actividad">
@@ -209,7 +220,7 @@ window.addEventListener('swal:reservaNoModificada', event => {
                     </div>
                        
             </div>
-
+            @endif
         </div>  
     </div>
     <x-spacing alto="1rem"></x-spacing>

@@ -75,6 +75,8 @@ Route::get('/auth/editar_perfil/{guardarfecha?}', [DashboardController::class, '
 
 Route::get('/auth/resumen_actividad/detalle_reserva/{id}/{guardarfecha?}', [DashboardController::class, 'show'])->name('ver-reserva');
 
+Route::get('/auth/reservar/{id}', [ReservasController::class, 'create'])->name('ocupar');
+
 
 
 Auth::routes();

@@ -11,10 +11,17 @@
             <p><strong> Hoy, {{date("d/m/Y", strtotime($hoy))}}</strong></p>
         @endif
     </div>
+    <div>
+        <button onclick="window.location.href='{{route('ocupar', [$user->homecamper->id])}}'" class="btn-secondary btn-ic" style="position: absolute; top: 8px; right:0px; margin:0px 8px; width: 200px; max-width:300px;" > <img src="{{ asset('images/sumar.png')}}" alt="">  Nueva reserva</button>         
+    </div>
+    <x-spacing alto="2rem"></x-spacing>
     <h1 id="h1-scroll"><strong style="font-weight: 900">{{ $user->homecamper->nombre}}</strong><br>
         Gestiona tus reservas</h1>
-        <x-spacing alto="1.7rem"></x-spacing>
-    
+        <x-spacing alto="2rem"></x-spacing>
+       
+       
+                   
+            
         <div class="wrapper">
     
              <div class="wrapper_actividad">
@@ -89,8 +96,14 @@
                                     @foreach ($entradas as $entrada)
                                     <div class="selector"  onclick="window.location.href='{{route('ver-reserva', [$entrada->id, $guardarfecha])}}'">
                                         <div class="select-right">
-                                        <p class="name">{{$entrada->user->name}}</p>
-                                        <p class="matricula">{{$entrada->user->matricula}}</p>
+                                            @if ($entrada->user->id == $entrada->homecamper->user->id)
+                                            <p class="name">{{$nombre_generico . $entrada->id}}</p>
+                                            <p class="matricula">Sin datos del cliente</p>
+                                            @else
+                                            <p class="name">{{$entrada->user->name}}</p>
+                                            <p class="matricula">{{$entrada->user->matricula}}</p>
+                                            @endif
+                                       
                                     </div>
                                         <div class="arrow"></div>
                                     </div>
@@ -111,8 +124,13 @@
                                        @foreach ($salidas as $salida)
                                        <div class="selector"  onclick="window.location.href='{{route('ver-reserva', [$salida->id, $guardarfecha])}}'">
                                            <div class="select-right">
+                                            @if ($salida->user->id == $salida->homecamper->user->id)
+                                            <p class="name">{{$nombre_generico . $salida->id}}</p>
+                                            <p class="matricula">Sin datos del cliente</p>
+                                            @else
                                            <p class="name">{{$salida->user->name}}</p>
                                            <p class="matricula">{{$salida->user->matricula}}</p>
+                                           @endif
                                        </div>
                                            <div class="arrow"></div>
                                        </div>
@@ -146,8 +164,13 @@
                                 <div class="selector" onclick="window.location.href='{{route('ver-reserva', [$noche->reserva_id, $guardarfecha])}}'">
                                     
                                         <div class="select-right">
-                                        <p class="name">{{$noche->user->name}}</p>
-                                        <p class="matricula">{{$noche->user->matricula}}</p>
+                                            @if ($noche->user->id == $noche->user->homecamper->user->id)
+                                            <p class="name">{{$nombre_generico . $noche->reserva_id}}</p>
+                                            <p class="matricula">Sin datos del cliente</p>
+                                            @else
+                                              <p class="name">{{$noche->user->name}}</p>
+                                              <p class="matricula">{{$noche->user->matricula}}</p>
+                                           @endif                                       
                                     
                                          </div>
                                          <div class="arrow"></div>

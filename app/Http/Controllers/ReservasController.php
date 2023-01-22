@@ -21,6 +21,16 @@ class ReservasController extends Controller
         ]);
     }
 
+    use ConsoleLog;
+    //Generar reserva 
+    public function create(Request $request)
+    {
+        $id = $request->id;
+        return view('ocupar', [
+            'homecamper' => HomeCamper::findOrFail($id)
+        ]);
+    }
+
     //Resultado reserva
     
     public function show($id, $id_res)

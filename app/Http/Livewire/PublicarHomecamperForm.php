@@ -77,11 +77,11 @@ class PublicarHomecamperForm extends Component
             'poblacion' => ['required']
         ],
         4 => [
+            'name' => ['required', 'min:2'],
             'email' => ['required', 'email', 'unique:users,email'],
             'telf' => ['required', 'numeric', 'digits_between:6,9']
         ],
         5 => [
-            'name' => ['required', 'min:2'],
             'password' => ['required', 'min:8']
         ],
     ];

@@ -82,7 +82,7 @@ class DashboardController extends Controller
           
          }
      }
-    public function show($id, $guardarfecha){
+    public function show($id, $guardarfecha=null){
 
        $user = auth()->user();
           //$user = User::where('id', '44')->first();

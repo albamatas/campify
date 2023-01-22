@@ -218,7 +218,10 @@ div.cabecera{
     .div.cabecera{
         top: -5%;
         
-    }       
+    }  
+    .dropdown-menu .inner .show {
+        max-width: 95vw;
+    }    
 }
 @media (min-width: 700px) and (max-width: 1024px) {
     .div.cabecera{
@@ -792,7 +795,7 @@ display: block;
   }
   
   .carousel-control-next-icon,  .carousel-control-prev-icon {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.695);
   border-radius: 100%;
   height: 50px;
   width: 50px;

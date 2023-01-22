@@ -34,6 +34,7 @@ class VerReserva extends Component
     public $actualizado = 0;  
     public $guardarfecha = null;
     public $tipo_modificacion = null;
+    public $nombre_generico = null;
     
     protected $listeners = [
         'Refresh' => '$refresh',
@@ -65,8 +66,13 @@ class VerReserva extends Component
     
     public function mount($reserva, $guardarfecha){
         $this->reserva = $reserva;
-               
         $this->guardarfecha = $guardarfecha;
+
+        if($reserva->user->id == $reserva->homecamper->user->id){
+           
+            $this->nombre_generico = "Reserva manual - " . $reserva->id;
+          
+        }
     }
 
     public function render()

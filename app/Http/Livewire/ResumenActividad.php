@@ -20,6 +20,7 @@ class ResumenActividad extends Component
     public $salidas = [];
     public $noches = [];
     public $guardarfecha = null;
+    public $nombre_generico = "Reserva manual - ";
 
     protected $listeners = [
         'Refresh' => '$refresh',
@@ -55,6 +56,9 @@ class ResumenActividad extends Component
 
         $this->noches = Ocupacion::where('fecha', $this->diaconsulta)->where('homecamper_id', $this->user->homecamper->id)->get();
         }
+        
+
+       
        
     }
 
