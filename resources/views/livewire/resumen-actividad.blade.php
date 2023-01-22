@@ -12,7 +12,7 @@
         @endif
     </div>
     <div>
-        <button onclick="window.location.href='{{route('ocupar', [$user->homecamper->id])}}'" class="btn-secondary btn-ic" style="position: absolute; top: 8px; right:0px; margin:0px 8px; width: 200px; max-width:300px;" > <img src="{{ asset('images/sumar.png')}}" alt="">  Nueva reserva</button>         
+        <button onclick="window.location.href='{{route('ocupar', [$user->homecamper->id])}}'" class="btn-secondary btn-ic" style="position: absolute; top: 8px; right:0px; margin:0px 8px; width: 200px; max-width:300px;" > <img src="{{ asset('images/sumar.svg')}}" alt="">  Nueva reserva</button>         
     </div>
     <x-spacing alto="2rem"></x-spacing>
     <h1 id="h1-scroll"><strong style="font-weight: 900">{{ $user->homecamper->nombre}}</strong><br>
