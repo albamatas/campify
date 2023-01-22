@@ -18,9 +18,7 @@
     <h1 id="h1-scroll"><strong style="font-weight: 900">{{ $user->homecamper->nombre}}</strong><br>
         Gestiona tus reservas</h1>
         <x-spacing alto="2rem"></x-spacing>
-       
-       
-                   
+                     
             
         <div class="wrapper">
     

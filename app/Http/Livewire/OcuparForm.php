@@ -285,7 +285,7 @@ class OcuparForm extends Component
             
             Ocupacion::create([
                 'fecha' => $fecha_temp1,
-                'user_id' => $this->homecamper->id,
+                'user_id' => $this->homecamper->user->id,
                 'homecamper_id' => $this->homecamper->id,
                 'reserva_id' => $reserva->id            
             ]);               
