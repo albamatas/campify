@@ -96,7 +96,7 @@
             <button wire:click="buscarSalida"  class="primary" style="margin: 0 20px; max-width:90%">Buscar</button>
         </div>
         <div id="in_numero" wire:ignore.self style="display: none">
-            <input  type="text" wire:model.defer="numeroBusqueda" wire:keyup="buscarNumero()" placeholder="Buscar... " id="" class="search" style="width:80%; min-width:370px; margin: 0px 20px">
+            <input  type="number" wire:model.defer="numeroBusqueda" wire:keyup="buscarNumero()" placeholder="Buscar... " id="" class="search" style="width:80%; min-width:370px; margin: 0px 20px">
         </div>
          
 

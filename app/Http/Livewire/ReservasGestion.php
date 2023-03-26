@@ -78,8 +78,7 @@ public function buscarNumero(){
     $sinespacios = trim($this->numeroBusqueda);
     $numeroBusqueda = '%'. $sinespacios .'%';
     $this->resultados = Reservas::where('id', 'like', $numeroBusqueda)
-        ->where('homecamper_id', $this->user->homecamper->id)
-        ->where('user_id', 'not like', $this->user->id)    
+        ->where('homecamper_id', $this->user->homecamper->id)  
         ->get();
 
    return $this->resultados;
