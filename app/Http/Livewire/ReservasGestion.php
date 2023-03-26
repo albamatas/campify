@@ -22,10 +22,18 @@ class ReservasGestion extends Component
     public $nombre_generico = 'Reserva manual';
     public $resultados = [];
     public $sinResultados = null;
+    public $buscado = false;
     public $entrada;
     public $salida;
     public $numeroBusqueda = null;
 
+    protected $rules = [
+        'numeroBusqueda' => ['numeric'],
+    ];
+    
+    protected $messages = [
+        'numeroBusqueda.numeric' => 'El campo número solo puede contener números.',
+    ];
 
     public function mount($user)
     {
@@ -96,11 +104,24 @@ if($this->resultados == []){
         //dd("1");
     }
 }
+$this->buscado = true;
+return $this->buscado;
 return $this->resultados;
 return $this->sinResultados;
+
     
 }
+public function emitErrorMessage($message)
+{
+    $this->addError('error', $message);
+}
 public function buscarNumero(){
+    
+    if ($this->numeroBusqueda == null) {
+        $this->emitErrorMessage('El número de reserva únicamente contiene números.');
+        return;
+    }else{
+      
     $sinespacios = trim($this->numeroBusqueda);
     $numeroBusqueda = '%'. $sinespacios .'%';
     $this->resultados = Reservas::where('id', 'like', $numeroBusqueda)
@@ -108,6 +129,7 @@ public function buscarNumero(){
         ->get();
 
    return $this->resultados;
+    }
     }
 
     public function buscarEntrada(){
@@ -126,6 +148,12 @@ public function buscarNumero(){
     }
     public function resetResultados(){
         $this->resultados = [];
+        $this->buscado = false;
+        $this->terminoBusqueda = null;
+        $this->numeroBusqueda = null;
+
+        return $this->resultados = [];
+        $this->buscado = false;
         $this->terminoBusqueda = null;
         $this->numeroBusqueda = null;
     }

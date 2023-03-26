@@ -886,6 +886,9 @@ div.google_translate_element > div.skiptranslate{
     border-top: 1px solid #bbb;
     margin: 10px 0px;
   }
+  div#cliente, .destacado{
+    background-color: #C8FFEF;
+  }
 
 
 

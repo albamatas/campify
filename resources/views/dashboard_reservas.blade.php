@@ -27,12 +27,14 @@ $('#tab-cliente').click(function(){
     $('#tab-reserva').removeClass('tab-selected'); 
     $('#tab-cliente').addClass('tab-selected');
     $('div#cliente').css({'display':'block'});
+    $('div#resultadosCliente').css({'display':'block'});
     $('div#reserva').css({'display':'none'});
 
 });
 $('#tab-reserva').click(function(){      
     $('#tab-cliente').removeClass('tab-selected'); 
     $('#tab-reserva').addClass('tab-selected');
+    $('div#resultadosCliente').css({'display':'none'});
     $('div#cliente').css({'display':'none'});
     $('div#reserva').css({'display':'block'});
 });
