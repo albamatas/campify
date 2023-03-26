@@ -11,8 +11,8 @@
         <x-spacing alto="2rem"></x-spacing>
 
         <div class="tabs">
-            <div id="tab-cliente"  class="tab tab-selected" wire:ignore.self>Datos del cliente</div>
-            <div id="tab-reserva"  class="tab" wire:ignore.self >Datos de la reserva</div>
+            <div id="tab-cliente"  class="tab tab-selected" wire:click="resetResultados" wire:ignore.self>Datos del cliente</div>
+            <div id="tab-reserva"  class="tab" wire:click="resetResultados" wire:ignore.self >Datos de la reserva</div>
         </div>
         <x-spacing alto="2rem"></x-spacing>
 
@@ -23,7 +23,7 @@
 
           
 
-        @if(!blank($resultados))
+       
         <div class="wrapper">
     
             <div class="wrapper_actividad">
@@ -33,11 +33,13 @@
                 <x-spacing alto="0.7rem"></x-spacing>
                        <div class="content_actividad">
                            <x-spacing alto="1rem"></x-spacing>
-
-                           @if (blank($resultados))
+                           @if (blank($sinResultados))
+                           <p>Realiza una búsqueda para encontrar reservas. </p>
+                            
+                           @elseif ($sinResultados == 0)
                            <p>No se ha encontrado ninguna reserva con estos valores de búsqueda "{{$terminoBusqueda}}". </p>
-                           @else
-                           
+                           @endif
+                           @if(!blank($resultados))
                             @foreach ($resultados as $reserva)
                             <div class="selector" onclick="window.location.href='{{route('ver-reserva', [$reserva->id, $guardarfecha])}}'">
                                     
@@ -49,7 +51,7 @@
                                       <p translate="no" class="name">{{$reserva->user->name}}</p>
                                       <p translate="no" class="matricula">{{$reserva->user->matricula}} <br> telf: {{$reserva->user->telefono}} <br> email: {{$reserva->user->email}}</p>
                                       <hr class="solid">
-                                      <p class="matricula"> <img src="{{ asset('images/img_entrada.svg')}}" style="width: 20px; height:auto" alt=""> {{date("d/m/Y", strtotime($reserva->entrada))}}      <img src="{{ asset('images/img_salida.svg')}}" alt="" style="width: 20px; height:auto; margin-left:20px;"> {{date("d/m/Y", strtotime($reserva->salida))}}</p>
+                                      <p class="matricula"> <img src="{{ asset('images/img_entrada.svg')}}" style="width: 20px; height:auto margin-right:5px" alt=""> {{date("d/m/Y", strtotime($reserva->entrada))}}      <img src="{{ asset('images/img_salida.svg')}}" alt="" style="width: 20px; height:auto; margin-left:20px; margin-right:5px;"> {{date("d/m/Y", strtotime($reserva->salida))}}</p>
 
                                    @endif                                       
                             
@@ -59,7 +61,8 @@
                         <x-spacing alto="1.5rem"></x-spacing>
                             @endforeach
                         
-                           @endif
+                            @endif
+                          
                            
 
                           
@@ -69,7 +72,7 @@
         </div>
 
 
-        @endif
+   
 
     </div>   
     
@@ -123,13 +126,13 @@
                                     <p class="name">{{$nombre_generico . $reserva->reserva_id}}</p>
                                     <p class="matricula">Sin datos del cliente</p>
                                     <hr class="solid">
-                                      <p class="matricula"> <img src="{{ asset('images/img_entrada.svg')}}" style="width: 20px; height:auto" alt=""> {{date("d/m/Y", strtotime($reserva->entrada))}}      <img src="{{ asset('images/img_salida.svg')}}" alt="" style="width: 20px; height:auto; margin-left:20px;"> {{date("d/m/Y", strtotime($reserva->salida))}}</p>
+                                      <p class="matricula"> <img src="{{ asset('images/img_entrada.svg')}}" style="width: 20px; height:auto; margin-right:5px" alt=""> {{date("d/m/Y", strtotime($reserva->entrada))}}      <img src="{{ asset('images/img_salida.svg')}}" alt="" style="width: 20px; height:auto; margin-left:20px; margin-right:5px"> {{date("d/m/Y", strtotime($reserva->salida))}}</p>
 
                                     @else
                                       <p translate="no" class="name">{{$reserva->user->name}}</p>
                                       <p translate="no" class="matricula">Número de reserva: {{$reserva->id}}</p>
                                       <hr class="solid">
-                                      <p class="matricula"> <img src="{{ asset('images/img_entrada.svg')}}" style="width: 20px; height:auto" alt=""> {{date("d/m/Y", strtotime($reserva->entrada))}}      <img src="{{ asset('images/img_salida.svg')}}" alt="" style="width: 20px; height:auto; margin-left:20px;"> {{date("d/m/Y", strtotime($reserva->salida))}}</p>
+                                      <p class="matricula"> <img src="{{ asset('images/img_entrada.svg')}}" style="width: 20px; height:auto; margin-right:5px" alt=""> {{date("d/m/Y", strtotime($reserva->entrada))}}      <img src="{{ asset('images/img_salida.svg')}}" alt="" style="width: 20px; height:auto; margin-left:20px; margin-right:5px"> {{date("d/m/Y", strtotime($reserva->salida))}}</p>
 
                                    @endif                                       
                             
@@ -152,7 +155,7 @@
         @endif
     </div> 
     </div>     
-    <x-spacing alto="4rem"></x-spacing>
+    <x-spacing alto="20rem"></x-spacing>
 
     <div>
         <button onclick="window.location.href='{{route('ocupar', [$user->homecamper->id])}}'" class="btn-secondary btn-ic btn-flotante" > <img src="{{ asset('images/sumar.svg')}}" alt="">  Nueva reserva</button>         

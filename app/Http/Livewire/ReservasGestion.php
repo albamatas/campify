@@ -21,6 +21,7 @@ class ReservasGestion extends Component
     public $guardarfecha = null;
     public $nombre_generico = 'Reserva manual';
     public $resultados = [];
+    public $sinResultados = null;
     public $entrada;
     public $salida;
     public $numeroBusqueda = null;
@@ -48,7 +49,12 @@ class ReservasGestion extends Component
 
     public function search()
 {
-     
+    //Si la cerca no conté cap valor es fa un resset
+    if($this->terminoBusqueda == '' || $this->terminoBusqueda == ''){
+        $this->resultados = [];
+
+    }else{
+     //Sinó es fa una cerca
     $usuariosCoincidentes = User::where('id', 'not like', $this->user->id) 
             ->where(function($query) {
                 
@@ -66,12 +72,32 @@ class ReservasGestion extends Component
     ->get()->load('reservas');
 
     $reservas = collect();
-  foreach ($usuariosCoincidentes as $usuario) {
-    $reservas = $reservas->merge($usuario->reservas);
+    
+            foreach ($usuariosCoincidentes as $usuario) {
+                $reservas = $reservas->merge($usuario->reservas);
+            }
+        
+
+$this->resultados = $reservas; 
+
 }
 
-$this->resultados = $reservas;    
-    
+if($this->resultados == []){
+    $this->sinResultados = 0;
+    //dd("0");
+}else{
+    if($this->resultados->isEmpty()){
+       
+        //dd("0");
+        $this->sinResultados = 0;
+    }else{
+        
+        $this->sinResultados = 1;  
+        //dd("1");
+    }
+}
+return $this->resultados;
+return $this->sinResultados;
     
 }
 public function buscarNumero(){
@@ -96,9 +122,12 @@ public function buscarNumero(){
     
         $this->resultados = Reservas::where('salida', $this->salida)->where('homecamper_id', $this->user->homecamper->id)->get();
     
-       return $this->resultados;
-    
-    
+       return $this->resultados;    
+    }
+    public function resetResultados(){
+        $this->resultados = [];
+        $this->terminoBusqueda = null;
+        $this->numeroBusqueda = null;
     }
 }
 

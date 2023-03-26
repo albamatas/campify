@@ -53,12 +53,9 @@ class ResumenActividad extends Component
       
         $this->salidas = Reservas::where('salida', $this->diaconsulta)->where('homecamper_id', $this->user->homecamper->id)->get();
        
-
         $this->noches = Ocupacion::where('fecha', $this->diaconsulta)->where('homecamper_id', $this->user->homecamper->id)->get();
         }
-        
-       
-       
+               
     }
 
     public function render()

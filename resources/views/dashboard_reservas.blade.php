@@ -44,7 +44,10 @@ $('#tab-entrada').click(function(){
     $('#in_entrada').css({'display':'block'});
     $('#in_salida').css({'display':'none'});
     $('#in_numero').css({'display':'none'});
-
+    
+     $('html, body').animate({
+    scrollTop: $("#tab-entrada").offset().top
+     }, 100);             
 });
 
 $('#tab-salida').click(function(){
@@ -54,6 +57,9 @@ $('#tab-entrada').removeClass('tab-selected');
 $('#in_entrada').css({'display':'none'});
     $('#in_salida').css({'display':'block'});
     $('#in_numero').css({'display':'none'});
+    $('html, body').animate({
+    scrollTop: $("#tab-entrada").offset().top
+     }, 100); 
 
 });
 
@@ -64,8 +70,20 @@ $('#tab-salida').removeClass('tab-selected');
 $('#in_entrada').css({'display':'none'});
     $('#in_salida').css({'display':'none'});
     $('#in_numero').css({'display':'block'});
+    $('html, body').animate({
+    scrollTop: $("#tab-entrada").offset().top
+     }, 100); 
 
 });
+
+$('.primary').click(function(){
+              
+              $('html, body').animate({
+                          scrollTop: $("#tab-entrada").offset().top
+                          }, 100); 
+                        
+          }
+      );
 
 </script>
     
