@@ -428,9 +428,13 @@
       </div>  
 
       <div class="bottom_wrapper">
-        
-        <div id="btn-reservas" class="btn-bottom " onclick="window.location.href='{{route('dashboard-homecamper', ['user' => $user, $guardarfecha])}}'">
-                    <img src="{{asset('/images/reservas.svg')}}"  style="width: 20px; height:20px; filter: opacity(50%);" alt="">
+        <div id="btn-actividad" class="btn-bottom" onclick="window.location.href='{{route('dashboard-homecamper', ['user' => $user, $guardarfecha])}}'">
+            <img src="{{asset('/images/actividad.svg')}}" class="svg-selected" style="width: 20px; height:20px; filter: opacity(50%)" alt="">
+            <p>Actividad</p>
+     </div>  
+
+        <div id="btn-reservas" class="btn-bottom " onclick="window.location.href='{{route('reservas', ['user' => $user])}}'">
+                    <img src="{{asset('/images/reservas.svg')}}"  style="width: 20px; height:20px; filter: opacity(50%)" alt="">
                     <p>Reservas</p>
              </div>  
       

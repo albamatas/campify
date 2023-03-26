@@ -47,7 +47,7 @@
       @endforeach
       </ul>
       <hr>
-      <p>Hay cosas que a veces no se consiguen a la primera, siempre puedes buscar otras fechas o otro establecimiento igual de ideal que este en campify ¡ánimo! </p>
+      <p>Hay cosas que a veces no se consiguen a la primera, siempre puedes buscar otras fechas o otro establecimiento igual de ideal que este en <span translate="no"> campify </span> ¡ánimo! </p>
 </div>       
 @endif
 @endif
@@ -87,9 +87,9 @@
         </div>  
         <x-spacing alto="1.2rem"></x-spacing>
         <div class="formbuttons">
-        <button data-toggle="modal" data-target="#login" type="button" class="btn-secondary">Ya tengo una cuenta en campify</button>
+        <button data-toggle="modal" data-target="#login" type="button" class="btn-secondary">Ya tengo una cuenta en <span translate="no"> campify </span></button>
         <x-spacing alto="1rem"></x-spacing>
-        <button wire:click="sinCuenta"  type="button" class="btn-secondary">Es mi primera vez en campify</button>
+        <button wire:click="sinCuenta"  type="button" class="btn-secondary">Es mi primera vez en <span translate="no"> campify </span></button>
         </div>
         <x-spacing alto="5rem"></x-spacing>
        
@@ -159,7 +159,7 @@
         <x-spacing alto="2rem"></x-spacing>
         <p class="hint">
             <strong>Tratamiento de datos</strong><br>
-            En Campify guardaremos tus datos según la normativa (RGPD) para generar la reserva e informarte de su estado.
+            En <span translate="no"> campify </span> guardaremos tus datos según la normativa (RGPD) para generar la reserva e informarte de su estado.
             El anfitrión con el que reserves tendrá acceso a tus datos para gestionar tu estancia. 
         </p> 
             

@@ -27,10 +27,14 @@ class Reservas extends Model
         return $this->belongsTo('App\Models\HomeCamper', 'homecamper_id');
     }
 
-    //Relación una a muchos//
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
+
+    //Relación una a muchos//
+   // public function user(){
+    //   return $this->belongsTo(User::class);
+    //}
 
     //Relación una a muchos//
     public function ocupaciones(){

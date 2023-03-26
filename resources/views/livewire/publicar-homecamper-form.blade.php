@@ -57,7 +57,7 @@
             
                
             <div class="alert alert-info" role="alert">
-            Para estar en campify debes cumplir lo siguiente:
+            Para estar en <span translate="no"> campify </span> debes cumplir lo siguiente:
                 <ul>
                     <li>Precio por vehículo y no por personas</li>
                     <li>Permitir la acampada: con suficiente espacio para sacar mesa, sillas, toldos, etc</li>
@@ -208,7 +208,7 @@
             <x-spacing alto="2rem"></x-spacing>
             <p class="hint">
                 <strong>Tratamiento de datos</strong><br>
-                En Campify guardaremos tus datos según la normativa (RGPD) para publicar tu anuncio e informarte del estado de las reservas.
+                En <span translate="no"> campify </span> guardaremos tus datos según la normativa (RGPD) para publicar tu anuncio e informarte del estado de las reservas.
                 Los clientes con reserva tendrán acceso a tus datos de contacto.
             </p> 
                 

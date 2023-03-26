@@ -10,6 +10,9 @@ use App\Models\Ocupacion;
 use Lean\ConsoleLog\ConsoleLog;
 use DateTime;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Request;
 
 use App\Mail\HomecamperReservaModificada;
 use App\Mail\UserReservaModificada;
@@ -25,6 +28,8 @@ class VerReserva extends Component
     public $salida = null;
     public $dias = null;
     public $precio;
+    public $url;
+    public $url_anterior;
     public $d1 = null;
     public $d2 = null;
     public $date1 = null;
@@ -65,6 +70,8 @@ class VerReserva extends Component
 
     
     public function mount($reserva, $guardarfecha){
+        $this->url = url()->current();
+        $this->url_anterior = url()->previous();
         $this->reserva = $reserva;
         $this->guardarfecha = $guardarfecha;
 
@@ -296,5 +303,21 @@ public function tipoModificacion ($tipo_modificacion) {
 
            // $this->consoleLog("Fin");
             
-    }
+        }
+    public function back(){
+                  
+        if($this->url_anterior == $this->url){
+           return redirect()->route('dashboard-homecamper', ['guardarfecha' => $this->guardarfecha]);
+        }else{
+            if (str_contains($this->url_anterior, '/reservar/')) {
+                return redirect()->route('reservas');
+            } else {
+                return redirect()->to($this->url_anterior);
+            }
+          
+        }
+         
+    } 
 }
+
+

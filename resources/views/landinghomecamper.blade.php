@@ -23,7 +23,7 @@
 
 <div class="content landing">
     <div class="heading">
-        <h1 class="">Publica tu área de autocaravanas o terreno particular en <span class="campify">campify</span> y empieza a recibir reservas online hoy mismo</h1>
+        <h1 class="">Publica tu área de autocaravanas o terreno particular en <span translate=no class="campify">campify</span> y empieza a recibir reservas online hoy mismo</h1>
         <x-spacing alto="2rem"></x-spacing>
         <a href="{{route('publicar')}}"><button type="button" class="primary">Publicar ahora</button></a>
        
@@ -62,11 +62,11 @@
             </div>
             <div class="card-ventajas">
                 <ul>
-                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Publica tu área, terreno o lo que tengas</li> 
                     <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Recibe reservas online</li> 
-                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Recibe notificaciones del estado de las reservas</li> 
-                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Consulta las reservas: dashboard y detalle de reservas</li> 
-                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Gestión de reservas: Modifica o cancela reservas</li>  
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Emails automáticos a ti y a los clientes al crear o modificar una reserva</li> 
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Resumen de las entradas y salidas diárias</li> 
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Consulta los datos de las reservas</li> 
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Gestiona las reservas: ocupa una plaza, modifica una reserva o cancelala</li>  
                 </ul>
             </div>
         </div>
@@ -74,7 +74,7 @@
         <x-spacing alto="6rem"></x-spacing>
                     
 
-<h2 class="h2-l">Tengas lo que tengas, <span class="campify">campify</span> es para tí</h2> 
+<h2 class="h2-l">Tengas lo que tengas, <span translate=no class="campify">campify</span> es para tí</h2> 
 <x-spacing alto="0.8rem"></x-spacing>
 <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center; align-items: center;">
     <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:20px; width:300px">
@@ -120,7 +120,7 @@
 
 
 <div class="heading">
-    <h2 class="h2-l">¿Ya publicaste tu área de autocaravanas en <span class="campify">campify</span>?</h2>
+    <h2 class="h2-l">¿Ya publicaste tu área de autocaravanas en <span translate=no class="campify">campify</span>?</h2>
     <x-spacing alto="0.8rem"></x-spacing>
     <p style="text-align: center">Accede ahora a tu cuenta y gestiona tus reservas.</p>
     <x-spacing alto="0.8rem"></x-spacing>
@@ -129,7 +129,7 @@
 
 </div>
 <x-spacing alto="4rem"></x-spacing>
-<h2 class="h2-l">Quieres reservar tu plaza en una área de autocaravanas o terreno particular de <span class="campify">campify</span>?</h2>
+<h2 class="h2-l">Quieres reservar tu plaza en una área de autocaravanas o terreno particular de <span translate=no class="campify">campify</span>?</h2>
 <x-spacing alto="0.8rem"></x-spacing>
 
 <a href="{{route('home')}}"><button class="btn-secondary">Ir a reservar plaza</button></a>

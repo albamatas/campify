@@ -92,17 +92,31 @@
       
         $('#btn-reservas').click(function(){
             $('#btn-reservas').addClass('btn-selected');
-            $('#btn-gris').removeClass('btn-selected'); 
+            $('#btn-gris').removeClass('btn-selected');
+            $('#btn-actividad').removeClass('btn-selected'); 
            
             $('#btn-reservas img').css({'filter': 'opacity(100%)'});
-            $('#btn-gris img').css({'filter': 'opacity(50%)'});        
+            $('#btn-gris img').css({'filter': 'opacity(50%)'}); 
+            $('#btn-actividad img').css({'filter': 'opacity(50%)'});        
         });
         $('#btn-gris').click(function(){
             $('#btn-gris').addClass('btn-selected');
-            $('#btn-reservas').removeClass('btn-selected'); 
+            $('#btn-reservas').removeClass('btn-selected');
+            $('#btn-actividad').removeClass('btn-selected'); 
             
             $('#btn-gris img').css({'filter': 'opacity(100%)'});
-            $('#btn-reservas img').css({'filter': 'opacity(50%)'});       
+            $('#btn-reservas img').css({'filter': 'opacity(50%)'}); 
+            $('#btn-actividad img').css({'filter': 'opacity(50%)'});      
+        });
+
+        $('#btn-actividad').click(function(){
+            $('#btn-actividad').addClass('btn-selected');
+            $('#btn-reservas').removeClass('btn-selected');
+            $('#btn-gris').removeClass('btn-selected'); 
+            
+            $('#btn-actividad img').css({'filter': 'opacity(100%)'});
+            $('#btn-reservas img').css({'filter': 'opacity(50%)'}); 
+            $('#btn-gris img').css({'filter': 'opacity(50%)'});      
         });
 
         
@@ -128,6 +142,14 @@
     </script>
 
      @livewireScripts  
+     <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'ca,es,en,fr,it,pt,de,eu,nl', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true}, 'google_translate_element');
+                }
+        </script>
+        
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
     @yield('js')
 
     

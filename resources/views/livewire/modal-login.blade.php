@@ -51,7 +51,11 @@
                    @if($acceso == 'login')
                       <button type="button" wire:click="authenticate" class="btn btn-primary">Acceder</button>
                     @elseif ($acceso == 'reservar')
-                    <button type="button" wire:click="authenticate" class="btn btn-primary">Acceder</button>
+                    <button type="button" wire:loading.disabled wire:click="authenticate" class="btn btn-primary">
+                        <div wire:loading wire:target="authenticate">
+                            <span  style="height:20px; width: 20px;"> <img style="height:20px; width: 20px; filter: invert(1);" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                             </div>
+                         Acceder</button>
                     @endif
 
           
@@ -66,16 +70,18 @@
 window.addEventListener('swal:fechaReservada', event => {
     swal.fire({
         title: 'No se ha podido realizar la reserva',
-            text: 'No está permitido tener 2 reservas con fechas coincidentes. Parece que ya reservaste para alguna de estas fechas. Te dirigiremos a tu cuenta para que puedas contactar con el anfitrión',
+            text: 'No está permitido tener 2 reservas con fechas coincidentes. Parece que ya reservaste para alguna de estas fechas. Contacta con el anfitrión de esa reserva para cancelarla y poder hacer una nueva',
             icon: 'error',
-            showCancelButton: false,
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Entendido',
+            showCancelButton: true,
+            cancelButtonColor: '#3085d6',
+            cancelButtonText: 'Acceder a mi cuenta',
+            confirmButtonColor: '#111',
+            confirmButtonText: 'Volver',
     }).then((result) => {
             if (result.isConfirmed){
-                window.livewire.emit('Acceder');
+                //window.livewire.emit('Acceder');
             }else{
-                window.livewire.emit('borrarReserva');
+                window.livewire.emit('Acceder');
             }
    
         })

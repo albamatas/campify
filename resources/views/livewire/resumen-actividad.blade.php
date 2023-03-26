@@ -11,12 +11,10 @@
             <p><strong> Hoy, {{date("d/m/Y", strtotime($hoy))}}</strong></p>
         @endif
     </div>
-    <div>
-        <button onclick="window.location.href='{{route('ocupar', [$user->homecamper->id])}}'" class="btn-secondary btn-ic" style="position: absolute; top: 8px; right:0px; margin:0px 8px; width: 200px; max-width:300px;" > <img src="{{ asset('images/sumar.svg')}}" alt="">  Nueva reserva</button>         
-    </div>
-    <x-spacing alto="2rem"></x-spacing>
+   
+    <x-spacing alto="1rem"></x-spacing>
     <h1 id="h1-scroll"><strong style="font-weight: 900">{{ $user->homecamper->nombre}}</strong><br>
-        Gestiona tus reservas</h1>
+        Tu actividad prevista</h1>
         <x-spacing alto="2rem"></x-spacing>
                      
             
@@ -34,18 +32,18 @@
                                     @if (date("d/m/Y", strtotime($hoy)) == date("d/m/Y", strtotime($diaconsulta)))
                                      <h2 class="blink"><small>Hoy,</small> {{date("d/m/Y", strtotime($hoy))}}</h2>
                                      @php ($guardarfecha = date("Y-m-d", strtotime($hoy)))
-                                     <br>
+                                    
                                     
                                     @else
                                     <h2 class="blink">{{date("d/m/Y", strtotime($diaconsulta))}}</h2>
                                     @php ($guardarfecha = date("Y-m-d", strtotime($diaconsulta)))
-                                    <br>
+                                    
                                     
                                     @endif
                                 @else
                                 <h2 class="blink"><small>Hoy,</small> {{date("d/m/Y", strtotime($hoy))}}</h2>
                                 @php ($guardarfecha = date("Y-m-d", strtotime($hoy)))
-                                <br>
+                                
                                 
                                 @endif
                                 <div id="arrow-next" class="next make-blinking" wire:click="diaSiguiente" style="border: 0px; border-radius: 4px" alt="Ir a resumen del día siguiente"></div>
@@ -56,7 +54,7 @@
 
                             <div class="item_actividad" id="entradas">
                                 <img src="{{ asset('images/img_entrada.svg') }}" alt="">
-                                <p class="categoria_actividad">Entradas</p>
+                                <p class="categoria_actividad">Llegadas</p>
                                 <p class="number_actividad c_entrada blink">{{$entradas->count()}}</p>
                             </div>
                             <div class="item_actividad" id="salidas">
@@ -77,7 +75,7 @@
                 <div class="actividad">
                         <div class="content_actividad">
                            <div class="tabs">
-                             <div id="tab1" class="tab tab1 tab-selected">Entradas</div>
+                             <div id="tab1" class="tab tab1 tab-selected">Llegadas</div>
                              <div id="tab2" class="tab tab2">Salidas</div>
                             </div>
     
@@ -98,8 +96,8 @@
                                             <p class="name">{{$nombre_generico . $entrada->id}}</p>
                                             <p class="matricula">Sin datos del cliente</p>
                                             @else
-                                            <p class="name">{{$entrada->user->name}}</p>
-                                            <p class="matricula">{{$entrada->user->matricula}}</p>
+                                            <p translate="no"  class="name">{{$entrada->user->name}}</p>
+                                            <p translate="no" class="matricula">{{$entrada->user->matricula}}</p>
                                             @endif
                                        
                                     </div>
@@ -126,8 +124,8 @@
                                             <p class="name">{{$nombre_generico . $salida->id}}</p>
                                             <p class="matricula">Sin datos del cliente</p>
                                             @else
-                                           <p class="name">{{$salida->user->name}}</p>
-                                           <p class="matricula">{{$salida->user->matricula}}</p>
+                                           <p translate="no" class="name">{{$salida->user->name}}</p>
+                                           <p translate="no" class="matricula">{{$salida->user->matricula}}</p>
                                            @endif
                                        </div>
                                            <div class="arrow"></div>
@@ -166,8 +164,8 @@
                                             <p class="name">{{$nombre_generico . $noche->reserva_id}}</p>
                                             <p class="matricula">Sin datos del cliente</p>
                                             @else
-                                              <p class="name">{{$noche->user->name}}</p>
-                                              <p class="matricula">{{$noche->user->matricula}}</p>
+                                              <p translate="no" class="name">{{$noche->user->name}}</p>
+                                              <p translate="no" class="matricula">{{$noche->user->matricula}}</p>
                                            @endif                                       
                                     
                                          </div>
@@ -190,7 +188,7 @@
                 <div class="actividad">
                     <div class="content_actividad">
                         <p>Incluye este enlace en las aplicaciones camper como Park4night o Caramaps para dirigir directamente a la reserva.</p>
-                           <a href="{{route('vista.homecamper', [$user->homecamper->slug])}}">www.campify.es/public/explorar/{{$user->homecamper->slug}}</a> 
+                           <a translate="no" href="{{route('vista.homecamper', [$user->homecamper->slug])}}">www.campify.es/public/explorar/{{$user->homecamper->slug}}</a> 
                     </div>
                 </div>
                 <x-spacing alto="5rem"></x-spacing>
@@ -202,16 +200,20 @@
         
 <div class="bottom_wrapper">
         
-    <div id="btn-reservas" class="btn-bottom btn-selected" onclick="window.location.href='{{route('dashboard-homecamper', ['user' => $user, $guardarfecha])}}'">
-                <img src="{{asset('/images/reservas.svg')}}" class="svg-selected" style="width: 20px; height:20px" alt="">
+    <div id="btn-actividad" class="btn-bottom btn-selected" onclick="window.location.href='{{route('dashboard-homecamper', ['user' => $user, $guardarfecha])}}'">
+        <img src="{{asset('/images/actividad.svg')}}" class="svg-selected" style="width: 20px; height:20px" alt="">
+        <p>Actividad</p>
+ </div>  
+    
+    <div id="btn-reservas" class="btn-bottom" onclick="window.location.href='{{route('reservas', ['user' => $user, $guardarfecha])}}'">
+                <img src="{{asset('/images/reservas.svg')}}" style="width: 20px; height:20px; filter: opacity(50%)" alt="">
                 <p>Reservas</p>
          </div>  
-  
-         
+   
      
          <div id="btn-gris" class="btn-bottom" onclick="window.location.href='{{route('editar-homecamper', [ 'user' => $user, $guardarfecha ])}}'">
             <img src="{{asset('/images/user.svg')}}" style="width: 20px; height:20px; filter: opacity(50%);" alt="">
-            <p>Editar perfil</p>
+            <p>Cuenta</p>
     </div>
     
 </div>

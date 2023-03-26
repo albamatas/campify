@@ -10,7 +10,7 @@
     <br>
     <div class="row justify-content-center">
         <div class="">
-            <h1>Inicia sesión para acceder a tu cuenta de campify</h1>
+            <h1>Inicia sesión para acceder a tu cuenta de <span translate="no">campify</span></h1>
             <x-spacing alto="1rem"></x-spacing>        
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

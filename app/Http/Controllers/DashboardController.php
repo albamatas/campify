@@ -56,6 +56,29 @@ class DashboardController extends Controller
         }
     }
 
+    public function search(){
+      // $user = HomeCamper::findOrFail($id),
+
+      
+      $user = auth()->user();
+        //$user = User::where('id', '44')->first();
+
+
+        //Si el usuario no tiene un homecamper asociado va fuera
+        if ($user->homecamper== null){
+           
+       
+        }else{
+        
+          
+            //Crear vista para las Reservas
+           return view('dashboard_reservas', [
+             'user' => $user,
+           ]);  
+                
+       }
+   }
+
     public function edit($guardarfecha = null){
         // $user = HomeCamper::findOrFail($id),
         

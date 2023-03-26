@@ -44,8 +44,10 @@
 
             if(top > 180) {
                 $('.topday').css({'display': 'block'});
+                $('#google_translate_element').css({'display': 'none'});
             }else{
                 $('.topday').css({'display': 'none'});
+                $('#google_translate_element').css({'display': 'block'});
             }           
         });
 

@@ -4,7 +4,7 @@
                            <select wire:model.lazy="provincia" id="select_provincia" class="predictivo">
                     <option value="">Escribe o selecciona una opción</option>
                         @foreach ($provincias as $provincia)
-                            <option value="{{$provincia->id}}">{{$provincia->provincia}}</option>
+                            <option translate="no" value="{{$provincia->id}}">{{$provincia->provincia}}</option>
                        @endforeach
                 </select> 
                  
@@ -21,7 +21,7 @@
                
                 <div wire:ignore>                    
                     <select wire:model.lazy='poblacion' class='predictivo'>
-                        <option value="">Escribe o selecciona una opción</option>
+                        <option translate="no" value="">Escribe o selecciona una opción</option>
                                     @foreach ($poblacionSelected as $poblacion)
                                 <option value="{{$poblacion->id}}">{{$poblacion->poblacion}}</option>
                         @endforeach

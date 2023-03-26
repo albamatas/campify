@@ -34,7 +34,7 @@
 </head>
 <body>
 
-    <div class="header"><strong>Campify</strong>,<br> <i>fluye pero sin preocupaciones</i></div>
+    <div class="header"><strong><span translate="no">Campif</span></strong>,<br> <i>fluye pero sin preocupaciones</i></div>
     <br>
 
     <h1>Reserva confirmada</h1>
@@ -83,7 +83,7 @@
 <x-spacing alto="1.2rem"></x-spacing>
 <br>
 <h2>Accede a tu cuenta</h2>
-<p>Recuerda que puedes acceder a tu cuenta campify para consultar todas tus reservas.</p>
+<p>Recuerda que puedes acceder a tu cuenta <span translate="no"> campify </span> para consultar todas tus reservas.</p>
 <a href="{{route('dashboard-homecamper')}}">Acceder</a>
 <x-spacing alto="0.7rem"></x-spacing>
 <br>

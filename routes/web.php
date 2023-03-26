@@ -71,6 +71,8 @@ Route::get('/reservar/{id}/resultado/{id_res}', [ReservasController::class, 'sho
 //Midelware auth
 Route::get('/auth/resumen_actividad/{guardarfecha?}', [DashboardController::class, 'index'])->name('dashboard-homecamper');
 
+Route::get('/auth/reservas', [DashboardController::class, 'search'])->name('reservas');
+
 Route::get('/auth/editar_perfil/{guardarfecha?}', [DashboardController::class, 'edit'])->name('editar-homecamper');
 
 Route::get('/auth/resumen_actividad/detalle_reserva/{id}/{guardarfecha?}', [DashboardController::class, 'show'])->name('ver-reserva');

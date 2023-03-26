@@ -57,7 +57,6 @@ class ResumenActividad extends Component
         $this->noches = Ocupacion::where('fecha', $this->diaconsulta)->where('homecamper_id', $this->user->homecamper->id)->get();
         }
         
-
        
        
     }

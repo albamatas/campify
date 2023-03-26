@@ -130,7 +130,7 @@
     </div>
     comment --}}
    
-    <a class="link-back" style="position: absolute; top: 0px; right: 0px; padding: 15px;" href="{{route('dashboard-homecamper', [ 'guardarfecha' => $guardarfecha ]) }}"><img style="width: 30px;" src="{{ asset('images/close.svg') }}" alt="Cerrar"> </a>
+    <a class="link-back" style="position: absolute; top: 0px; right: 0px; padding: 15px;" wire:click="back"><img style="width: 30px;" src="{{ asset('images/close.svg') }}" alt="Cerrar"> </a>
     <x-spacing alto="1.4rem"></x-spacing>
     
         @if(isset($nombre_generico))
@@ -224,7 +224,9 @@ window.addEventListener('swal:reservaNoModificada', event => {
         </div>  
     </div>
     <x-spacing alto="1rem"></x-spacing>
-     <a class="link-back" href="{{route('dashboard-homecamper', [ 'guardarfecha' => $guardarfecha ]) }}"> < Volver al resumen de actividad</a>
+
+    <a class="link-back" wire:click="back"> < Volver </a>
+     {{-- comment <a class="link-back" href="{{route('dashboard-homecamper', [ 'guardarfecha' => $guardarfecha ]) }}"> < Volver al resumen de actividad</a>--}}
     <x-spacing alto="1.4rem"></x-spacing>
    
     @if($actualizado == 1)

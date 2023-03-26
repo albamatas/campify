@@ -23,7 +23,7 @@
 <div class="content landing">
 
         <div class="heading">
-            <h1 class="">Con <span class="campify">campify</span> reserva tu plaza y acampa a tu aire en los lugares más camperfriendly</h1>
+            <h1 class="">Con <span translate=no class="campify">campify</span> reserva tu plaza y acampa a tu aire en los lugares más camperfriendly</h1>
             <x-spacing alto="2rem"></x-spacing>
             <a href="{{route('lista.homecamper')}}"><button type="button" class="primary">Explorar lugares campify</button></a>
            

@@ -32,7 +32,7 @@ padding: 0 20px;
     font-size: 1.2rem !important;
     height: 50px;
 }
-button:disabled{
+.btn:disabled{
     opacity: 40%;
 }
 li{
@@ -67,6 +67,12 @@ height: 80px;
     width: 78%;
     position: relative;
     float: right;
+}
+.primary:disabled{
+   background-color: #777; 
+}
+.btn-check:focus + .btn-primary, .btn-primary:focus {
+    background-color: #777; 
 }
 .back{
 min-width: 40px;
@@ -435,7 +441,11 @@ cursor: pointer;
 }
 
 .selector{
-    height: 78px;
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
     width: 100%;
     padding: 10px 20px;
     box-shadow: 0px 2px 8px rgba(122, 122, 122, 0.25);
@@ -451,8 +461,8 @@ cursor: pointer;
     transition-timing-function: ease;
 }
 .select-right{
-position: relative;
-float: left;
+flex-grow: 1;
+margin-right: 20px;
 }
 
 .select-right p{
@@ -470,6 +480,17 @@ float: left;
 }
 .bootstrap-select select {
     left:0;
+}
+.btn-flotante{
+background-color: #79FFD7;
+font-weight: 800;
+box-shadow: 0px 0px 8px #9d9d9d3e;
+position: fixed;
+bottom: 80px;
+right:20px;
+margin:0px;
+width: 200px !important;
+max-width:300px;
 }
 
 .name{
@@ -519,8 +540,8 @@ padding: 10px;
     z-index: 100;
     width: 100%;
     }
-    .btn-bottom{
-       width:55%;
+    /*.btn-bottom{
+       width:38%;
        padding: 10px;
        cursor: pointer;
        position: absolute;
@@ -532,30 +553,65 @@ padding: 10px;
        flex-direction: column;
        align-items: center;
        border-radius: 0 50% 0 0;
-       font-size: 98%;
+       font-size: 92%;
        color: #777;
        box-shadow: 0px -2px 8px #6c6c6c3e;
+    }*/
+    .btn-bottom{
+        width:38%;
+        padding: 10px;
+        cursor: pointer;
+        position: absolute;
+        z-index: 100;
+        background: linear-gradient(180deg, rgba(238, 238, 238, 20%) -20%, #EEEEEE 30%);
+        border: 1px solid #cccccc;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0 50% 0 0;
+        font-size: 92%;
+        color: #777777;
+        box-shadow: 0px -2px 8px #6c6c6c3e;
+     }
+    .btn-bottom img{
+        filter: (70%);
     }
-    #btn-reservas{
+    #btn-actividad{
         border-radius: 0 50% 0 0;
         margin-right: -5%;
         left:0;
+       
+     }
+     #btn-reservas{
+        border-radius: 40% 40% 0 0;
+        left:32%;
+        z-index: 100;
      }
      #btn-gris{
         border-radius: 50% 0 0 0;   
         margin-left: -5%;
         right: 0;
+        z-index: 10;
      }
-
+/*
     .btn-selected{
         background-color: #00FFB3;
         color: #111111;
         font-weight: 700;
-        z-index: 1000;
-        
+        z-index: 1000 !important;  
     }
+    */
+    .btn-selected{
+        background: linear-gradient(360deg, #111111 39.47%, rgba(17, 17, 17, 0) 130%);
+        color: #FFFFFF;
+        font-weight: 700;
+        z-index: 1000 !important;  
+    }
+
     .svg-selected{
         filter: opacity(100%);
+        filter:invert(1);
     }
     
    
@@ -574,6 +630,11 @@ padding: 10px;
     margin-right:10px;
     margin-top:10px;
    
+}
+.search{
+    max-width:350px;
+    margin: 0px 20px;
+    border-radius: 10px;
 }
 .form-check-input input{
     display: inline-block !important;
@@ -713,12 +774,24 @@ padding: 10px 5px;
 }
 
 .goog-te-gadget-simple{
-border-radius: 5px;
+    border-radius: 25px;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: none !important;  
+    border-right: none !important;
 }
 
 .goog-te-gadget-simple span{
-    font-size: 120%;
+    font-size: 106%;
     padding: 5px 10px;
+    }
+
+.goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed img{
+    display: none !important;
+}
+
+.goog-te-gadget-simple span a span:last-child, .goog-te-gadget-simple span a span:nth-last-child(3), .goog-te-gadget-simple span a span:nth-last-child(2) {
+    display: none !important;
     }
 
 img .goog-te-gadget-icon{
@@ -776,6 +849,13 @@ display: block;
    padding-right: 8px;
 }
 
+body > div.skiptranslate{
+    display: none !important; 
+}
+
+div.google_translate_element > div.skiptranslate{
+    display: block !important;
+}
 .visually-hidden {
     position: absolute !important;
     height: 1px;
@@ -800,6 +880,11 @@ display: block;
   height: 50px;
   width: 50px;
   background-size: 30px;
+  }
+
+  hr.solid {
+    border-top: 1px solid #bbb;
+    margin: 10px 0px;
   }
 
 

@@ -40,11 +40,19 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
-        
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'ca,en,fr,it,pt,de', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true}, 'google_translate_element');
+            }
+    </script>
+    
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </head>
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+      
     <x-top-bar_acces></x-top-bar_acces>
     @livewire('modal-login', [ 'acceso' => 'login', 'homecamper' => null, 'entrada' => null, 'salida' => null, 'dias' => null, 'precio' => null ])
 
