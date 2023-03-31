@@ -42,6 +42,9 @@
     
 <h2>{{$homecamper->nombre}}, espera tu llegada para el día {{ date("d/m/Y", strtotime($reserva->entrada)) }}</h2>
 
+<p><strong>Número de reserva</strong><br>
+    {{$reserva->id}}</p>
+
 <p><strong>Día de entrada</strong><br>
 {{date("d/m/Y", strtotime($reserva->entrada))}}</p>
 

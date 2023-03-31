@@ -42,6 +42,9 @@
 <h2>Detalle de la reserva que has cancelado</h2>
 <x-spacing alto="1rem"></x-spacing>
 
+<p><strong>Número de reserva</strong><br>
+    {{$reserva->id)}}</p>
+
 <p><strong>Día de entrada</strong><br>
 {{date("d/m/Y", strtotime($reserva->entrada))}}</p>
 
