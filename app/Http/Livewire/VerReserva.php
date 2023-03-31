@@ -75,11 +75,14 @@ class VerReserva extends Component
         $this->reserva = $reserva;
         $this->guardarfecha = $guardarfecha;
 
-        if($reserva->user->id == $reserva->homecamper->user->id){
+        if($reserva->user->homecamper != null){
+            if($reserva->user->id == $reserva->user->homecamper->user->id){
            
-            $this->nombre_generico = "Reserva manual - " . $reserva->id;
-          
+                $this->nombre_generico = "Reserva manual - " . $reserva->id;
+             
+            }
         }
+        
     }
 
     public function render()

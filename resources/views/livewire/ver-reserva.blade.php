@@ -30,13 +30,13 @@
                             
                             @endif
                             <div class="tabs">
-                                <div id="tab-entrada"  wire:click.defer="tipoModificacion(1)" class="tab" wire:ignore.self>Entrada</div>
+                                <div id="tab-entrada"  wire:click.defer="tipoModificacion(1)" class="tab" wire:ignore.self>Llegada</div>
                                 <div id="tab-salida" wire:click.defer="tipoModificacion(2)" class="tab" wire:ignore.self >Salida</div>
                                 <div id="tab-ambas"  wire:click.defer="tipoModificacion(3)" class="tab" wire:ignore.self>Ambas</div>
                             </div>
                             <x-spacing alto="1.7rem"></x-spacing>
                             <div id="modificar-entrada" wire:ignore.self>
-                                <label for="">Nueva fecha de entrada</label>
+                                <label for="">Nueva fecha de Llegada</label>
                                 <input  type="date" wire:model="entrada" value="" placeholder="{{date("d/m/Y", strtotime($reserva->entrada))}}" name="" id="">
                                     @error('entrada')
                                     <span class="error">{{ $message }}</span>
@@ -46,7 +46,7 @@
                                
                             </div>
                             <div id="modificar-salida" wire:ignore.self>
-                                <p><strong>Fecha de entrada </strong><br>{{date("d/m/Y", strtotime($reserva->entrada))}}</p>
+                                <p><strong>Fecha de llegada </strong><br>{{date("d/m/Y", strtotime($reserva->entrada))}}</p>
                                 <x-spacing alto="0.4rem"></x-spacing>
                                 <label for="">Nueva fecha de salida:</label>
                                 <input  type="date" wire:model="salida"  name="" id="">
@@ -56,7 +56,7 @@
                                 
                             </div>
                             <div id="modificar-ambas" wire:ignore.self>
-                                <label for="">Nueva fecha de entrada</label>
+                                <label for="">Nueva fecha de llegada</label>
                                 <input  type="date" wire:model="entrada">
                                 @error('entrada')
                                 <span class="error">{{ $message }}</span>
@@ -140,9 +140,10 @@
         @else
         <h4 style="margin-left:20px">Reserva de:</h4>
     
-        <h1 style="max-width: 90vw">
+        <h1 translate=no style="max-width: 90vw">
             {{$reserva->user->name}}</h1>
-        <p style="margin-left:20px">{{$reserva->user->matricula}}<p>
+        <p style="margin-left:20px">Matrícula: <span translate=no>{{$reserva->user->matricula}}</span></p>
+
         @endif
     
     <x-spacing alto="0.7rem"></x-spacing>
@@ -174,9 +175,11 @@ window.addEventListener('swal:reservaNoModificada', event => {
 
             <div class="actividad">
                     <div class="content_actividad">
+                        <h5>Reserva número: {{$reserva->id}}</h5>
+                        <br>
                         <div class="item_actividad">
                             <img src="{{ asset('images/img_entrada.svg') }}" alt="">
-                            <p class="categoria_actividad">Entrada</p>
+                            <p class="categoria_actividad">Llegada</p>
                             <p class="number_actividad c_entrada blink" style="font-size:120%">{{date("d/m/Y", strtotime($reserva->entrada))}}</p>
                         </div>
                         <div class="item_actividad">
@@ -210,13 +213,13 @@ window.addEventListener('swal:reservaNoModificada', event => {
             <div class="actividad">
                     <div class="content_actividad">
                         <p><strong>Nombre</strong><br>
-                            {{ $reserva->user->name }}</p>
+                           <span translate=no>{{ $reserva->user->name }}</span> </p>
                         <p><strong>Teléfono</strong><br>
                             {{ $reserva->user->telefono }}</p>
                         <p><strong>Email</strong><br>
                             {{ $reserva->user->email }}</p>
                         <p><strong>Matrícula</strong><br>
-                            {{ $reserva->user->matricula }}</p>
+                            <span translate=no>{{ $reserva->user->matricula }} </span></p>
                     </div>
                        
             </div>
