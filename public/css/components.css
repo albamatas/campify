@@ -194,6 +194,12 @@ img.cabecera{
     margin: 0px 0px;
     background-color: #C8FFEF;
 }
+.content_home_landing{
+       background-color: white;
+    border: 1px solid white;
+    width: 100%;
+    padding: 50px 20px;
+}
 .heading{
     border-radius: 20px;
     width: 100% + 40px;
