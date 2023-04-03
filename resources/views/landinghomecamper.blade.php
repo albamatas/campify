@@ -13,7 +13,7 @@
     <h1 class="big">Ahorra tiempo y aumenta tus ingresos con campify</h1>
     <p>La plataforma de gestión de reservas online para áreas de autocaravana.</p> 
     <x-spacing alto="4rem"></x-spacing>
-    <a href="{{route('publicar')}}"><button type="button" class="primary">Empezar ahora gratis</button></a>
+    <a href="{{route('publicar')}}"><button type="button" class="primary cta">Empezar ahora gratis</button></a>
    
 </div>
 
@@ -50,7 +50,7 @@
     
 
 <x-spacing alto="3rem"></x-spacing>
-<a href="{{route('publicar')}}"><button class="primary">Empezar ahora gratis</button></a>
+<a href="{{route('publicar')}}"><button class="primary cta">Empezar ahora gratis</button></a>
 <x-spacing alto="6rem"></x-spacing>
 
         
@@ -75,7 +75,7 @@
         </div>
 
         <x-spacing alto="3rem"></x-spacing>
-<a href="{{route('publicar')}}"><button class="primary">Empezar ahora gratis</button></a>
+<a href="{{route('publicar')}}"><button class="primary cta">Empezar ahora gratis</button></a>
 <x-spacing alto="6rem"></x-spacing>
        
 
@@ -123,7 +123,7 @@
 </div>
 
     <x-spacing alto="3rem"></x-spacing>
-    <a href="{{route('publicar')}}"><button class="primary">Empezar ahora gratis</button></a>
+    <a href="{{route('publicar')}}"><button class="primary cta">Empezar ahora gratis</button></a>
     <x-spacing alto="8rem"></x-spacing>
 
 
