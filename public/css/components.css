@@ -191,7 +191,7 @@ img.cabecera{
     width: 100%;
     padding: 50px 20px;
     padding-top: 120px;
-    margin: 0px 0px;
+    margin: -40px 0px 0px;
     background-color: #C8FFEF;
 }
 .content_home_landing{
@@ -199,6 +199,11 @@ img.cabecera{
     border: 1px solid white;
     width: 100%;
     padding: 50px 20px;
+}
+
+h1.big{
+    font-size: 240%;
+    line-height: 130%;
 }
 .heading{
     border-radius: 20px;

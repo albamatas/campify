@@ -10,7 +10,7 @@
 @section('content')
 
 <div class="heading_homecamper">
-    <h1 class="">Ahorra tiempo y aumenta tus ingresos con la gestión de reservas online de tu área de autocaravanas</h1>
+    <h1 class="big">Ahorra tiempo y aumenta tus ingresos con la gestión de reservas online de tu área de autocaravanas</h1>
     <x-spacing alto="2rem"></x-spacing>
     <a href="{{route('publicar')}}"><button type="button" class="primary">Empezar ahora gratis</button></a>
    
@@ -72,9 +72,13 @@
             </div>
 
         </div>
+
+        <x-spacing alto="3rem"></x-spacing>
+<a href="{{route('publicar')}}"><button class="primary">Empezar ahora gratis</button></a>
+<x-spacing alto="6rem"></x-spacing>
        
 
-        <x-spacing alto="6rem"></x-spacing>
+       
                     
 
 <h2 class="h2-l">Tengas lo que tengas, <span translate=no class="campify">campify</span> es para tí</h2> 
