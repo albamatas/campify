@@ -186,13 +186,14 @@ img.cabecera{
     height: auto;
     margin: auto;
 }
+
 .heading_homecamper{
     border-radius: 0px 0px 20px 20px;
     width: 100%;
     padding: 50px 20px;
-    padding-top: 120px;
+    padding-top: 200px;
     margin: -40px 0px 0px;
-    background-color: #C8FFEF;
+    background: linear-gradient(0deg, #00FFF0 0%, #C8FFEF 100%);
 }
 .content_home_landing{
        background-color: white;
