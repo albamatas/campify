@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservasController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SignIn;
 
 
 /*
@@ -47,6 +48,12 @@ Route::get('/explorar/{homecamp}', [HomeController::class, 'view'])->name('vista
 Route::get('/reservar_plaza_en_area_autocaravanas', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::get('/publicar', [SignIn::class, 'publicar'])->name('publicar');
+
+
+Route::get('/publicar/resultado/{homecamp}', [SignIn::class, 'publicarResultado'])->name('publicar-resultado');
+
+/*
 Route::get('/publicar', function () {
     return view('publicarhomecamper');
 })->name('publicar');
@@ -56,7 +63,7 @@ Route::get('/publicar/resultado', function () {
     return view('publicar-resultado');
 })->name('publicar-resultado');
 
-
+*/
 
 
 

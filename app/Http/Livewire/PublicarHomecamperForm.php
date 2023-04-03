@@ -199,7 +199,7 @@ class PublicarHomecamperForm extends Component
         $correo = New ConfirmacionPublicado ();
         Mail::to($this->email)->send($correo);
        
-       return redirect()->route('publicar-resultado');
+       return redirect()->route('publicar-resultado', $camper);
        
     }
 }

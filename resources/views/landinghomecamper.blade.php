@@ -1,72 +1,72 @@
 @extends('layouts.landing')
 
 @section('seo')
-    <title>Campify, gestiona las reservas online de tu área de autocaravanas o terreno particular</title>
-    <meta name="description" content="¿Tienes una área, un camping, un terreno y sigues apuntando tus reservas en un excel o un papel? ¿A qué esperas? ¡Digitalízate ya! Con campify tus clientes reservan de manera online así ahorras tiempo, agilidad y calidad en tu servicio.">
-    <meta name="keywords" content="reserva online area de autocaravanas, reserva area de autocaravanas, reservar, autocaravanas, camper, furgo, camping, terreno, gestionar reservas, gratis, gestionar reservas gratis, park4night, caramaps, airb&b, camplify, campify">
+    <title>Campify: Reservas Online para Áreas de Autocaravanas - Gestiona tu Espacio con Nuestra Plataforma</title>
+    <meta name="description" content="Gestiona las reservas online de tu área de autocaravana de manera eficiente con nuestra plataforma online. Ahorra tiempo y dinero al permitir la reserva y gestión en línea. ¡Empieza ahora y disfruta de la comodidad de gestionar tus reservas desde cualquier lugar y cualquier dispositivo!">
+    <meta name="keywords" content="Reservas online, Áreas de autocaravanas, Gestión de espacios, Plataforma de reservas, Autocaravanas, Gestión de reservas, Reserva de aparcamiento, Camping en autocaravana, terreno">
 
 @endsection
 
 @section('content')
 
-<div class="cabecera">
-   
-    <img class="cabecera" src="{{ asset('images/homecamper_landing_large.png')}}" 
-   
-                                srcSet="{{ asset('images/homecamper_landing_small.png')}} 320w,
-                                    {{ asset('images/homecamper_landing_medium.png')}} 480w,
-                                    {{ asset('images/homecamper_landing_large.png')}} 800w"
-                                    alt="Una autocaravanaa en un jardín con sillas y una mesa a su alrededo">   
 
-</div>
-
-
-<div class="content landing">
-    <div class="heading">
-        <h1 class="">Publica tu área de autocaravanas o terreno particular en <span translate=no class="campify">campify</span> y empieza a recibir reservas online hoy mismo</h1>
+<div class="landing">
+    <div class="heading_homecamper">
+        <h1 class="">Ahorra tiempo y aumenta tus ingresos haciendo el salto a la gestión de reservas online de tu área de autocaravanas con <span translate=no class="campify">campify</span></h1>
         <x-spacing alto="2rem"></x-spacing>
-        <a href="{{route('publicar')}}"><button type="button" class="primary">Publicar ahora</button></a>
+        <a href="{{route('publicar')}}"><button type="button" class="primary">Empezar ahora gratis</button></a>
        
     </div>
     <x-spacing alto="4rem"></x-spacing>
     
     
-    
     <div style="display:flex; flex-direction:column; align-items:center">
-        <h2 class="h2-l">Estarás al día de todas las entradas y salidas</h2>
+        <h2 class="h2-l">Mejora el servicio</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Tanto tú como los clientes recibís un correo de confirmación de la reserva. También tendrás la infomación actualizada en tu pantalla de inicio.</p>  
+        <p style="text-align: center">Tus clientes podrán reservar online mientras tu deas de preocuparte por responder llamadas o emails.</p>  
+        <img src="{{ asset('images/land_reserva.png')}}" style="max-width:250px" alt="">
+        <x-spacing alto="0.4rem"></x-spacing>
+    </div>
+    <x-spacing alto="4rem"></x-spacing>
+
+    <div style="display:flex; flex-direction:column; align-items:center">
+
+        <h2 class="h2-l">Al día de todas las llegadas y salidas</h2>
+        <x-spacing alto="0.8rem"></x-spacing>
+        <p style="text-align: center">Información en tiempo real de toda la actividad en tu pantalla de inicio..</p>  
         <img src="{{ asset('images/Resumen.png')}}" style="max-width:250px" alt="">
         <x-spacing alto="0.4rem"></x-spacing>
     </div>
     <x-spacing alto="4rem"></x-spacing>
     <div style="display:flex; flex-direction:column; align-items:center">
-        <h2 class="h2-l">Consulta tus reservas y gestionalas al momento des de cualquier dispositivo</h2>
+        <h2 class="h2-l">Gestiona las reserbas</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Consulta o modifica tus reservas siempre que quieras. Olvídate del papel o de los excels, conéctate con tu móvil, tu tablet o ordenador para gestionar las reservas.</p>  
+        <p style="text-align: center">Olvídate del papel o de los excels para gestionar tus reservas, ahora las tendrás en la palma de tu mano.</p>  
         <img src="{{ asset('images/Movimientos.png')}}" style="max-width:250px" alt="">
         <x-spacing alto="0.4rem"></x-spacing>
     </div>
     
 
 <x-spacing alto="3rem"></x-spacing>
-<a href="{{route('publicar')}}"><button class="primary">Publicar ahora</button></a>
+<a href="{{route('publicar')}}"><button class="primary">Empezar ahora gratis</button></a>
 <x-spacing alto="6rem"></x-spacing>
 
         
         <div class="card-landing">
             <div class="green-header">
-                <h2>Plan gratuito</h2>
-                <div><span id="price">0</span><span id="euro"> €</span>
+                <h2>Con campify todo son ventajas</h2>
+               <!-- <div><span id="price">0</span><span id="euro"> €</span> -->
                 </div>
             </div>
             <div class="card-ventajas">
                 <ul>
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Gratis para tí y para tus clientes</li> 
                     <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Recibe reservas online</li> 
-                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Emails automáticos a ti y a los clientes al crear o modificar una reserva</li> 
-                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Resumen de las entradas y salidas diárias</li> 
-                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Consulta los datos de las reservas</li> 
-                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Gestiona las reservas: ocupa una plaza, modifica una reserva o cancelala</li>  
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Emails de confirmación automática al crear o modificar una reserva</li> 
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Resumen de las llegadas, salidas y la ocupación diaria</li> 
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Buscador de reservas eficiente</li> 
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Gestión de reservas: crea, modifica o cancela reservas</li>  
+                    <li><img src="{{ asset('images/Check.png')}}" alt="Ventaja">Con el dispositivo que mejor te convenga: móvil, tablet o ordenador</li>  
                 </ul>
             </div>
         </div>
@@ -115,7 +115,7 @@
 </div>
 
     <x-spacing alto="3rem"></x-spacing>
-    <a href="{{route('publicar')}}"><button class="primary">Publicar ahora</button></a>
+    <a href="{{route('publicar')}}"><button class="primary">Empezar ahora gratis</button></a>
     <x-spacing alto="8rem"></x-spacing>
 
 
