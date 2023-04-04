@@ -31,7 +31,8 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
            
-          <button type="submit"  wire:click="actualizarNombre()" class="btn btn-primary">Acceder</button>
+          <button type="submit"  wire:click="actualizarNombre()" wire:loadig.attr="disabled" wire:target="actualizarNombre" class="btn btn-primary">
+            <span wire:loading wire:target="actualizarNombre()" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>Guardar</button>
          
           
         </div>

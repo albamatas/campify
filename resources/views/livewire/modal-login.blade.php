@@ -49,12 +49,12 @@
           <div class="modal-footer">
             <button type="button" class="btn innerform" data-dismiss="modal">Cerrar</button>
                    @if($acceso == 'login')
-                      <button type="button" wire:click="authenticate" class="btn btn-primary">Acceder</button>
+                      <button type="button" wire:click="authenticate" class="btn btn-primary">
+                        <span wire:loading wire:target="authenticate" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                        Acceder</button>
                     @elseif ($acceso == 'reservar')
                     <button type="button" wire:loading.disabled wire:click="authenticate" class="btn btn-primary">
-                        <div wire:loading wire:target="authenticate">
-                            <span  style="height:20px; width: 20px;"> <img style="height:20px; width: 20px; filter: invert(1);" src="{{ asset('images/loading.gif') }}" alt=""></span>
-                             </div>
+                        <span wire:loading wire:target="authenticate" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
                          Acceder</button>
                     @endif
 

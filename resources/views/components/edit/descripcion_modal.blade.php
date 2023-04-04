@@ -30,7 +30,9 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
            
-          <button type="submit"  wire:click="actualizarDescripcion($user->homecamper->descripcion)" class="btn btn-primary">Guardar</button>
+          <button type="submit"  wire:click="actualizarDescripcion($user->homecamper->descripcion)" class="btn btn-primary">
+            <span wire:loading wire:target="actualizarDescripcion($user->homecamper->descripcion)" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+            Guardar</button>
          
           
         </div>

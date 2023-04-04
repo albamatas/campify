@@ -43,7 +43,9 @@
             <div class="modal-footer">
               <button type="button" class="innerform" data-dismiss="modal">Cerrar</button>
              
-            <button type="submit"  data-dismiss="modal"  wire:click="actualizarDescripcion()" class="btn btn-primary">Guardar</button>
+            <button type="submit"  data-dismiss="modal" wire:loadig.attr="disabled" wire:target="actualizarDescripcion()" wire:click="actualizarDescripcion()" class="btn btn-primary">
+                <span wire:loading wire:target="actualizarDescripcion()" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                Guardar</button>
            
             
           </div>
@@ -119,7 +121,8 @@
             <div class="modal-footer">
               <button type="button" class="innerform" data-dismiss="modal">Cerrar</button>
              
-            <button type="submit"  data-dismiss="modal"  wire:click="actualizarServicios()" class="btn btn-primary">Guardar</button>
+            <button type="submit"  data-dismiss="modal"  wire:click="actualizarServicios()" wire:loadig.attr="disabled" wire:target="actualizarServicios()" class="btn btn-primary">
+                <span wire:loading wire:target="actualizarServicios()" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>Guardar</button>
            
             
           </div>
@@ -184,7 +187,7 @@
              <button type="submit" id="cerrar" class="cerrarfotos btn btn-primary" data-dismiss="modal" wire:click="subirImagen" wire:target="imageAll" onclick="hide_modal()">Subir fotos</button>
               @endif 
                    <div wire:loading wire:target="imageAll">
-                       <span  style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                       <span  style="height:20px; width: 20px;"> <img style="height:20px; width: 20px;" src="{{ asset('images/loading_black.gif') }}" alt=""></span>
                         Cargando...
                     </div>
                     

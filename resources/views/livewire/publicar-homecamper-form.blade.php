@@ -220,7 +220,8 @@
              <div class="botonera">
                 @if ($currentPage === count($pages))
                      <button wire:click="goToPreviousPage"  wire:loadig.attr="disabled" alt="Volver" type="button" class="back"></button>
-                    <button type="submit" wire:target="store" wire:loadig.attr="disabled" class="primary_double">Aceptar</button>
+                    <button type="submit" wire:target="store" wire:loadig.attr="disabled" class="primary_double"><span wire:loading wire:target="store" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                        Aceptar</button>
                     
                 @else
                     @if ($currentPage === 1 )

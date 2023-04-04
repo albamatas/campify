@@ -635,10 +635,7 @@ padding: 10px;
         z-index: 1000 !important;  
     }
 
-    .svg-selected{
-        filter: opacity(100%);
-        filter:invert(1);
-    }
+   
     
    
 

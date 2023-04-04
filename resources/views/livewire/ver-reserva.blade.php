@@ -78,7 +78,9 @@
               <button type="button" class="innerform" data-dismiss="modal">Cerrar</button>
 
              
-            <button type="submit" wire:click.defer="actualizarFechas()" class="btn btn-primary">Guardar</button>
+            <button type="submit" wire:click.defer="actualizarFechas()" wire:loadig.attr="disabled" wire:target="actualizarFechas()" class="btn btn-primary">
+                <span wire:loading wire:target="actualizarFechas()" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                Guardar</button>
            
             
           </div>
