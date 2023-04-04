@@ -10,14 +10,14 @@
 @section('content')
 
 <div class="cabecera">
+    <img class="cabecera"
+  src="{{ asset('images/landing_user.jpg')}}" 
+  alt="Una autocaravana con vistas a la montaña y a un río en el atardecer" 
+  srcset="{{ asset('images/landing_user-480.jpg')}} 480w,
+  {{ asset('images/landing_user-800.jpg')}} 800w,
+  {{ asset('images/landing_user-1150.jpg')}} 1150w"
+/>
    
-    <img class="cabecera" src="{{ asset('images/landing_user_large.png')}}" 
-                         sizes="(max-width: 400px) 320px, (max-width: 760px) 42px, 800px"
-                                srcSet="{{ asset('images/landing_user_small.png')}} 320w,
-                                    {{ asset('images/landing_user_medium.png')}} 480w,
-                                    {{ asset('images/landing_user_large.png')}} 800w"
-                                 alt="Lugares campify. Una camper autocaravana aparcada en el monte con unas vistas espectaculares">   
-
 </div>
 
 <div class="content landing">
