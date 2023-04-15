@@ -634,6 +634,9 @@ padding: 10px;
         font-weight: 700;
         z-index: 1000 !important;  
     }
+    .svg-selected{
+        filter: invert(1);
+    }
 
    
     
