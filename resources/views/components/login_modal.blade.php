@@ -47,11 +47,11 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
            @if ($acceso == 'login')
-           <button type="submit" href="{{ route('login') }}" class="btn btn-primary">
+           <button type="submit"  wire:loadig.attr="disabled"href="{{ route('login') }}" class="btn btn-primary">
             <span wire:loading wire:target="" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
             Acceder</button>
           @else
-          <button type="submit"  wire:click="authenticate()" class="btn btn-primary">
+          <button type="submit"  wire:click="authenticate()" wire:loadig.attr="disabled" wire:target="authenticate()" class="btn btn-primary">
             <span wire:loading wire:target="authenticate()" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>Acceder</button>
           @endif
           

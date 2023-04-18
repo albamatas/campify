@@ -92,7 +92,7 @@
                      
                <p class="hint">
                 Para que te hagas una idea: los precios de las áreas sin servicios como electricidad, agua o vaciado, 
-                suelen rondar los 3-8€, y entre 10-18€ los que más servicios tienen.
+                suelen rondar los 5-8€, y entre 10-20€ los que más servicios tienen y según temporada.
                 </p>
                     
                 <x-spacing alto="7rem"></x-spacing>

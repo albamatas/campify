@@ -147,5 +147,15 @@ function handleFiles() {
     });
   </script>
   comment --}}
+
+  <script>
+    
+    
+window.addEventListener('close-modal', event => {
+  console.log('close-modal');
+         $('.modal').modal('hide');
+});
+    
+</script>
   
 @endsection

@@ -34,6 +34,11 @@ class EditHomecamper extends Component
 
     public $user;
     public $descripcion=null;
+    public $nombre;
+    public $precio;
+    public $tipo;
+    public $tipos;
+    public $plazas;
     public $servicios=null;
     public $staticservicio=null;
     public $checked=false;
@@ -51,6 +56,17 @@ class EditHomecamper extends Component
         'Refresh' => '$refresh',
         'set',
    ];
+
+   protected $rules = [
+    'nombre' => 'required|min:3',
+    'descripcion' => 'required|min:3',
+    'precio' => ['required', 'numeric', 'max:25.00'],
+    'plazas' => ['required', 'numeric'],
+    'serviciosSelected' => '',
+    'tipo' => '',
+];
+
+ 
     public function mount($user, $guardarfecha)
     {
         if($guardarfecha!=null){        
@@ -62,7 +78,38 @@ class EditHomecamper extends Component
         $this->guardarfecha = $guardarfecha;
         
         $this->user = $user;
-        $this->servicios = $user->homecamper->servicios;
+
+        if($user->homecamper->descripcion == ""){
+            $this->descripcion = null;
+             }else{
+                $this->descripcion = $user->homecamper->descripcion;
+             }
+        
+         if($user->homecamper->nombre == ""){
+              $this->nombre = null;
+              }else{
+               $this->nombre = $user->homecamper->nombre;
+              }
+
+              $this->precio = $user->homecamper->precio;
+              $this->plazas = $user->homecamper->plazas;
+                
+              
+              $this->tipos = TiposHomeCamper::all()->sortBy('tipos');
+              $this->servicios = ServiciosHomeCamper::where('homecamper_id', $this->user->homecamper->id)->get();
+              
+
+              if($this->servicios !== null){
+                $this->checked=true;
+                foreach($this->servicios as $servicio){
+                
+                array_push($this->serviciosSelected, $servicio->servicio_id);
+                }
+                
+                
+              }
+              
+        
         $this->fotos = $user->homecamper->fotos;
         $this->staticservicio = Servicios::all();
     }
@@ -75,11 +122,58 @@ class EditHomecamper extends Component
 
     public function actualizarDescripcion()
     {
+        $this->validate(['descripcion' => ['required', 'min:10']]);
         $this->user->homecamper->descripcion =  $this->descripcion;
 
         $this->user->homecamper->save(); 
-       
+        $this->dispatchBrowserEvent('close-modal');
         $this->emit('EditHomecamper', $this->user->homecamper->descripcion);
+    }
+
+    
+    public function actualizarNombre()
+    {
+        $this->validate(['nombre' => ['required', 'min:3']]);
+        
+        $this->user->homecamper->nombre =  $this->nombre;
+        $this->user->homecamper->save();    
+        $this->emit('EditHomecamper', $this->user->homecamper->nombre);
+        $this->dispatchBrowserEvent('close-modal');
+    }
+
+    public function actualizarTipo(){
+       
+        $this->validate(['tipo' => ['required']]);
+        $tipo = TiposHomeCamper::where('id', $this->tipo)->get();
+        
+        $this->user->homecamper->tipo_id = $this->tipo;        
+        $this->user->homecamper->save();   
+        $this->user->homecamper->refresh();
+        
+        $this->emit('EditHomecamper', $this->user->homecamper->tipo);
+        $this->dispatchBrowserEvent('close-modal');
+       
+    }
+
+
+    public function actualizarPrecio()
+    {
+        $this->validate(['precio' => ['required', 'numeric', 'max:25.00']]);
+        $this->user->homecamper->precio =  $this->precio;
+
+        $this->user->homecamper->save(); 
+        $this->dispatchBrowserEvent('close-modal');
+        $this->emit('EditHomecamper', $this->user->homecamper->precio);
+    }
+
+    public function actualizarPlazas()
+    {
+        $this->validate([ 'plazas' => ['required', 'numeric']]);
+        $this->user->homecamper->plazas =  $this->plazas;
+
+        $this->user->homecamper->save(); 
+        $this->dispatchBrowserEvent('close-modal');
+        $this->emit('EditHomecamper', $this->user->homecamper->plazas);
     }
 
     public function actualizarServicios()
@@ -87,7 +181,7 @@ class EditHomecamper extends Component
         $numcheks = 0;
         //Revisar si ya hay servicios en este establecimiento, en caso que haya se borran todos, luego se crean los marcados
         
-       
+        
         if ($this->servicios !== null){
             //borrar registros
             $borrarservicios = ServiciosHomeCamper::where('homecamper_id', $this->user->homecamper->id)->delete();
@@ -106,7 +200,8 @@ class EditHomecamper extends Component
             }
         
             $this->servicios = ServiciosHomeCamper::where('homecamper_id', $this->user->homecamper->id)->get();
-       
+           
+           
         $this->emit('Refresh');
         $this->emit('EditHomecamper', $this->fotos, $this->servicios);      
     }

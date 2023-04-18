@@ -1,5 +1,53 @@
 <div>
-    <div class="modal fade" id="descripcion" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    {{-------------------- EDITAR NOMBRE ----------------------}}
+    <div wire:ignore.self class="modal fade" id="nombre" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                
+              <h5 class="modal-title" id="exampleModalLabel">Editar nombre</h5>
+              
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+   
+                        
+            </div>
+            <div class="modal-body">
+                <form wire:submit.prevent method="POST">
+                    @csrf
+  
+                    <div  class="row mb-3">
+                       
+                        <label for="nombre" class="">Nombre de tu área camper</label>
+                       
+  
+                        <div class="">
+                            <textarea wire:model="nombre" name="nombre" id="" cols="30" rows="8"></textarea>
+                            
+                            @error('nombre')
+                            <span class="error">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                                
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="innerform" data-dismiss="modal">Cerrar</button>
+             
+            <button type="button"  wire:loading.attr="disabled" wire:click="actualizarNombre()" class="btn btn-primary">
+                <span wire:loading wire:target="actualizarNombre()" style="height:30px; width: 30px"> <img style="height:30px; width: 30px" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                Guardar</button>            
+          </div>
+          </div>
+        </div>
+    </div>
+
+    {{-------------------- EDITAR DESCRIPCION ----------------------}}
+
+    <div wire:ignore.self class="modal fade" id="descripcion" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -15,25 +63,23 @@
                         
             </div>
             <div class="modal-body">
-                <form method="POST">
+                <form wire:submit.prevent method="POST">
                     @csrf
   
                     <div  class="row mb-3">
                        
-                        <label for="descripcion" class="col-md-4 col-form-label text-md-end">Descripción</label>
+                        <label for="descripcion" class="">Descripción</label>
                        
   
-                        <div class="col-md-6">
+                        <div class="">
                             @if ($user->homecamper->descripcion == null)
                             <textarea wire:model.defer="descripcion" name="description" id="" cols="30" rows="8"></textarea>
                             
                             @else 
-                            <textarea wire:model.defer="descripcion" name="description" id="" cols="30" rows="8" value="{{old($user->homecamper->descripcion)}}"></textarea>
+                            <textarea wire:model="descripcion" name="description" id="" cols="30" rows="8"></textarea>
                             @endif
                             @error('descripcion')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                            <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
@@ -43,7 +89,7 @@
             <div class="modal-footer">
               <button type="button" class="innerform" data-dismiss="modal">Cerrar</button>
              
-            <button type="submit"  data-dismiss="modal" wire:loadig.attr="disabled" wire:target="actualizarDescripcion()" wire:click="actualizarDescripcion()" class="btn btn-primary">
+            <button type="submit"  wire:loading.attr="disabled" wire:click="actualizarDescripcion()" class="btn btn-primary">
                 <span wire:loading wire:target="actualizarDescripcion()" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
                 Guardar</button>
            
@@ -52,9 +98,162 @@
           </div>
         </div>
     </div>
-      
 
-      <div wire:ignore class="modal fade" id="servicios" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     {{-------------------- EDITAR TIPO ----------------------}}
+
+     <div wire:ignore.self class="modal fade" id="tipo" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                
+              <h5 class="modal-title" id="exampleModalLabel">Editar tipo de establecimiento</h5>
+              
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+   
+                        
+            </div>
+            <div class="modal-body">
+                <form wire:submit.prevent method="POST">
+                    @csrf
+  
+                    <div  class="row mb-3">
+                                       
+  
+                       
+                            <div >  
+                                <select id="tipo" class="form-select-me predictivo" data-live-search="true" wire:model="tipo" name="" id="" >
+                                    <option value="">Selecciona una opción</option>
+                                    @foreach ($tipos as $tipo)
+                                        <option value="{{$tipo->id}}">{{$tipo->tipo}}</option>
+                                    @endforeach
+                                 </select>
+                            </div>
+                                @error('tipo')
+                                <span class="error">{{ $message }}</span>
+                                @enderror
+                       
+                    </div>
+                                
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="innerform" data-dismiss="modal">Cerrar</button>
+             
+            <button type="button"  wire:loading.attr="disabled" wire:click="actualizarTipo()" class="btn btn-primary">
+                <span wire:loading wire:target="actualizarTipo()" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                Guardar</button>
+           
+            
+          </div>
+          </div>
+        </div>
+    </div>
+
+
+     
+   
+
+    {{-------------------- EDITAR PRECIO ----------------------}}
+
+    <div wire:ignore.self class="modal fade" id="precio" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                
+              <h5 class="modal-title" id="exampleModalLabel">Editar precio</h5>
+              
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+   
+                        
+            </div>
+            <div class="modal-body">
+                <form wire:submit.prevent method="POST">
+                    @csrf
+  
+                    <div  class="row mb-3">
+                                       
+  
+                        <div class="">
+                            <label id="scroll_precio">¿Cuánto vas a cobrar por cada plaza?</label>
+                            <span style=" display: block; width: 100%"> <input wire:model.lazy="precio" style="width: 80px; display: inline-block !important" type="text" name="" id="precio">   €</span>
+                            @error('precio')
+                                 <span class="error">{{ $message }}</span>
+                             @enderror
+                                  
+                            <p class="hint">
+                             Para que te hagas una idea: los precios de las áreas sin servicios como electricidad, agua o vaciado, 
+                             suelen rondar los 5-8€, y entre 10-18€ los que más servicios tienen y según temporada.
+                             </p>
+                            
+                        </div>
+                    </div>
+                                
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="innerform" data-dismiss="modal">Cerrar</button>
+             
+            <button type="button"  wire:loading.attr="disabled" wire:click="actualizarPrecio()" class="btn btn-primary">
+                <span wire:loading wire:target="actualizarPrecio()" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                Guardar</button>
+          </div>
+          </div>
+        </div>
+    </div>
+
+    {{-------------------- EDITAR PLAZA ----------------------}}
+    <div wire:ignore.self class="modal fade" id="plazas" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                
+              <h5 class="modal-title" id="exampleModalLabel">Editar plazas</h5>
+              
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+   
+                        
+            </div>
+            <div class="modal-body">
+                <form wire:submit.prevent method="POST">
+                    @csrf
+  
+                    <div  class="row mb-3">
+                                       
+  
+                        <div class="">
+                            <label id="scroll_precio">¿Cuantas plazas tienes?</label>
+                            <span style=" display: block; width: 100%"> <input wire:model="plazas" style="" type="number" name="" id="lazas">  </span>
+                            @error('plazas')
+                                 <span class="error">{{ $message }}</span>
+                             @enderror
+                                                              
+                        </div>
+                    </div>
+                                
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="innerform" data-dismiss="modal">Cerrar</button>
+             
+            <button type="button"  wire:loading.attr="disabled" wire:click="actualizarPlazas()" class="btn btn-primary">
+                <span wire:loading wire:target="actualizarPlazas()" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>
+                Guardar</button>
+           
+            
+          </div>
+          </div>
+        </div>
+    </div>
+      
+    {{-------------------- EDITAR SERVICIOS ----------------------}}
+
+      <div wire:ignore.self class="modal fade" id="servicios" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -121,7 +320,7 @@
             <div class="modal-footer">
               <button type="button" class="innerform" data-dismiss="modal">Cerrar</button>
              
-            <button type="submit"  data-dismiss="modal"  wire:click="actualizarServicios()" wire:loadig.attr="disabled" wire:target="actualizarServicios()" class="btn btn-primary">
+            <button type="submit"  data-dismiss="modal"  wire:click="actualizarServicios()" wire:loading.attr="disabled" wire:target="actualizarServicios()" class="btn btn-primary">
                 <span wire:loading wire:target="actualizarServicios()" style="height:30px; width: 30px;"> <img style="height:30px; width: 30px;" src="{{ asset('images/loading.gif') }}" alt=""></span>Guardar</button>
            
             
@@ -130,6 +329,7 @@
         </div>
       </div>
      
+      {{-------------------- EDITAR FOTOS ----------------------}}
 
       <div class="modal fade"  id="fotos" tabindex="-1" role="dialog" styles="z-index: 100000000000" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -197,9 +397,13 @@
                 </div>
             </div>
         </div>
+
+        {{-------------------- CONTENT ----------------------}}
   
     <h1>Editar información </h1>
                <x-spacing alto="1.7rem"></x-spacing>
+
+         {{-------------------- AVISO ----------------------}}
     
         @if (blank($user->homecamper->fotos) || $user->homecamper->descripcion == null || blank($servicios))
             <div id="avisocompletarinfo" class="alert alert-warning" role="alert">
@@ -237,6 +441,9 @@
                     <div class="actividad">       
                             <div class="content_actividad">
                                 <p>{{$user->homecamper->nombre}}</p>
+                                <x-spacing alto="0.7rem"></x-spacing>
+                                <button data-toggle="modal" data-target="#nombre" wire:click="" class="btn-secondary btn-ic" > <img src="{{ asset('images/ic_edit.svg')}}" alt="">  Editar nombre</button>
+                                <x-spacing alto="0.7rem"></x-spacing>
                                 <p style="font-style:italic; font-size:80%">Próximamente podrás editar este dato</p>
                             </div>
                     </div>
@@ -272,7 +479,9 @@
                                 
                                     <p>{{$user->homecamper->descripcion}}</p>
                                     <x-spacing alto="0.7rem"></x-spacing>
-                                    <p style="font-style:italic; font-size:80%">Próximamente podrás editar este dato</p>
+                                     <button data-toggle="modal" data-target="#descripcion" wire:click="" class="btn-secondary btn-ic" > <img src="{{ asset('images/ic_edit.svg')}}" alt="">  Editar descripción</button>
+                                    <x-spacing alto="0.7rem"></x-spacing>
+                                 {{--   <p style="font-style:italic; font-size:80%">Próximamente podrás editar este dato</p> comment --}} 
                 
                         @endisset
                      </div>
@@ -284,18 +493,22 @@
                 <div class="actividad">
                         <div class="content_actividad">
                           <p>{{$user->homecamper->tipo->tipo}}</p>
-                          <p style="font-style:italic; font-size:80%">Próximamente podrás editar este dato</p>
+                          <x-spacing alto="0.7rem"></x-spacing>
+                                <button data-toggle="modal" data-target="#tipo" wire:click="" class="btn-secondary btn-ic" > <img src="{{ asset('images/ic_edit.svg')}}" alt="">  Editar tipo</button>
+                                <x-spacing alto="0.7rem"></x-spacing>
                         </div>
                 </div>
                 
                 <x-spacing alto="2rem"></x-spacing>
-                <h2>Precio por 24h</h2>
+                <h2>Precio por 24 horas</h2>
                 <x-spacing alto="0.7rem"></x-spacing>
                 <div class="actividad">
                         <div class="content_actividad">
                             <p>{{$user->homecamper->precio}} €</p>
                             <p>{{$user->homecamper->precio_descripcion}}</p>
-                            <p style="font-style:italic; font-size:80%">Próximamente podrás editar este dato</p>
+                            <x-spacing alto="0.7rem"></x-spacing>
+                                     <button data-toggle="modal" data-target="#precio" wire:click="" class="btn-secondary btn-ic" > <img src="{{ asset('images/ic_edit.svg')}}" alt="">  Editar precio</button>
+                                    <x-spacing alto="0.7rem"></x-spacing>
                         </div>
                 </div>
 
@@ -305,7 +518,9 @@
                 <div class="actividad">
                         <div class="content_actividad">
                             <p>{{$user->homecamper->plazas}}</p>
-                            <p style="font-style:italic; font-size:80%">Próximamente podrás editar este dato</p>
+                            <x-spacing alto="0.7rem"></x-spacing>
+                            <button data-toggle="modal" data-target="#plazas" wire:click="" class="btn-secondary btn-ic" > <img src="{{ asset('images/ic_edit.svg')}}" alt="">  Editar plazas</button>
+                            <x-spacing alto="0.7rem"></x-spacing>
                         </div>
                 </div>
 
@@ -345,6 +560,9 @@
                                 @endforeach
                             
                              </ul>
+                             <x-spacing alto="0.7rem"></x-spacing>
+                             <button data-toggle="modal" data-target="#servicios" wire:click="" class="btn-secondary btn-ic" > <img src="{{ asset('images/ic_edit.svg')}}" alt="">  Editar Servicios</button>
+                             <x-spacing alto="0.7rem"></x-spacing>
                          
                     @endif
                 </div>
@@ -448,6 +666,7 @@
                 <p>Editar perfil</p>
         </div>
     </div>
+
      
        
 </div>
