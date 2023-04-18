@@ -8,7 +8,6 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Storage;
 use Lean\ConsoleLog\ConsoleLog;
 
-
 use App\Models\TiposHomeCamper;
 use App\Models\Provincias;
 use App\Models\Poblaciones;
@@ -136,6 +135,7 @@ class EditHomecamper extends Component
         $this->validate(['nombre' => ['required', 'min:3']]);
         
         $this->user->homecamper->nombre =  $this->nombre;
+        $this->user->homecamper->slug = Str::slug($this->nombre, '-');
         $this->user->homecamper->save();    
         $this->emit('EditHomecamper', $this->user->homecamper->nombre);
         $this->dispatchBrowserEvent('close-modal');
