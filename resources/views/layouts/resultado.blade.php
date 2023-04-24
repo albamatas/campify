@@ -43,6 +43,7 @@
     </head>
 
 <body>
+    <x-top-bar_acces></x-top-bar_acces>
     <div class="grey">
     <img src="{{ asset('/images/check_verde.svg')}}" alt="">
     <x-spacing alto="1rem"></x-spacing>
