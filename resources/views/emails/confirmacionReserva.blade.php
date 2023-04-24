@@ -34,7 +34,7 @@
 </head>
 <body>
 
-    <div class="header"><strong><span translate="no">Campif</span></strong>,<br> <i>fluye pero sin preocupaciones</i></div>
+    <div class="header"><strong><span translate="no">Campify</span></strong>,<br> <i>fluye pero sin preocupaciones</i></div>
     <br>
 
     <h1>Reserva confirmada</h1>

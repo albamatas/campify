@@ -1,4 +1,4 @@
-@extends('layouts.landing')
+@extends('layouts.explorar')
 
 @section('content')
 
@@ -111,7 +111,7 @@
 <a class="link-back" href="{{route('lista.homecamper')}}" style="padding-left:0"> < Volver al listado</a>
 <x-spacing alto="3rem"></x-spacing>
 
-<p class="hint">Para hacer la reserva online no tendrás que añadir ningún método de pago.</p>
+<p class="hint">Para hacer la reserva online no tendrás que añadir ningún método de pago ni se te cobrará comisión.</p>
 
 <x-spacing alto="3rem"></x-spacing>
 </div>
@@ -119,7 +119,7 @@
 <div class="botonera" style="z-index:1000; left:0;">
    
         <a class="btn primary" href="{{route('reservar', [$homecamper->id])}}">
-            Reservar
+            Reservar ahora
         </a>
         
 </div>
