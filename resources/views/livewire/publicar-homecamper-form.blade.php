@@ -1,7 +1,7 @@
 <div style="overflow-x:hidden;">
     <div class="titulo" id="titulo">
             <x-spacing alto="1.7rem"></x-spacing>
-            <h1>Empezar en campify</h1>
+            <h1>Empezar en <span translate="no">campify</span></h1>
             <x-spacing alto="1.2rem"></x-spacing>
             <x-progres_bar progres="{{ $pages[$currentPage] ['progres'] }}"></x-progres_bar>
     </div>
@@ -34,7 +34,7 @@
                     }else{}
         });
             </script>
-                <p class="hint">Ejemplo: Área de Vilanova, Camping La Vall, Casa de los Olivos.</p>
+                <p class="hint"><span translate="no">Ejemplo: Área de Vilanova, Camping La Vall, Casa de los Olivos.</span></p>
                                    <x-spacing alto="1.7rem"></x-spacing>
 
             <label for="">¿Qué tipo de alojamiento es?</label>

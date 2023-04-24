@@ -75,17 +75,22 @@ class ReservasGestion extends Component
             })
             ->whereHas('reservas', function (Builder $query){
         $query->where('homecamper_id', $this->user->homecamper->id)
-        ->where('user_id', 'not like', $this->user->id) ;   
+        ->where('user_id', 'not like', $this->user->id);   
     })
     ->get()->load('reservas');
 
     $reservas = collect();
     
             foreach ($usuariosCoincidentes as $usuario) {
-                $reservas = $reservas->merge($usuario->reservas);
+                //Voler a verificar que únicamente ve los usuarios que reservaron en este homecamper
+                if( $this->user->homecamper->id == $usuario->reservas->homecamper_id){
+                    $reservas = $reservas->merge($usuario->reservas);
+                }else{
+                   
+                }
+                
             }
         
-
 $this->resultados = $reservas; 
 
 }
