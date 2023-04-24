@@ -22,23 +22,24 @@
 
 <div class="content landing">
 
-        <div class="heading">
-            <h1 class="">Con <span translate=no class="campify">campify</span> reserva tu plaza y acampa a tu aire en los lugares más camperfriendly</h1>
+        <div class="heading destacado">
+            <h1 class="">Fluye en tu viaje pero sin preocupaciones</h1>
+            <p>Reserva tu plaza online en áreas de autocaravana antes de que se llenen al completo.</p>
             <x-spacing alto="2rem"></x-spacing>
-            <a href="{{route('lista.homecamper')}}"><button type="button" class="primary">Explorar lugares campify</button></a>
+            <a href="{{route('lista.homecamper')}}"><button type="button" class="primary">Explorar lugares</button></a>
            
         </div>
         <x-spacing alto="4rem"></x-spacing>
 
 
-        <h2 class="h2-l">Fluye en tu viaje pero sin sorpresas</h2>
+        <h2 class="h2-l">¿Te suena la incertidumbre de conducir hasta una área y no saber si tendrás hueco para dormir?</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">No te quedes sin plaza. Consulta las parcelas disponibles y reserva online, en un plis plas.
+        <p style="text-align: center">Queremos que disfrutes al máximo de tus vacaciones y te olvides de todas tus preoucpaciones. Reserva online de manera fácil y rápida, y asegura tu plaza antes no se llene al completo.
         </p>   
         
         <x-spacing alto="4rem"></x-spacing>
 
-        <h2 class="h2-l">Money, money, money... de eso nada, el money te lo quedas tú</h2>
+        <h2 class="h2-l">Sin pagos extras, reservar con campify es gratis</h2>
         <x-spacing alto="0.8rem"></x-spacing>
         <p style="text-align: center">Reservar con nosotros es totalmente gratuïto sin ningún coste añadido. Pagarás directamente allí. El precio no se cuenta por personas sinó por parcela y punto.
         </p>    

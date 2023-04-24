@@ -27,7 +27,9 @@ p{
 height: 100%;
 padding: 0 20px;
 }
-
+.destacado{
+    background: linear-gradient(0deg, #00FFF0 0%, #C8FFEF 100%);
+}
 .btn{
     font-size: 1.2rem !important;
     height: 50px;
