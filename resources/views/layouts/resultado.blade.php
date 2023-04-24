@@ -45,7 +45,7 @@
 <body>
     <x-top-bar_acces></x-top-bar_acces>
     <div class="grey">
-    <x-spacing alto="2rem"></x-spacing>
+    <x-spacing alto="4rem"></x-spacing>
     <img src="{{ asset('/images/check_verde.svg')}}" alt="">
     <x-spacing alto="1rem"></x-spacing>
     <h1 style="text-align: center">@yield('h1')</h1>
