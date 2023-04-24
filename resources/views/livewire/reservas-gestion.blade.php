@@ -44,7 +44,7 @@
                             @if (!blank($resultados))
                                 @foreach ($resultados as $reserva)
                                     <div class="selector"
-                                        onclick="window.location.href='{{ route('ver-reserva', [$reserva->id, $guardarfecha]) }}'">
+                                        onclick="window.location.href='{{ route('ver-reserva', [$reserva, $guardarfecha]) }}'">
 
                                         <div class="select-right">
                                             @if ($reserva->user->id == $reserva->homecamper->user->id)
@@ -138,8 +138,9 @@
                                     "{{ $terminoBusqueda }}". </p>
                             @else
                                 @foreach ($resultados as $reserva)
+                                
                                     <div class="selector"
-                                        onclick="window.location.href='{{ route('ver-reserva', [$reserva->id, $guardarfecha]) }}'">
+                                        onclick="window.location.href='{{ route('ver-reserva', [$reserva['id'], $guardarfecha]) }}'">
 
                                         <div class="select-right">
                                             @if ($reserva->user->id == $reserva->homecamper->user->id)

@@ -55,8 +55,7 @@ class ReservasGestion extends Component
          
     }
 
-    public function search()
-{
+    public function search(){
     //Si la cerca no conté cap valor es fa un resset
     if($this->terminoBusqueda == '' || $this->terminoBusqueda == ''){
         $this->resultados = [];
@@ -69,53 +68,62 @@ class ReservasGestion extends Component
                 $sinespacios = trim($this->terminoBusqueda);
                 $terminoBusqueda = '%'. $sinespacios .'%';
                 $query->where('name', 'like', $terminoBusqueda)
+                    ->where('id', 'not like', $this->user->id)
                       ->orWhere('matricula', 'like', $terminoBusqueda)
                       ->orWhere('email', 'like', $terminoBusqueda)
                       ->orWhere('telefono', 'like', $terminoBusqueda); 
             })
             ->whereHas('reservas', function (Builder $query){
         $query->where('homecamper_id', $this->user->homecamper->id)
-        ->where('user_id', 'not like', $this->user->id);   
+        ->where('user_id', '!=', $this->user->id);   
     })
     ->get()->load('reservas');
 
     $reservas = collect();
     
             foreach ($usuariosCoincidentes as $usuario) {
+                $usr_reservas = $usuario->reservas->where('homecamper_id', $this->user->homecamper->id);
+                        $reservas = $reservas->merge($usr_reservas);
+                       
+                    }
+               
                 //Voler a verificar que únicamente ve los usuarios que reservaron en este homecamper
-                if( $this->user->homecamper->id == $usuario->reservas->homecamper_id){
-                    $reservas = $reservas->merge($usuario->reservas);
-                }else{
+               // if( $this->user->homecamper->id == $usuario->reservas->homecamper_id){
+                    
+               // }else{
                    
-                }
+               // }
                 
-            }
+            
         
-$this->resultados = $reservas; 
-
-}
-
-if($this->resultados == []){
-    $this->sinResultados = 0;
-    //dd("0");
-}else{
-    if($this->resultados->isEmpty()){
-       
-        //dd("0");
-        $this->sinResultados = 0;
-    }else{
+        $this->resultados = $reservas; 
         
-        $this->sinResultados = 1;  
-        //dd("1");
+        foreach ($this->resultados as $reserva){
+           
+        }
+
     }
-}
-$this->buscado = true;
-return $this->buscado;
-return $this->resultados;
-return $this->sinResultados;
 
-    
-}
+    if($this->resultados == []){
+        $this->sinResultados = 0;
+        //dd("0");
+    }else{
+        if($this->resultados->isEmpty()){
+        
+            //dd("0");
+            $this->sinResultados = 0;
+        }else{
+            
+            $this->sinResultados = 1;  
+            //dd("1");
+        }
+    }
+    $this->buscado = true;
+    return $this->buscado;
+    return $this->resultados;
+    return $this->sinResultados;
+   
+    }
 public function emitErrorMessage($message)
 {
     $this->addError('error', $message);
