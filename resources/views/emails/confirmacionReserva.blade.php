@@ -39,6 +39,17 @@
 
     <h1>Reserva confirmada</h1>
     <br>
+
+    <p>Idioma: </p> <div id="google_translate_element" class="google"></div>
+    
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'ca,en,fr,it,pt,de', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true}, 'google_translate_element');
+                }
+        </script>
+        
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
     
 <h2>{{$homecamper->nombre}}, espera tu llegada para el día {{ date("d/m/Y", strtotime($reserva->entrada)) }}</h2>
 
