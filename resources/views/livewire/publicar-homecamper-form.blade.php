@@ -67,7 +67,7 @@
 
             <x-spacing alto="1.7rem"></x-spacing>  
 
-        <label id="plazaslabel">¿Cuántas plazas de acampada tienes?</label>
+        <label id="plazaslabel">¿Cuántas plazas tienes?</label>
             <span style=" display: block; width: 100%"> <input wire:model.lazy="plazas" style="width: 80px; display: inline-block !important" type="number" step="1" name="" id="plazas">   plazas</span>
             
             @error('plazas')
