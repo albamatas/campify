@@ -35,7 +35,7 @@
 
         <h2 class="h2-l">Al día de todas las llegadas y salidas</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Información en tiempo real de toda la actividad en tu pantalla de inicio..</p>  
+        <p style="text-align: center">Información en tiempo real de toda la actividad en tu pantalla de inicio.</p>  
         <img src="{{ asset('images/Resumen.png')}}" style="max-width:250px" alt="">
         <x-spacing alto="0.4rem"></x-spacing>
     </div>
