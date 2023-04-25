@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Correo</title>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
        
     <!-- Styles -->
@@ -41,14 +40,6 @@
     <h1>Reserva confirmada</h1>
     <br>
 
-    <p>Idioma: </p> <div id="google_translate_element" class="google"></div>
-    
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'ca,en,fr,it,pt,de', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true}, 'google_translate_element');
-                }
-        </script>
-        
        
     
     

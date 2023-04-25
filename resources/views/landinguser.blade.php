@@ -1,9 +1,9 @@
 @extends('layouts.landing')
 
 @section('seo')
-    <title>Campify, reserva tu parcela online en áreas de autocaravanas y terrenos de particulares</title>
-    <meta name="description" content="Reserva tu parcela online y acampa en áreas de autocaravana o terrenos de particulares. Fluye en tu viaje pero sin sorpresas.">
-    <meta name="keywords" content="reserva online area de autocaravanas, reserva area de autocaravanas, reservar, reserva, parcela, plaza, autocaravana, autocaravanas, camper, furgo, camping, terreno, gestionar reservas, gratis, gestionar reservas gratis, park4night, caramaps, airb&b, camplify, campify">
+    <title>Reserva tu plaza online en áreas de autocaravanas y terrenos de particulares con Campify</title>
+    <meta name="description" content="Reserva tu plaza online y acampa en áreas de autocaravana o terrenos de particulares. Fluye en tu viaje pero sin sorpresas. Gestionar tus reservas es gratis y podrás acampar sin problemas.">
+    <meta name="keywords" content="reserva online area de autocaravanas, reserva area de autocaravanas, reservar, reserva, parcela, plaza, autocaravana, autocaravanas, camper, furgo, camping, terreno, gestionar reservas, gratis, gestionar reservas gratis, park4night, caramaps, camplify, campify, publicar area, ventajas publicar area">
 
 @endsection
 
@@ -58,7 +58,8 @@
 
 
 <div class="heading">
-    <h2 class="h2-l">¿Ya tienes cuenta? <br> Accede a tu área para consultar todas tus reservas y gestionarlas</h2>
+    <h2 class="h2-l">¿Ya tienes cuenta?</h2>
+     <p style="text-align: center"> Accede a tu área para consultar todas tus reservas y gestionarlas</p>
    
     <x-spacing alto="2rem"></x-spacing>
 
