@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Correo</title>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
        
@@ -48,7 +49,7 @@
                 }
         </script>
         
-        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+       
     
     
 <h2>{{$homecamper->nombre}}, espera tu llegada para el día {{ date("d/m/Y", strtotime($reserva->entrada)) }}</h2>
