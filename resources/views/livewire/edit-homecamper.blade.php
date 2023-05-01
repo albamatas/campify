@@ -400,11 +400,17 @@
 
         {{-------------------- CONTENT ----------------------}}
   
-    <h1>Editar información </h1>
+    <h1>Gestiona tu cuenta </h1>
                <x-spacing alto="1.7rem"></x-spacing>
-
+               <h2>Cerra sesión</h2>
+               <x-spacing alto="0.7rem"></x-spacing>
+               <button wire:click="logout" class="btn-secondary" >Cerrar sesión</button>
+              <x-spacing alto="1.7rem"></x-spacing>
+              <hr class="solid">
+              <x-spacing alto="1.7rem"></x-spacing>
          {{-------------------- AVISO ----------------------}}
-    
+         <h1>Editar información </h1>
+         <x-spacing alto="1.7rem"></x-spacing>
         @if (blank($user->homecamper->fotos) || $user->homecamper->descripcion == null || blank($servicios))
             <div id="avisocompletarinfo" class="alert alert-warning" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -663,7 +669,7 @@
          
              <div id="btn-gris" class="btn-bottom btn-selected" onclick="window.location.href='{{route('editar-homecamper', ['user' => $user, $guardarfecha])}}'">
                 <img src="{{asset('/images/user.svg')}}" class="svg-selected" style="width: 20px; height:20px" alt="">
-                <p>Editar perfil</p>
+                <p>Cuenta</p>
         </div>
     </div>
 

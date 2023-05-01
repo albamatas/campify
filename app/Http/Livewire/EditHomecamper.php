@@ -7,6 +7,11 @@ use Livewire\Component;
 
 use Illuminate\Support\Facades\Storage;
 use Lean\ConsoleLog\ConsoleLog;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
+ 
 
 use App\Models\TiposHomeCamper;
 use App\Models\Provincias;
@@ -278,5 +283,13 @@ class EditHomecamper extends Component
         $this->emit('Refresh');
         $this->emit('EditHomecamper', $this->fotos);      
     }
+
+    public function logout(){
+    Auth::logout();
+       
+    Session::flush();
+   
+    redirect()->route('login');
+}
     
 }

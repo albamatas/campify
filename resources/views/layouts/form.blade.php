@@ -6,6 +6,7 @@
 
         <title>@yield('title')</title>
 
+        
             <!-- Fonts -->
         
        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
@@ -24,8 +25,10 @@
       
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
         <link rel="stylesheet" href="{{ asset('css/components.css?v=').time() }}">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-Eq3KjfdL+riXSL7VvMV61Fk5UD2b5z5uRK7cAVvTT8Wcn7VDe5H67p9+UxSqr1d8m3DqXhffm43/j6+ZU6OIPg==" crossorigin="">
 
-       
+
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha384-L9kRcC1ZzeQfzv+jfsnha1KXMpYuBb3q3HvK5D7aFdm6gjqn6U5jwYHb7Q8GdVyP" crossorigin=""></script>
         @livewireStyles
 
         <!-- Hotjar Tracking Code for https://campify.es/public/ -->
