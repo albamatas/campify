@@ -188,7 +188,7 @@
                 <div class="actividad">
                     <div class="content_actividad">
                         <p>Incluye este enlace en las aplicaciones camper como Park4night o Caramaps para dirigir directamente a la reserva.</p>
-                           <a translate="no" href="{{route('vista.homecamper', [$user->homecamper->slug])}}">www.campify.es/public/explorar/{{$user->homecamper->slug}}</a> 
+                           <a translate="no" href="{{route('vista.homecamper', [$user->homecamper->slug])}}">www.campify.es/public/reservar_en/{{$user->homecamper->slug}}</a> 
                     </div>
                 </div>
                 <x-spacing alto="5rem"></x-spacing>

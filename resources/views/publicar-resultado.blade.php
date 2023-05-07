@@ -16,7 +16,7 @@
 <h2>Comparte este enlace con tus clientes para que reserven online</h2>
 <x-spacing alto="1rem"></x-spacing>
 <p>Incluye este enlace en tu web o en las aplicaciones camper como Park4night o Caramaps para dirigir directamente a la reserva.</p>
-<a translate="no" href="{{route('vista.homecamper', [$homecamper->slug])}}">www.campify.es/public/explorar/{{$homecamper->slug}}</a> 
+<a translate="no" href="{{route('vista.homecamper', [$homecamper->slug])}}">www.campify.es/public/reservar_en/{{$homecamper->slug}}</a> 
 <x-spacing alto="3rem"></x-spacing>
 
 <h2>Gestiona tus reservas</h2>
