@@ -275,14 +275,11 @@
         );
         $("#provincia" )
         .on( "change", function() {
-                console.log('provincia');
-
-
-                
+                                
                             $('.content-form').animate({
                                 scrollTop: 1000
                             }, 1000, function(){
-                                console.log("scroll");
+                                
                             });          
                                         }
 
