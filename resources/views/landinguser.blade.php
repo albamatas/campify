@@ -34,7 +34,7 @@
 
         <h2 class="h2-l">¿Te suena la incertidumbre de conducir hasta una área y no saber si tendrás hueco para dormir?</h2>
         <x-spacing alto="0.8rem"></x-spacing>
-        <p style="text-align: center">Queremos que disfrutes al máximo de tus vacaciones y te olvides de todas tus preoucpaciones. Reserva online de manera fácil y rápida, y asegura tu plaza antes no se llene al completo.
+        <p style="text-align: center">Queremos que disfrutes al máximo de tus vacaciones y te olvides de todas tus preocupaciones. Reserva online de manera fácil y rápida, y asegura tu plaza antes no se llene al completo.
         </p>   
         
         <x-spacing alto="4rem"></x-spacing>

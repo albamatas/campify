@@ -1,4 +1,4 @@
-<div style="overflow-x:hidden;">
+<div id="scrollable" style="overflow-x:hidden;">
     <div class="titulo" id="titulo">
             <x-spacing alto="1.7rem"></x-spacing>
             <h1>Empezar en <span translate="no">campify</span></h1>
@@ -272,6 +272,20 @@
                             }, 100); 
                           
             }
+        );
+        $("#provincia" )
+        .on( "change", function() {
+                console.log('provincia');
+
+
+                
+                            $('.content-form').animate({
+                                scrollTop: 1000
+                            }, 1000, function(){
+                                console.log("scroll");
+                            });          
+                                        }
+
         );
         
 }); 
