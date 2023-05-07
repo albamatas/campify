@@ -168,6 +168,9 @@ class PublicarHomecamperForm extends Component
     
     }
     public function store(){
+         //CREAR USUARIO Y RESERVAR
+         $this->validate(['password' => ['required', 'min:8']]);
+
        $user = User::create([
             'name' => $this->name,
             'telefono' => $this->telf,
